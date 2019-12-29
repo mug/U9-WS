@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="aa13712d-a4de-45fc-92f3-5641a600c454" name="WSMBE" displayName="WSMBE" description="" help="" type="BE" assemblyName="UFIDA.U9.Cust.Pub.WSMBE" mapProject=".\..\WSMBE_DB\WSMBE_DB.ubfdbproj" resourceName="" projectVersion="Normal">
+  <SourceControl />
+  <ItemGroup>
+    <Item id="e33446ff-67b9-497c-bc21-c1b4f4154081" name="WSTokenBE.ubfbe" displayName="WSTokenBE.ubfbe" description="" help="" include="WSTokenBE.ubfbe" type="BE" />
+  </ItemGroup>
+</Project>

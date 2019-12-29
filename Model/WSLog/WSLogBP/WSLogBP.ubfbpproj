@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="be1ea1d3-63ea-4c21-8e7f-d087d60b1dac" name="WSLogBP" displayName="WSLogBP" description="" help="" type="BP" assemblyName="UFIDA.U9.Cust.Pub.WSLogBP" mapProject="" resourceName="" projectVersion="Normal">
+  <Imports>
+    <Import id="448bc629-6823-49c5-b853-25ab516c6d92" name="WSLogBE" displayName="WSLogBE" description="" help="" componentid="fa1f2397-0e16-4d70-a71d-536d1df3ba71" path="..\WSLogBE\WSLogBE.ubfmlproj" type="BE" isRuntime="False" />
+    <Import id="f1714b78-ef28-4dfb-a765-f612d13b566c" name="BaseBE" displayName="BaseBE" description="" help="" componentid="2402fd32-810a-4130-811d-f1e6183a5a26" path="..\..\..\..\..\..\yonyou\UBFV60\U9.VOB.Product.Metadata\UBF\UFIDA.U9.Base.BaseBE.MetaData.dll" type="BE" isRuntime="True" />
+  </Imports>
+  <SourceControl />
+  <ItemGroup>
+    <Item id="6435eb87-ed52-4c86-83b1-dc3c7b348755" name="WSLogBP.ubfbp" displayName="WSLogBP.ubfbp" description="" help="" include="WSLogBP.ubfbp" type="BE" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F39E5BEC-20B0-4813-8A7A-599DE6CD9763}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UFIDA.U9.Cust.Pub.WS.Token.DBProvider</RootNamespace>
+    <AssemblyName>UFIDA.U9.Cust.Pub.WS.Token.DBProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UBF.System">
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\bin\UBF.System.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.Base.BaseBE">
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.Base.BaseBE.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.Cust.Pub.WSM.WSMRSV.Agent">
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.Cust.Pub.WSM.WSMRSV.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.Cust.Pub.WSM.WSMRSV.Deploy">
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.Cust.Pub.WSM.WSMRSV.Deploy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.Cust.Pub.WSMBE">
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.Cust.Pub.WSMBE.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.UBF.Management.BE">
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.UBF.Management.BE.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.UBF.SystemManage.Base">
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\bin\UFIDA.UBF.SystemManage.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="UFSoft.UBF.AopFrame">
+      <HintPath>..\WCFService\Bin\UFSoft.UBF.AopFrame.dll</HintPath>
+    </Reference>
+    <Reference Include="UFSoft.UBF.Business">
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\bin\UFSoft.UBF.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="UFSoft.UBF.PL">
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\bin\UFSoft.UBF.PL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="WSTokenDBProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Base\UFIDA.U9.Cust.Pub.WS.Base.csproj">
+      <Project>{8C8E9755-0FFC-47E5-BD79-66C6B1ABD12B}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Token\UFIDA.U9.Cust.Pub.WS.Token.csproj">
+      <Project>{CB3FD880-C065-43A5-9058-ECC3AB89DC9D}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.Token</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

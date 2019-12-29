@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="10f3384b-5d4e-4e52-86b8-4db303b0fb31" name="WSLogListQry" displayName="WSLogListQry" description="" help="" type="" assemblyName="WSLogListQry" mapProject="" resourceName="" projectVersion="Normal">
+  <Imports>
+    <Import id="ca8b29bb-fdf6-49b7-a7b9-4fcb3c18a09d" name="WSLogUI" displayName="WSLogUI" description="" help="" componentid="91378c71-c106-4fc5-8164-bd21cb5c9b4b" path="..\WSLogUI\WSLogUI.ubfuiproj" type="UI" isRuntime="False" />
+    <Import id="d7c41aca-c251-411b-bcdb-cf625e222df8" name="WSLogBP" displayName="WSLogBP" description="" help="" componentid="be1ea1d3-63ea-4c21-8e7f-d087d60b1dac" path="..\WSLogBP\WSLogBP.ubfbpproj" type="BP" isRuntime="False" />
+  </Imports>
+  <SourceControl />
+  <ItemGroup>
+    <Item id="53f75a69-2554-4489-ac43-ed3b748df19f" name="WSLogListQry.ubfquery" displayName="WSLogListQry.ubfquery" description="" help="" include="WSLogListQry.ubfquery" type="" />
+  </ItemGroup>
+</Project>

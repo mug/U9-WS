@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="5aacd643-1ebd-4032-8865-e80201deea40" name="WSLogSV" displayName="WSLogSV" description="" help="" type="SV" assemblyName="UFIDA.U9.Cust.Pub.WSLogSV" mapProject="" resourceName="" projectVersion="Normal">
+  <Imports>
+    <Import id="b0bd3b0c-e6b7-407d-846a-1975b03736d7" name="WSLogBE" displayName="WSLogBE" description="" help="" componentid="fa1f2397-0e16-4d70-a71d-536d1df3ba71" path="..\WSLogBE\WSLogBE.ubfmlproj" type="BE" isRuntime="False" />
+  </Imports>
+  <SourceControl />
+  <ItemGroup>
+    <Item id="3147e44a-87be-4e26-b217-90beb14a9b9f" name="WSLogSV.ubfsvr" displayName="WSLogSV.ubfsvr" description="" help="" include="WSLogSV.ubfsvr" type="BE" />
+  </ItemGroup>
+</Project>

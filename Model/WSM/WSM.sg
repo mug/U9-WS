@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceGroup>
+  <ServiceGroupInfo id="18d976c4-b497-4776-bdc2-7fed6bf22c48" name="WSM" displayName="WSM" description="" help="" fullPath="D:\Works\Pub_U9\02服务\Model\WSM\WSM.sg" applicationID="" />
+  <AssemblyGroup>
+    <Assembly ID="aa13712d-a4de-45fc-92f3-5641a600c454" name="UFIDA.U9.Cust.Pub.WSMBE" type="BE" path="" />
+    <Assembly ID="ad0ee245-1040-4093-a786-f2a27a246f78" name="UFIDA.U9.Cust.Pub.WSM.WSMRSV" type="SV" path="" />
+    <Assembly ID="5b456677-3945-47f7-844d-ecc2e00d994e" name="WSMListBP" type="BP" path="" />
+    <Assembly ID="ee744a72-621c-492d-a688-18e80e2cf7bd" name="WSMListQry" type="" path="" />
+    <Assembly ID="ebad4e26-980d-417a-8c82-ad8dd72399d4" name="UFIDA.U9.Cust.Pub.WSM.WSMListUI" type="UI" path="" />
+  </AssemblyGroup>
+</ServiceGroup>

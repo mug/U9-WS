@@ -1,0 +1,30 @@
+﻿using System.ServiceModel.Activation;
+using System.ServiceModel.Web;
+using UFIDA.U9.Cust.Pub.WS.Base.Models;
+using UFIDA.U9.Cust.Pub.WS.Token.Interfaces;
+using UFIDA.U9.Cust.Pub.WS.Token.Models;
+
+namespace UFIDA.U9.Cust.Pub.WS.Token.Services
+{
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    public class AuthTokenService : IAuthTokenService
+    {
+        public ReturnMessage<string> Authenticate(Credentials creds)
+        {
+            ReturnMessage<string> ret = new ReturnMessage<string>();
+            if (creds == null && WebOperationContext.Current != null)
+            {
+                string basicAuthHeader =
+                    WebOperationContext.Current.IncomingRequest.Headers[TokenConstant.HeaderAuthorizationName];
+                if (!string.IsNullOrWhiteSpace(basicAuthHeader))
+                    creds = new BasicAuth(basicAuthHeader).Creds;
+            }
+            if (creds != null && string.IsNullOrEmpty(creds.OrgCode)) creds.OrgCode = "102";
+            Token token = TokenManagement.Instance.Create(creds);
+            if (token == null)
+                throw new TokenException("获取Token失败,请确认配置是否正确");
+            ret.Result = token.TokenStr;
+            return ret;
+        }
+    }
+}

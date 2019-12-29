@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<QueryComponent id="2cc46c4a-4c5f-4014-b4b9-f9afc0527605" name="WSTokenListQry" displayName="WSTokenListQry" description="" help="" QueryType="List" QueryURI="b6f329f2-5cd8-4f2a-9cf9-423b3323b56c" QuerySourceFullName="UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSToken" UIViewDragType="DragDown" RefInfoLoadType="Cache">
+  <BasicInfo id="69405bba-d369-4e7c-a6f2-cdfed12ca34f" name="" displayName="" description="" help="" RefToken="" RootDescContextValue="" FilterTabVisible="True" ColumnTabVisible="True" SortTabVisible="True" FilterExpandLevel="3" ColumnExpandLevel="3" SortExpandLevel="3" />
+  <BPRefInfo id="ccf889d1-7c35-475e-a1b0-dfdc2d91e411" name="" displayName="" description="" help="" ProjectID="" ProjectPath="" BPItemID="" BPOperationID="" DTOID="" BPAgentDll="" BPAgentProxy="" />
+  <UIRefInfo id="36f34cc1-7398-455c-9751-772cf53850b7" name="" displayName="" description="" help="" ProjectID="" ProjectPath="" UIModelItemID="b7472d7f-9225-4279-8a4e-ba7445d48d9e" UIFormItemID="6d422043-83cf-447e-b81c-d1d61d2a9e46" UIModelID="15710914-b49e-4998-a9ba-c06ca46be2eb" />
+  <DefaultCase>
+    <BasicFilters>
+      <BasicFilter id="7105a208-3892-4d21-bfd5-9fe0edcd95a1" name="UserCode" displayName="用户编码" description="" help="" />
+      <BasicFilter id="b2ebb798-4a02-49e1-a086-f5dc308969b5" name="OrgCode" displayName="组织编码" description="" help="" />
+      <BasicFilter id="a07ca03d-a3b2-4de0-ad64-299c0c93dbd0" name="EnterpriseID" displayName="企业ID" description="" help="" />
+    </BasicFilters>
+    <DefaultColumns>
+      <Column id="e9033aa3-f226-4340-a13d-9dc490fd33ec" name="TokenStr" displayName="Token串" description="" help="" />
+      <Column id="0eb55a95-960b-4214-8c8d-b367797ada77" name="EnterpriseID" displayName="企业ID" description="" help="" />
+      <Column id="b78f8302-bf3b-493a-ac60-5a88fd5ba141" name="EnterpriseName" displayName="企业名称" description="" help="" />
+      <Column id="91b92098-4882-4601-9191-d07af2848dca" name="OrgCode" displayName="组织编码" description="" help="" />
+      <Column id="0b375c1e-6474-473b-b82d-321f016ea361" name="OrgName" displayName="组织名称" description="" help="" />
+      <Column id="0c2850be-0539-4a11-9f59-d1a3097f0268" name="UserCode" displayName="用户编码" description="" help="" />
+      <Column id="00b931f2-ef2b-4685-9056-fd02ec1a10d4" name="UserName" displayName="用户名称" description="" help="" />
+      <Column id="106976ea-1eae-41fb-b503-0b28af6577cf" name="CreateTime" displayName="创建时间" description="" help="" />
+      <Column id="86fab98d-f478-474f-9272-f34fafe2d14e" name="LastUpdateTime" displayName="最后更新时间" description="" help="" />
+      <Column id="cc0d7197-fa78-4481-8fec-0c2e6b338834" name="IsAlive" displayName="活动" description="" help="" />
+      <Column id="54388d38-2b14-4446-b8dc-848d6ce87757" name="InvalidTime" displayName="失效时间" description="" help="" />
+    </DefaultColumns>
+    <DefaultSorts>
+      <Sort id="8175f703-b1c8-4541-aa95-6cda98e3a766" name="CreateTime" displayName="" description="" help="" SortType="ASC" />
+    </DefaultSorts>
+  </DefaultCase>
+</QueryComponent>

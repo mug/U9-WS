@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="ebad4e26-980d-417a-8c82-ad8dd72399d4" name="WSMListUI" displayName="WSMListUI" description="" help="" type="UI" assemblyName="UFIDA.U9.Cust.Pub.WSM.WSMListUI" mapProject="" resourceName="" projectVersion="Normal">
+  <Imports>
+    <Import id="108297f0-ff26-42cd-af48-b5a3d0ab1430" name="WSMBE" displayName="WSMBE" description="" help="" componentid="aa13712d-a4de-45fc-92f3-5641a600c454" path="..\..\..\..\..\..\yonyou\UBFV60\U9.VOB.Product.Metadata\Unconfiged\Metadata\UFIDA.U9.Cust.Pub.WSMBE.MetaData.dll" type="BE" isRuntime="True" />
+  </Imports>
+  <SourceControl />
+  <ItemGroup>
+    <Item id="b7472d7f-9225-4279-8a4e-ba7445d48d9e" name="WSTokenBListUIModel.ubfuim" displayName="WSTokenBListUIModel.ubfuim" description="" help="" include="WSTokenBListUIModel.ubfuim" type="" />
+    <Item id="6d422043-83cf-447e-b81c-d1d61d2a9e46" name="WSTokenBListUIForm.ubfform" displayName="WSTokenBListUIForm.ubfform" description="" help="" include="WSTokenBListUIForm.ubfform" type="" />
+  </ItemGroup>
+</Project>

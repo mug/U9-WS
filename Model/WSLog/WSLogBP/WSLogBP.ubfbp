@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Component id="303d720d-ea84-46fe-8f13-397293d52c0f" name="WSLogBP" displayName="WSLogBP" description="" help="" type="BP" assemblyName="UFIDA.U9.Cust.Pub.WSLogBP">
+  <Namespace id="25dda2b6-a3cf-43fb-ba03-12ef1a3a6a6b" name="UFIDA.U9.Cust.Pub.WSLogBP" displayName="UFIDA.U9.Cust.Pub.WSLogBP" description="" help="">
+    <PropertyType id="9d887817-b27a-472a-b7f2-2aae4294a93c" name="RequestResultDTO" displayName="请求结果DTO" description="" help="" mD_ParentClass_ID="" isFactEntity="False" isQuery="False" isPersistence="False">
+      <Groups>
+        <Group id="98522d49-024c-4018-a437-332217bf856f" name="Misc" displayName="Misc" description="" help="" />
+      </Groups>
+      <Attributes>
+        <Attribute id="d894fb00-2207-4296-be93-21f787620e70" name="WSLogID" displayName="服务日志ID" description="" help="请求结果DTO.Misc.服务日志ID" dataTypeID="ba391065-6c27-4c82-acc8-b52b1c93a910" isKey="False" defaultValue="0" length="8" precise="19" scale="0" isNullable="True" isReadOnly="False" isHide="False" isCalculation="False" valueExpression="" maxValue="" minValue="" sequence="0" isDefaultDimensionAttribute="False" isDefaultMeasureAttribute="False" isGlobalization="False" idGenerator="" groupName="Misc" isEntityKey="False" isEntityData="True" isSystem="False" isBusinessKey="False" isSyncDictionary="False" dictionaryKey="" isExtendCode="False" isQuery="True" isForAsso="True" isModifyControl="False" isDynamic="False" isImpressible="False" isInCache="False" isKeySerializable="False" isColumnDefine="True" isFilterDefine="True" isSortDefine="True" isDefaultColumn="True" forOBAImport="False" />
+        <Attribute id="946872c2-d894-49d1-99a2-5712c6555d6b" name="CallResult" displayName="调用结果" description="" help="请求结果DTO.Misc.调用结果" dataTypeID="128c6abf-abe7-4c50-aed1-6fdf20e32110" isKey="False" defaultValue="0" length="50" precise="5" scale="0" isNullable="True" isReadOnly="False" isHide="False" isCalculation="False" valueExpression="" maxValue="" minValue="" sequence="1" isDefaultDimensionAttribute="False" isDefaultMeasureAttribute="False" isGlobalization="False" idGenerator="" groupName="Misc" isEntityKey="False" isEntityData="True" isSystem="False" isBusinessKey="False" isSyncDictionary="False" dictionaryKey="" isExtendCode="False" isQuery="True" isForAsso="True" isModifyControl="False" isDynamic="False" isImpressible="False" isInCache="False" isKeySerializable="False" isColumnDefine="True" isFilterDefine="True" isSortDefine="True" isDefaultColumn="True" forOBAImport="False" />
+        <Attribute id="9bdf25f9-7df8-4147-a25d-6fc13e26cbe0" name="ResponseContent" displayName="返回消息" description="" help="请求结果DTO.Misc.返回消息" dataTypeID="3d174255-fd12-47f7-8844-3b5e4fae9e8c" isKey="False" defaultValue="" length="50" precise="5" scale="0" isNullable="True" isReadOnly="False" isHide="False" isCalculation="False" valueExpression="" maxValue="" minValue="" sequence="2" isDefaultDimensionAttribute="False" isDefaultMeasureAttribute="False" isGlobalization="False" idGenerator="" groupName="Misc" isEntityKey="False" isEntityData="True" isSystem="False" isBusinessKey="False" isSyncDictionary="False" dictionaryKey="" isExtendCode="False" isQuery="True" isForAsso="True" isModifyControl="False" isDynamic="False" isImpressible="False" isInCache="False" isKeySerializable="False" isColumnDefine="True" isFilterDefine="True" isSortDefine="True" isDefaultColumn="True" forOBAImport="False" />
+        <Attribute id="6bf8ab1b-fa8e-4fc1-80bb-700a4c77bac3" name="ErrorMessage" displayName="错误信息" description="" help="请求结果DTO.Misc.错误信息" dataTypeID="3d174255-fd12-47f7-8844-3b5e4fae9e8c" isKey="False" defaultValue="" length="50" precise="5" scale="0" isNullable="True" isReadOnly="False" isHide="False" isCalculation="False" valueExpression="" maxValue="" minValue="" sequence="3" isDefaultDimensionAttribute="False" isDefaultMeasureAttribute="False" isGlobalization="False" idGenerator="" groupName="Misc" isEntityKey="False" isEntityData="True" isSystem="False" isBusinessKey="False" isSyncDictionary="False" dictionaryKey="" isExtendCode="False" isQuery="True" isForAsso="True" isModifyControl="False" isDynamic="False" isImpressible="False" isInCache="False" isKeySerializable="False" isColumnDefine="True" isFilterDefine="True" isSortDefine="True" isDefaultColumn="True" forOBAImport="False" />
+      </Attributes>
+    </PropertyType>
+    <Operation id="d96368d6-25af-4d1d-81f6-a05bc4dac869" name="DoRequestBP" displayName="请求处理" description="" help="" mD_ParentClass_ID="" isFactEntity="False" returnTypeID="9d887817-b27a-472a-b7f2-2aae4294a93c" isService="False" isDefault="False" isEntityKey="False" transactionType="0" isAuthorization="True" isISV="False">
+      <Groups>
+        <Group id="f77c8df0-12f4-49a9-aec8-8f690f108b7a" name="Misc" displayName="Misc" description="" help="" />
+      </Groups>
+      <Attributes>
+        <Attribute id="729ac550-c78d-4ce8-8c0f-9e24af6f777a" name="WSLogID" displayName="服务日志ID" description="" help="请求处理.Misc.服务日志ID" dataTypeID="ba391065-6c27-4c82-acc8-b52b1c93a910" isKey="False" defaultValue="0" length="8" precise="19" scale="0" isNullable="True" isReadOnly="False" isHide="False" isCalculation="False" valueExpression="" maxValue="" minValue="" sequence="0" isDefaultDimensionAttribute="False" isDefaultMeasureAttribute="False" isGlobalization="False" idGenerator="" groupName="Misc" isEntityKey="False" isEntityData="True" isSystem="False" isBusinessKey="False" isSyncDictionary="False" dictionaryKey="" isExtendCode="False" isQuery="True" isForAsso="True" isModifyControl="False" isDynamic="False" isImpressible="False" isInCache="False" isKeySerializable="False" isColumnDefine="True" isFilterDefine="True" isSortDefine="True" isDefaultColumn="True" forOBAImport="False" />
+      </Attributes>
+      <Implements>
+        <Operation id="cafc6712-0e73-4bd7-8434-4d02a51cfffb" name="Impement" displayName="实现" description="" help="" mD_ParentClass_ID="" isFactEntity="False" returnTypeID="9d887817-b27a-472a-b7f2-2aae4294a93c" isService="False" isDefault="True" isEntityKey="False" transactionType="2" isAuthorization="True" isISV="False" />
+      </Implements>
+    </Operation>
+    <Diagram id="8cb6d657-f39f-4005-b591-25177c560611" name="WSLogBP" displayName="WSLogBP">
+      <Class Editable="True" ID="d47c8639-1e8e-4b52-b0ef-d7ec797eb171" Type="PropertyType" ADID="9d887817-b27a-472a-b7f2-2aae4294a93c">
+        <Location X="65" Y="156" />
+        <Size width="245" height="58" />
+      </Class>
+      <Class Editable="True" ID="70bef16a-1359-49b9-bca3-9632f9ab28cf" Type="Operation" ADID="d96368d6-25af-4d1d-81f6-a05bc4dac869">
+        <Location X="64" Y="63" />
+        <Size width="238" height="58" />
+      </Class>
+    </Diagram>
+  </Namespace>
+</Component>

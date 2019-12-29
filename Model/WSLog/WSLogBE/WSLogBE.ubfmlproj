@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="fa1f2397-0e16-4d70-a71d-536d1df3ba71" name="WSLogBE" displayName="WSLogBE" description="" help="" type="BE" assemblyName="UFIDA.U9.Cust.Pub.WSLogBE" mapProject=".\..\WSLogBE_DB\WSLogBE_DB.ubfdbproj" resourceName="" projectVersion="Normal">
+  <SourceControl />
+  <ItemGroup>
+    <Item id="be5d3f29-e203-4c20-9228-c444bc2f66f3" name="WSLogBE.ubfbe" displayName="WSLogBE.ubfbe" description="" help="" include="WSLogBE.ubfbe" type="BE" />
+  </ItemGroup>
+</Project>

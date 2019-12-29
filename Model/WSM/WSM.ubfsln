@@ -1,0 +1,12 @@
+<Solution>
+  <SourceControl>
+  </SourceControl>
+  <ItemGroup>
+    <Item id="250d6f2b-1c6b-4082-86e0-17e232c403e3" include="WSMBE\WSMBE.ubfmlproj" />
+    <Item id="273311e1-8606-4990-833c-3a12468086a1" include="WSMRSV\WSMRSV.ubfserproj" />
+    <Item id="1c2bbd7a-78a0-4972-9378-860d3c1e852c" include="WSMListUI\WSMListUI.ubfuiproj" />
+    <Item id="e33eb74d-134c-432e-b942-1a5760b81752" include="WSMListBP\WSMListBP.ubfbpproj" />
+    <Item id="e7697c61-9711-44f6-b981-2d90f59c35b1" include="WSMListQry\WSMListQry.ubfqueryproj" />
+  </ItemGroup>
+  <ServiceGroupInfo id="18d976c4-b497-4776-bdc2-7fed6bf22c48" name="WSM" displayName="WSM" description="" help="" fullPath="D:\Works\Pub_U9\02服务\Model\WSM\WSM.ubfsln" applicationID="" />
+</Solution>

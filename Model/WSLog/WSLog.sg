@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceGroup>
+  <ServiceGroupInfo id="204e46a9-b81b-47f3-8207-62e9483f1cfd" name="WSLog" displayName="WSLog" description="" help="" fullPath="D:\Works\Pub_U9\02服务\Model\WSLog\WSLog.sg" applicationID="" />
+  <AssemblyGroup>
+    <Assembly ID="fa1f2397-0e16-4d70-a71d-536d1df3ba71" name="UFIDA.U9.Cust.Pub.WSLogBE" type="BE" path="" />
+    <Assembly ID="5aacd643-1ebd-4032-8865-e80201deea40" name="UFIDA.U9.Cust.Pub.WSLogSV" type="SV" path="" />
+    <Assembly ID="91378c71-c106-4fc5-8164-bd21cb5c9b4b" name="UFIDA.U9.Cust.Pub.WSLogUI" type="UI" path="" />
+    <Assembly ID="be1ea1d3-63ea-4c21-8e7f-d087d60b1dac" name="UFIDA.U9.Cust.Pub.WSLogBP" type="BP" path="" />
+    <Assembly ID="10f3384b-5d4e-4e52-86b8-4db303b0fb31" name="WSLogListQry" type="" path="" />
+    <Assembly ID="d4f8fb03-1eda-4556-aa83-145fefc632da" name="UFIDA.U9.Cust.Pub.WSLogRSV" type="SV" path="" />
+  </AssemblyGroup>
+</ServiceGroup>

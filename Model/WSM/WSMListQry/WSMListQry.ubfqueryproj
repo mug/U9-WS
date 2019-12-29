@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="ee744a72-621c-492d-a688-18e80e2cf7bd" name="WSMListQry" displayName="WSMListQry" description="" help="" type="" assemblyName="WSMListQry" mapProject="" resourceName="" projectVersion="Normal">
+  <Imports>
+    <Import id="6f0fc2ef-dc62-4c0b-be6f-540dbe922245" name="WSMListUI" displayName="WSMListUI" description="" help="" componentid="ebad4e26-980d-417a-8c82-ad8dd72399d4" path="..\WSMListUI\WSMListUI.ubfuiproj" type="UI" isRuntime="False" />
+    <Import id="299d5927-2435-40a8-9a42-5d7196bdb5de" name="WSMListBP" displayName="WSMListBP" description="" help="" componentid="5b456677-3945-47f7-844d-ecc2e00d994e" path="..\WSMListBP\WSMListBP.ubfbpproj" type="BP" isRuntime="False" />
+  </Imports>
+  <SourceControl />
+  <ItemGroup>
+    <Item id="5e096cbf-f815-48aa-b970-8c7b85376eca" name="WSTokenListQry.ubfquery" displayName="WSTokenListQry.ubfquery" description="" help="" include="WSTokenListQry.ubfquery" type="" />
+  </ItemGroup>
+</Project>

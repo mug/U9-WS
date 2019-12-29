@@ -1,0 +1,13 @@
+<Solution>
+  <SourceControl>
+  </SourceControl>
+  <ItemGroup>
+    <Item id="242074a8-c9b7-4e36-9e48-8015bac689c6" include="WSLogBE\WSLogBE.ubfmlproj" />
+    <Item id="80c2a7cf-50f4-484f-827e-cb4278e280e3" include="WSLogSV\WSLogSV.ubfserproj" />
+    <Item id="63a1b5ea-a097-420c-9051-327e6d240974" include="WSLogUI\WSLogUI.ubfuiproj" />
+    <Item id="f4431b8f-2baa-492e-b86b-03ae3507a4c1" include="WSLogBP\WSLogBP.ubfbpproj" />
+    <Item id="d5c27c51-74f1-4cd0-92ef-a130d730cbf5" include="WSLogListQry\WSLogListQry.ubfqueryproj" />
+    <Item id="d3db50c7-d962-4d4a-b074-32cf57cd7e63" include="WSLogRSV\WSLogRSV.ubfserproj" />
+  </ItemGroup>
+  <ServiceGroupInfo id="204e46a9-b81b-47f3-8207-62e9483f1cfd" name="WSLog" displayName="WSLog" description="" help="" fullPath="D:\Works\Pub_U9\02服务\Model\WSLog\WSLog.sg" applicationID="" />
+</Solution>

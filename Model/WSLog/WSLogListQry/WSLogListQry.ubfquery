@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<QueryComponent id="744dcc0b-d2f9-47ac-a15f-83038ab36635" name="WSLogListQry" displayName="WSLogListQry" description="" help="" QueryType="List" QueryURI="3e403ab4-5431-490c-ac51-3f1b2826ccfa" QuerySourceFullName="UFIDA.U9.Cust.Pub.WSLogBE.WSLog" UIViewDragType="DragDown" RefInfoLoadType="Cache">
+  <BasicInfo id="bb8dbe1e-7a6b-4fed-9e59-01d3cbd91fe2" name="" displayName="" description="" help="" RefToken="" RootDescContextValue="" FilterTabVisible="True" ColumnTabVisible="True" SortTabVisible="True" FilterExpandLevel="3" ColumnExpandLevel="3" SortExpandLevel="3" />
+  <BPRefInfo id="98f80afd-34e6-42d1-b2ac-25d85a9c7a02" name="" displayName="" description="" help="" ProjectID="" ProjectPath="" BPItemID="" BPOperationID="" DTOID="" BPAgentDll="" BPAgentProxy="" />
+  <UIRefInfo id="8db1a4b7-2a8a-45d3-a375-638d221393ba" name="" displayName="" description="" help="" ProjectID="" ProjectPath="" UIModelItemID="179b84eb-e64b-448c-b299-c02c5d21a58d" UIFormItemID="5f5be7c2-8e1b-4015-b829-2fe729cbffa3" UIModelID="aac07d53-b4ec-4f2f-bb0e-bf91a23d61fd" />
+  <FilterDefines>
+    <FilterDefine id="23742c17-3943-4e1a-807d-029d4d93f729" name="RequestContent" displayName="RequestContent" description="" help="" ParentName="" Alias="RequestContent" IsFixed="False" IsAllowBlank="True" Visible="True" DescFieldContextValue="" FilterNodeType="Item" DateDisplayType="" RaiseChangedEvent="False" IsBuildWhereStr="True" OperatorList="AllLike,Equal,NotEqual,GreaterThan,LessThan,GreaterThanEqual,LessThanEqual,In,NotIn,LeftLike,RightLike,IsNull,NotIsNull,Between" />
+    <FilterDefine id="b1cf4120-4e23-4784-af49-3d2259c33b9d" name="ResponseContent" displayName="ResponseContent" description="" help="" ParentName="" Alias="ResponseContent" IsFixed="False" IsAllowBlank="True" Visible="True" DescFieldContextValue="" FilterNodeType="Item" DateDisplayType="" RaiseChangedEvent="False" IsBuildWhereStr="True" OperatorList="AllLike,Equal,NotEqual,GreaterThan,LessThan,GreaterThanEqual,LessThanEqual,In,NotIn,LeftLike,RightLike,IsNull,NotIsNull,Between" />
+  </FilterDefines>
+  <ColumnDefines>
+    <ColumnDefine id="64972162-b532-4e2e-92d8-691f4e4d0406" name="ElapsedSecond" displayName="ElapsedSecond" description="" help="" ParentName="" Alias="ElapsedSecond" IsFixed="False" Visible="True" DescFieldContextValue="" ZeroIsEmpty="False" DateDisplayType="" PrecisionType="Static" NumericType="Numberic" Point="3" />
+  </ColumnDefines>
+  <DefaultCase>
+    <BasicFilters>
+      <BasicFilter id="87b38af7-dc0c-44b0-9edc-2e7819d75e93" name="ClassName" displayName="类名" description="" help="" />
+      <BasicFilter id="e300f83c-7431-4233-a669-0d27ec0b3fa3" name="MethodName" displayName="方法名" description="" help="" />
+      <BasicFilter id="c5ed7a3c-376e-4c1b-9a43-70617efd8c10" name="StartTime" displayName="开始时间" description="" help="" />
+      <BasicFilter id="ece1790f-ea33-49e2-ad33-5722a9c1591d" name="EndTime" displayName="结束时间" description="" help="" />
+      <BasicFilter id="bc483005-00f8-4171-b760-a0092ef98ba3" name="RequestContent" displayName="请求内容" description="" help="" />
+      <BasicFilter id="f0443fe9-c86e-4253-b1d2-bb8b32d25ed1" name="CallResult" displayName="调用结果" description="" help="" />
+      <BasicFilter id="96c3ed47-7f93-47a5-b308-8a7a87ec864b" name="ErrorMessage" displayName="错误信息" description="" help="" />
+      <BasicFilter id="089d561e-e9b2-4da1-aac4-c0e118bae99a" name="MethodDescription" displayName="方法描述" description="" help="" />
+    </BasicFilters>
+    <DefaultColumns>
+      <Column id="278502ee-4d38-4724-a32d-123d99d83592" name="ClassName" displayName="类名" description="" help="" />
+      <Column id="25ea5112-2e62-4416-9245-ac841754ca21" name="MethodName" displayName="方法名" description="" help="" />
+      <Column id="08c4ad58-67e9-474a-af53-bd38475592b9" name="MethodDescription" displayName="方法描述" description="" help="" />
+      <Column id="4075d93e-2686-4510-a500-fa3821a3a896" name="StartTime" displayName="开始时间" description="" help="" />
+      <Column id="13bb7fbf-7e02-4c55-b2ff-f4fe95266b4a" name="EndTime" displayName="结束时间" description="" help="" />
+      <Column id="91a34fef-b139-4a52-a61f-16dd2a41d544" name="ElapsedSecond" displayName="历时(秒)" description="" help="" />
+      <Column id="3271c212-ba33-420d-a44c-9e670a8dc63e" name="CallResult" displayName="调用结果" description="" help="" />
+      <Column id="6083415f-9cac-47a0-972e-91bb09f44a9e" name="ErrorMessage" displayName="错误信息" description="" help="" />
+      <Column id="b1745a70-c404-4132-9e04-7d83abf5e053" name="CallCount" displayName="请求次数" description="" help="" />
+    </DefaultColumns>
+    <DefaultSorts>
+      <Sort id="1f18f996-c519-4aa4-a8d0-56271f7b5998" name="CreatedOn" displayName="" description="" help="" SortType="DESC" />
+    </DefaultSorts>
+  </DefaultCase>
+</QueryComponent>

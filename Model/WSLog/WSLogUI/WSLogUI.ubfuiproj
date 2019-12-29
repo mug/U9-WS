@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="91378c71-c106-4fc5-8164-bd21cb5c9b4b" name="WSLogUI" displayName="WSLogUI" description="" help="" type="UI" assemblyName="UFIDA.U9.Cust.Pub.WSLogUI" mapProject="" resourceName="" projectVersion="Normal">
+  <Imports>
+    <Import id="6c69eabb-8b4f-415a-9b46-d9166c75c47f" name="WSLogBE" displayName="WSLogBE" description="" help="" componentid="fa1f2397-0e16-4d70-a71d-536d1df3ba71" path="..\..\..\..\..\..\yonyou\UBFV60\U9.VOB.Product.Metadata\Unconfiged\Metadata\UFIDA.U9.Cust.Pub.WSLogBE.MetaData.dll" type="BE" isRuntime="True" />
+  </Imports>
+  <SourceControl />
+  <ItemGroup>
+    <Item id="179b84eb-e64b-448c-b299-c02c5d21a58d" name="WSLogBListUIModel.ubfuim" displayName="WSLogBListUIModel.ubfuim" description="" help="" include="WSLogBListUIModel.ubfuim" type="" />
+    <Item id="5f5be7c2-8e1b-4015-b829-2fe729cbffa3" name="WSLogBListUIForm.ubfform" displayName="WSLogBListUIForm.ubfform" description="" help="" include="WSLogBListUIForm.ubfform" type="" />
+    <Item id="fb6b30cf-dd59-4bd3-ba68-341c8f025e83" name="WSLogUIModel.ubfuim" displayName="WSLogUIModel.ubfuim" description="" help="" include="WSLogUIModel.ubfuim" type="" />
+    <Item id="0841e8fc-5526-4088-80ec-cbd9aed37bcf" name="WSLogUIForm.ubfform" displayName="WSLogUIForm.ubfform" description="" help="" include="WSLogUIForm.ubfform" type="" />
+  </ItemGroup>
+</Project>

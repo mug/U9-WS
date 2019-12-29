@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="d4f8fb03-1eda-4556-aa83-145fefc632da" name="WSLogRSV" displayName="WSLogRSV" description="" help="" type="SV" assemblyName="UFIDA.U9.Cust.Pub.WSLogRSV" mapProject="" resourceName="" projectVersion="SV_REST">
+  <SourceControl />
+  <ItemGroup>
+    <Item id="01936056-dfdf-4c8c-b0e6-7b7a3a2588b0" name="WSLogRSV.ubfsvr" displayName="WSLogRSV.ubfsvr" description="" help="" include="WSLogRSV.ubfsvr" type="BE" />
+  </ItemGroup>
+</Project>

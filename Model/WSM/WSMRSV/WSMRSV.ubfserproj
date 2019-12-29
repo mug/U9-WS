@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project id="ad0ee245-1040-4093-a786-f2a27a246f78" name="WSMRSV" displayName="WSMRSV" description="" help="" type="SV" assemblyName="UFIDA.U9.Cust.Pub.WSM.WSMRSV" mapProject="" resourceName="" projectVersion="SV_REST">
+  <SourceControl />
+  <ItemGroup>
+    <Item id="d687bd19-e5ad-42db-bd33-a2831625ee6c" name="WSTokenSV.ubfsvr" displayName="WSTokenSV.ubfsvr" description="" help="" include="WSTokenSV.ubfsvr" type="BE" />
+  </ItemGroup>
+</Project>
