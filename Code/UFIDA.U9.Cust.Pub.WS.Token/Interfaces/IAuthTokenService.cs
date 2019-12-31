@@ -12,5 +12,10 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.Interfaces
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare)]
         ReturnMessage<string> Authenticate(Credentials creds);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.Bare)]
+        ReturnMessage<bool> TokenIsValid(Token token);
     }
 }

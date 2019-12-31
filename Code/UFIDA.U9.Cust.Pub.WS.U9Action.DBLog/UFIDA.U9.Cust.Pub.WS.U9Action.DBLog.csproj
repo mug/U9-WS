@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\EKDL_U9\00公共模块\Code\EKService\Bin\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -68,6 +64,10 @@
     <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Base\UFIDA.U9.Cust.Pub.WS.Base.csproj">
       <Project>{8c8e9755-0ffc-47e5-bd79-66c6b1abd12b}</Project>
       <Name>UFIDA.U9.Cust.Pub.WS.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Json\UFIDA.U9.Cust.Pub.WS.Json.csproj">
+      <Project>{AE6D00EA-5BEE-48D7-B385-F9F6C7EB7799}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.Json</Name>
     </ProjectReference>
     <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.U9Action\UFIDA.U9.Cust.Pub.WS.U9Action.csproj">
       <Project>{366444a8-4479-49f4-a614-61df5d50994e}</Project>

@@ -38,6 +38,14 @@
     <Reference Include="UFIDA.U9.Base.BaseBE.Deploy">
       <HintPath>..\..\..\..\..\..\yonyou\UBFV60\U9.VOB.Product.UBF\UBFStudio\Runtime\UFIDA.U9.Base.BaseBE.Deploy.dll</HintPath>
     </Reference>
+    <Reference Include="UFIDA.U9.Base.BaseBP.Agent, Version=25.5401.31025.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.Base.BaseBP.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.Base.BaseBP.Deploy, Version=25.5401.31025.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.Base.BaseBP.Deploy.dll</HintPath>
+    </Reference>
     <Reference Include="UFIDA.U9.CBO.PubBE">
       <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.CBO.PubBE.dll</HintPath>
     </Reference>

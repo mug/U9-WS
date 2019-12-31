@@ -5,14 +5,13 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.ServiceModel.Web;
-using UFIDA.U9.Cust.Pub.WS.Base.Behavior.Endpoint;
-using UFIDA.U9.Cust.Pub.WS.Base.Context;
+using UFIDA.U9.Cust.Pub.WS.U9Context;
 using UFSoft.UBF.Util.Log;
 
 namespace UFIDA.U9.Cust.Pub.WS.Token.Behavior.Endpoint
 {
     /// <summary>
-    /// 通过Token设置U9上下文
+    ///     通过Token设置U9上下文
     /// </summary>
     public class SetU9ContextByTokenEndpointBehavior : IDispatchMessageInspector, IEndpointBehavior
     {
@@ -31,22 +30,17 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.Behavior.Endpoint
             Token token = TokenManagement.Instance.Get(tokenStr);
             if (token == null)
                 throw new TokenException("认证失败或认证已失效");
-            ContextInfo contextInfo = TokenHelper.GetContextInfo(token);
-            object obj = new object();
-            //初始化上下文
-            ContextHelper.InitContext(obj);
-            //设置上下文
-            ContextHelper.SetContext(contextInfo);
-            return obj;
+            return  new ContextObject(token);
         }
 
         public void BeforeSendReply(ref Message reply, object correlationState)
         {
             try
             {
-                object obj = correlationState;
+                ContextObject obj = correlationState as ContextObject;
+                if (obj == null) return;
                 //清空上下文
-                ContextHelper.ClearContext(obj);
+                obj.ClearContext();
             }
             catch (Exception ex)
             {

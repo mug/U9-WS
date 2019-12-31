@@ -38,6 +38,8 @@ namespace UFIDA.U9.Cust.Pub.WSM.WSTokenBE
                         
                         
                         
+                        
+                        
             
                 knownTypes.Add(typeof(UFSoft.UBF.Util.Data.MultiLangDataDict));
             return knownTypes;
@@ -64,6 +66,8 @@ namespace UFIDA.U9.Cust.Pub.WSM.WSTokenBE
 	     			
 	     			
 	     							IsAlive=false; 
+	     			
+	     			
 	     			
 	     			
 	     			
@@ -462,10 +466,48 @@ namespace UFIDA.U9.Cust.Pub.WSM.WSTokenBE
 			}
 		}
 		
+
+				/// <summary>
+		/// 语言
+		/// 服务Token.Misc.语言
+		/// </summary>
+		[DataMember(IsRequired=false)]
+		private System.String m_culture ;
+		public System.String Culture
+		{
+			get	
+			{	
+				return m_culture  ;
+			}
+			set	
+			{	
+				m_culture = value ;	
+			}
+		}
+		
+
+				/// <summary>
+		/// 支持语言列表
+		/// 服务Token.Misc.支持语言列表
+		/// </summary>
+		[DataMember(IsRequired=false)]
+		private System.String m_supportCultureNameList ;
+		public System.String SupportCultureNameList
+		{
+			get	
+			{	
+				return m_supportCultureNameList  ;
+			}
+			set	
+			{	
+				m_supportCultureNameList = value ;	
+			}
+		}
+		
 		#endregion	
 
 		#region Multi_Fields
-																			
+																					
 		#endregion 		
 	}	
 

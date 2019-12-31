@@ -4,13 +4,19 @@ echo iisreset
 
 echo beging copy componet dll to portal and appserver
 
-copy .\AuthTokenService.svc  D:\yonyou\U9V60\Portal\WCFService
-copy .\CommService.svc  D:\yonyou\U9V60\Portal\WCFService
-copy .\TestService.svc  D:\yonyou\U9V60\Portal\WCFService
-copy .\Web.config  D:\yonyou\U9V60\Portal\WCFService
+copy .\AuthTokenService.svc  D:\yonyou\U9V60\Portal\ws
+copy .\CommService.svc  D:\yonyou\U9V60\Portal\ws
+copy .\TestService.svc  D:\yonyou\U9V60\Portal\ws
+copy .\Web.config  D:\yonyou\U9V60\Portal\ws
 
 copy .\bin\UFIDA.U9.Cust.Pub.WS.Base.dll  D:\yonyou\U9V60\Portal\bin
 copy .\bin\UFIDA.U9.Cust.Pub.WS.Base.pdb  D:\yonyou\U9V60\Portal\bin
+
+copy .\bin\UFIDA.U9.Cust.Pub.WS.Json.dll  D:\yonyou\U9V60\Portal\bin
+copy .\bin\UFIDA.U9.Cust.Pub.WS.Json.pdb  D:\yonyou\U9V60\Portal\bin
+
+copy .\bin\UFIDA.U9.Cust.Pub.WS.U9Context.dll  D:\yonyou\U9V60\Portal\bin
+copy .\bin\UFIDA.U9.Cust.Pub.WS.U9Context.pdb  D:\yonyou\U9V60\Portal\bin
 
 copy .\bin\UFIDA.U9.Cust.Pub.WS.Token.dll  D:\yonyou\U9V60\Portal\bin
 copy .\bin\UFIDA.U9.Cust.Pub.WS.Token.pdb  D:\yonyou\U9V60\Portal\bin

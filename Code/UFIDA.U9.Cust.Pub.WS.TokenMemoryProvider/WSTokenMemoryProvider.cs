@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Specialized;
-using UFIDA.U9.Cust.Pub.WS.Base.Context;
+using UFIDA.U9.Cust.Pub.WS.Context;
 using UFIDA.U9.Cust.Pub.WS.Token.Configuration;
 using UFIDA.U9.Cust.Pub.WS.Token.Models;
 using UFSoft.UBF.Util.Log;
@@ -18,6 +18,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
         /// </summary>
         private void CleanByTimeOut()
         {
+            if (_tokenStorage.Count == 0) return;
             ArrayList arrayList = new ArrayList(_tokenStorage.Count);
             foreach (object tokenStr in _tokenStorage.Keys)
             {
@@ -39,7 +40,8 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
         /// </summary>
         private void CleanBySize()
         {
-            if (this.MaxSizePerUser < 0 || _tokenStorage.Count <= this.MaxSizePerUser) return;
+            if (_tokenStorage.Count == 0) return;
+            if (this.MaxSizePerUser <= 0 || _tokenStorage.Count <= this.MaxSizePerUser) return;
             ArrayList arrayList = new ArrayList(_tokenStorage.Count);
             foreach (string tokenStr in _tokenStorage.Keys)
             {
@@ -62,8 +64,10 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
         private readonly Hashtable _tokenStorage = Hashtable.Synchronized(new Hashtable());
         private bool _isSameCredentialsOneToken;
         private int _maxSizePerUser = int.MaxValue;
+        private int _clearInvalidTokenSeconds;
         private TimeSpan _timeout = TimeSpan.FromSeconds(DefaultTimeoutSecond);
-        private readonly int _tokenSize = 200;
+        private  int _tokenSize = -1;
+        private const int DefaultTokenSize = 200;
 
         /// <summary>
         ///     超时时间
@@ -102,6 +106,14 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
             get { return true; }
         }
 
+        /// <summary>
+        /// 清理失效Token秒数
+        /// </summary>
+        public int ClearInvalidTokenSeconds
+        {
+            get { return _clearInvalidTokenSeconds; }
+        }
+
         #endregion
 
         #region 重写虚方法
@@ -117,11 +129,12 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
             int timeoutSecond = config["timeout"] == null ? DefaultTimeoutSecond : Convert.ToInt32(config["timeout"]);
             _timeout = TimeSpan.FromSeconds(timeoutSecond);
             this._maxSizePerUser = config["maxSizePerUser"] == null ? -1 : Convert.ToInt32(config["maxSizePerUser"]);
+            _tokenSize = config["tokenSize"] == null ? DefaultTokenSize : Convert.ToInt32(config["tokenSize"]);
             _isSameCredentialsOneToken = config["IsSameCredentialsOneToken"] != null &&
                                          Convert.ToBoolean(config["IsSameCredentialsOneToken"]);
-        }
+            this._clearInvalidTokenSeconds = config["clearInvalidTokenSeconds"] == null ? -1 : Convert.ToInt32(config["clearInvalidTokenSeconds"]);
 
-        
+        }
 
         /// <summary>
         ///     创建Token

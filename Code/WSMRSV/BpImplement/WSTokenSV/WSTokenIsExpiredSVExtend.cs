@@ -41,17 +41,15 @@ namespace UFIDA.U9.Cust.Pub.WSM.WSTokenSV
             DateTime now = DateTime.Now;
             DateTime d = wsToken.LastUpdateTime;
             bool isExpired = now - d > timeout;
-            if (isExpired)
+            if (!isExpired) return false;
+            using (ISession s = Session.Open())
             {
-                using (ISession s = Session.Open())
-                {
-                    wsToken.IsAlive = false;
-                    wsToken.InvalidTime = DateTime.Now;
-                    s.InList(wsToken);
-                    s.Commit();
-                }
+                wsToken.IsAlive = false;
+                wsToken.InvalidTime = DateTime.Now;
+                s.InList(wsToken);
+                s.Commit();
             }
-            return isExpired;
+            return true;
         }
     }
 

@@ -3,8 +3,8 @@ using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Web;
-using UFIDA.U9.Cust.Pub.WS.Base.Context;
-using UFIDA.U9.Cust.Pub.WS.Base.Utils;
+using UFIDA.U9.Cust.Pub.WS.Context;
+using UFIDA.U9.Cust.Pub.WS.U9Context;
 
 namespace UFIDA.U9.Cust.Pub.WS.U9Action.Action
 {
@@ -19,30 +19,27 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Action.Action
             if (WebOperationContext.Current == null)
                 throw new WebFaultException(HttpStatusCode.BadRequest);
             ContextInfo contextInfo;
-            if (ContextInfoManager.Instance.IsMultiEnterprise)
+            if (ContextInfoManager.Instance.MultiEnterprise)
             {
                 string enterpriseID =
-                    WebOperationContext.Current.IncomingRequest.Headers[ServiceConstant.HeaderEnterpriseIDName];
+                    WebOperationContext.Current.IncomingRequest.Headers[ContextConstant.HeaderEnterpriseIDName];
                 if (string.IsNullOrWhiteSpace(enterpriseID))
-                    throw new Exception("请求头未指定EnterpriseID");
-                contextInfo = ContextInfoManager.Instance.GetContextInfo(enterpriseID);
+                    throw new U9ContextException("配置中指定为多企业，请求Headers需指定EnterpriseID");
+                contextInfo = ContextInfoManager.Instance.GetContext(enterpriseID);
             }
             else
             {
-                contextInfo = ContextInfoManager.Instance.GetContextInfo();
+                contextInfo = ContextInfoManager.Instance.GetContext();
             }
-            object obj = new object();
-            //初始化上下文
-            ContextHelper.InitContext(obj);
-            //设置上下文
-            ContextHelper.SetContext(contextInfo);
-            return obj;
+            return new ContextObject(contextInfo);
         }
 
         public void AfterDo(ref Message reply, object beforeReturnObj, U9ActionCorrelationState u9ActionCorrelationState)
         {
+            ContextObject obj = beforeReturnObj as ContextObject;
+            if (obj == null) return;
             //清空上下文
-            ContextHelper.ClearContext(beforeReturnObj);
+            obj.ClearContext();
         }
     }
 }

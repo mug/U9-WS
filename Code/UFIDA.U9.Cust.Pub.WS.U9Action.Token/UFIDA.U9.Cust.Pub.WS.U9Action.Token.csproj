@@ -40,6 +40,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UFIDA.UBF.SystemManage.Base, Version=25.5401.31296.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\yonyou\U9V60\Portal\bin\UFIDA.UBF.SystemManage.Base.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -49,6 +53,10 @@
     <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Base\UFIDA.U9.Cust.Pub.WS.Base.csproj">
       <Project>{8C8E9755-0FFC-47E5-BD79-66C6B1ABD12B}</Project>
       <Name>UFIDA.U9.Cust.Pub.WS.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Context\UFIDA.U9.Cust.Pub.WS.U9Context.csproj">
+      <Project>{0383059E-C9E6-4A08-8444-4FFCCEA88253}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.U9Context</Name>
     </ProjectReference>
     <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Token\UFIDA.U9.Cust.Pub.WS.Token.csproj">
       <Project>{cb3fd880-c065-43a5-9058-ecc3ab89dc9d}</Project>

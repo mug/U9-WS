@@ -2,9 +2,9 @@
 using System.IO;
 using System.Text;
 using UFIDA.U9.Cust.Pub.WS.Base.Utils;
-using UFIDA.U9.Cust.Pub.WS.CommService.Json;
-using UFIDA.U9.Cust.Pub.WS.CommService.Json.Converters;
-using UFIDA.U9.Cust.Pub.WS.CommService.Json.Serialization;
+using UFIDA.U9.Cust.Pub.WS.Json;
+using UFIDA.U9.Cust.Pub.WS.Json.Converters;
+using UFIDA.U9.Cust.Pub.WS.Json.Serialization;
 
 namespace UFIDA.U9.Cust.Pub.WS.CommService.Utils
 {
@@ -13,7 +13,7 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Utils
     /// </summary>
     public static class CommServiceJsonHelper
     {
-        private const string DefaultDateTimeFormat = "yyyy-MM-ddTHH:mm:ssZ";
+        private const string DefaultDateTimeFormat = "yyyy-MM-dd HH:mm:ss";
 
         /// <summary>
         /// 获取默认Json序列化配置
@@ -82,30 +82,5 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Utils
             return JsonConvert.SerializeObject(obj, Formatting.None, settings);
         }
 
-        /// <summary>
-        ///     获取JsonBody
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <param name="isBOM"></param>
-        /// <returns></returns>
-        public static byte[] GetJsonBody(object obj, bool isBOM = true)
-        {
-            byte[] body;
-            var serializer = GetDefaultJsonSerializer();
-            using (MemoryStream ms = new MemoryStream())
-            {
-                using (StreamWriter sw = new StreamWriter(ms, new UTF8Encoding(isBOM)))
-                {
-                    using (JsonWriter writer = new JsonTextWriter(sw))
-                    {
-                        //writer.Formatting = Newtonsoft.Json.Formatting.Indented;
-                        serializer.Serialize(writer, obj);
-                        sw.Flush();
-                        body = ms.ToArray();
-                    }
-                }
-            }
-            return body;
-        }
     }
 }

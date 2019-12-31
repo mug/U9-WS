@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Runtime.Serialization.Json;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
-using System.ServiceModel.Dispatcher;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Xml;
-using Newtonsoft.Json;
 using UFIDA.U9.Cust.Pub.WS.Base.Models;
 using UFIDA.U9.Cust.Pub.WS.Base.Utils;
+using UFIDA.U9.Cust.Pub.WS.Json;
 using UFIDA.U9.Cust.Pub.WS.U9Action;
 using UFIDA.U9.Cust.Pub.WS.U9Action.Action;
 using UFSoft.UBF.Util.Context;
@@ -47,7 +44,7 @@ namespace UFIDA.U9.Cust.Pub.WS.DBLog.Action
                 if (method == null) return null;
                 //日志属性
                 WSLogAttribute attribute =
-                    method.GetCustomAttribute(typeof(WSLogAttribute)) as
+                    method.GetCustomAttribute(typeof (WSLogAttribute)) as
                         WSLogAttribute;
                 if (attribute == null) return null;
                 string logID = WebOperationContext.Current.IncomingRequest.Headers[HeaderLogIDName];

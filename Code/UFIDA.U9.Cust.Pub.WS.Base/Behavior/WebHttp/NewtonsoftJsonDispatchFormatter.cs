@@ -6,8 +6,8 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.Xml;
-using Newtonsoft.Json;
 using UFIDA.U9.Cust.Pub.WS.Base.Utils;
+using UFIDA.U9.Cust.Pub.WS.Json;
 using UFSoft.UBF.Util.Log;
 
 namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.WebHttp
@@ -89,7 +89,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.WebHttp
 
         public Message SerializeReply(MessageVersion messageVersion, object[] parameters, object result)
         {
-            byte[] body = JsonHelper.GetJsonBody(result, true);
+            byte[] body = JsonHelper.GetReturnJsonBody(result);
             Message replyMessage = Message.CreateMessage(messageVersion, _operation.Messages[1].Action,
                 new RawBodyWriter(body));
             replyMessage.Properties.Add(WebBodyFormatMessageProperty.Name,

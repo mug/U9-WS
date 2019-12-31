@@ -1,4 +1,7 @@
-﻿namespace UFIDA.U9.Cust.Pub.WSM.WSMRSV
+﻿using UFIDA.U9.Base.Profile;
+using UFIDA.U9.Base.Profile.Proxy;
+
+namespace UFIDA.U9.Cust.Pub.WSM.WSMRSV
 {
     /// <summary>
     /// </summary>
@@ -10,7 +13,11 @@
         /// <returns></returns>
         public static int GetTokenTimeoutSecond()
         {
-            return 60;
+            GetProfileValueProxy getProfileValue = new GetProfileValueProxy();
+            getProfileValue.ProfileCode = "Cust_WS_TokenTimeout";
+            getProfileValue.IsThrowException = true;
+            PVDTOData pV = getProfileValue.Do();
+            return int.Parse(pV.ProfileValue);
         }
     }
 }

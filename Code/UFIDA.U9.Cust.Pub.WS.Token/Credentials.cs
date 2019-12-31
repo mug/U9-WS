@@ -12,7 +12,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.Models
         public string EnterpriseID { get; set; }
 
         /// <summary>
-        /// 组织编码
+        ///     组织编码
         /// </summary>
         [DataMember]
         public string OrgCode { get; set; }
@@ -28,5 +28,17 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.Models
         /// </summary>
         [DataMember]
         public string Password { get; set; }
+
+        /// <summary>
+        ///     语言
+        /// </summary>
+        [DataMember]
+        public string Culture { get; set; }
+
+        /// <summary>
+        ///     语言列表
+        /// </summary>
+        [DataMember]
+        public string SupportCultureNameList { get; set; }
     }
 }

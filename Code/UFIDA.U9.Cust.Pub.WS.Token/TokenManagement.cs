@@ -15,7 +15,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token
         private static readonly object Lock = new object();
         private static readonly object InitLock = new object();
         private static readonly object CleanLock = new object();
-        public static int DefaultSecondsClearInvalidToken = 5*60*1000;
+        public static int DefaultClearInvalidTokenSeconds = 5*60;
         private static readonly ILogger Logger = LoggerManager.GetLogger(typeof (TokenManagement));
         private bool _isInited;
         private TokenProvider _provider;
@@ -74,7 +74,9 @@ namespace UFIDA.U9.Cust.Pub.WS.Token
                     Timer tokenTimer = new Timer();
                     tokenTimer.Elapsed += TokenTimer_Elapsed;
                     // 设置引发时间的时间间隔 此处设置为5分钟
-                    tokenTimer.Interval = DefaultSecondsClearInvalidToken;
+                    tokenTimer.Interval = (config.ClearInvalidTokenSeconds > 0
+                        ? config.ClearInvalidTokenSeconds
+                        : DefaultClearInvalidTokenSeconds) *1000;
                     tokenTimer.Enabled = true;
                 }
                 _isInited = true;
@@ -117,7 +119,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token
         }
 
         /// <summary>
-        ///     是否有效
+        ///     Token是否到期
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>

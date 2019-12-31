@@ -6,10 +6,10 @@ using UFIDA.U9.BS.Job.RequestClient;
 using UFIDA.U9.Cust.Pub.WS.Base.Models;
 using UFIDA.U9.Cust.Pub.WS.CommService.Interfaces;
 using UFIDA.U9.Cust.Pub.WS.CommService.Json;
-using UFIDA.U9.Cust.Pub.WS.CommService.Json.Cust;
 using UFIDA.U9.Cust.Pub.WS.CommService.Models;
 using UFIDA.U9.Cust.Pub.WS.CommService.Utils;
 using UFIDA.U9.Cust.Pub.WS.DBLog;
+using UFIDA.U9.Cust.Pub.WS.Json;
 using UFSoft.UBF;
 using UFSoft.UBF.Service.Base;
 
@@ -169,7 +169,8 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Services
         private static string ProxyBaseToJsonString(object obj, int maxExpandDepth)
         {
             if (obj == null) return string.Empty;
-            var settings = CommServiceJsonHelper.GetJsonSerializerSettings(new ProxyBaseContractResolver());
+            JsonSerializerSettings settings = CommServiceJsonHelper.GetJsonSerializerSettings(new ProxyBaseContractResolver());
+            settings.IsAutoCreateMemberValue = true;
             settings.MaxWritingDepth = maxExpandDepth > 0 ? maxExpandDepth : DefaultMaxWritingDepth;
             return JsonConvert.SerializeObject(obj, Formatting.None, settings);
         }
@@ -184,6 +185,7 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Services
         {
             if (obj == null) return string.Empty;
             var settings = CommServiceJsonHelper.GetDefaultJsonSerializerSettings();
+            settings.IsAutoCreateMemberValue = true;
             settings.MaxWritingDepth = maxExpandDepth > 0 ? maxExpandDepth : DefaultMaxWritingDepth;
             return JsonConvert.SerializeObject(obj, Formatting.None, settings);
         }

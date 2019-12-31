@@ -37,6 +37,8 @@ namespace UFIDA.U9.Cust.Pub.WSM.WSTokenSV
 		
 		
 		
+		
+		
 
 			//调用默认值初始化服务进行配置方式初始化
 			UFSoft.UBF.Service.DTOService.InitConfigDefault(this);
@@ -54,13 +56,13 @@ namespace UFIDA.U9.Cust.Pub.WSM.WSTokenSV
 			if (dict[this] != null)
 				return ;
 			dict[this] = this;
-	        	        	        	        	        	        	        	        	        	        	        
+	        	        	        	        	        	        	        	        	        	        	        	        	        
 		}
 		#endregion 
 		/// <summary>
 		/// Constructor Full Argument
 		/// </summary>
-		public WSTokenDTOData(  System.String tokenStr  , System.String enterpriseID  , System.String enterpriseName  , System.String userID  , System.String userCode  , System.String userName  , System.String orgID  , System.String orgCode  , System.String orgName  , System.DateTime createTime  , System.DateTime lastUpdateTime  )
+		public WSTokenDTOData(  System.String tokenStr  , System.String enterpriseID  , System.String enterpriseName  , System.String userID  , System.String userCode  , System.String userName  , System.String orgID  , System.String orgCode  , System.String orgName  , System.DateTime createTime  , System.DateTime lastUpdateTime  , System.String culture  , System.String supportCultureNameList  )
 		{
 			initData();
 			this.TokenStr = tokenStr;
@@ -74,6 +76,8 @@ namespace UFIDA.U9.Cust.Pub.WSM.WSTokenSV
 			this.OrgName = orgName;
 			this.CreateTime = createTime;
 			this.LastUpdateTime = lastUpdateTime;
+			this.Culture = culture;
+			this.SupportCultureNameList = supportCultureNameList;
 		}
 		#region System Fields 
 		//--系统字段,目前没有.EntityData上有相应的字段,用于保存相关的实体状态信息,DTO上没有状态信息.	
@@ -301,10 +305,50 @@ namespace UFIDA.U9.Cust.Pub.WSM.WSTokenSV
 			}
 		}
 			
+		
+
+		/// <summary>
+		/// 语言
+		/// 服务TokenDTO.Misc.语言
+		/// </summary>
+		private System.String m_culture ;
+		[DataMember(IsRequired=false)]
+		public System.String Culture
+		{
+			get	
+			{	
+				return m_culture ;
+			}
+			set	
+			{	
+				m_culture = value ;	
+			}
+		}
+			
+		
+
+		/// <summary>
+		/// 支持语言列表
+		/// 服务TokenDTO.Misc.支持语言列表
+		/// </summary>
+		private System.String m_supportCultureNameList ;
+		[DataMember(IsRequired=false)]
+		public System.String SupportCultureNameList
+		{
+			get	
+			{	
+				return m_supportCultureNameList ;
+			}
+			set	
+			{	
+				m_supportCultureNameList = value ;	
+			}
+		}
+			
 		#endregion	
 
 		#region Multi_Fields
-																						
+																										
 		#endregion 
 	} 	
 }

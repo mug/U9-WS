@@ -44,7 +44,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.WebHttp
             if (ret == null) return;
             ret.IsSuccess = false;
             ret.ErrMsg = error.InnerException == null ? error.Message : error.InnerException.Message;
-            byte[] body = JsonHelper.GetJsonBody(ret, true);
+            byte[] body = JsonHelper.GetReturnJsonBody(ret);
             fault = Message.CreateMessage(version, "",
                 new RawBodyWriter(body));
             fault.Properties.Add(WebBodyFormatMessageProperty.Name,

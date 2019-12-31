@@ -79,6 +79,10 @@
       <Project>{8C8E9755-0FFC-47E5-BD79-66C6B1ABD12B}</Project>
       <Name>UFIDA.U9.Cust.Pub.WS.Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Context\UFIDA.U9.Cust.Pub.WS.U9Context.csproj">
+      <Project>{0383059E-C9E6-4A08-8444-4FFCCEA88253}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.U9Context</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Token\UFIDA.U9.Cust.Pub.WS.Token.csproj">
       <Project>{CB3FD880-C065-43A5-9058-ECC3AB89DC9D}</Project>
       <Name>UFIDA.U9.Cust.Pub.WS.Token</Name>

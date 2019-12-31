@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Specialized;
-using UFIDA.U9.Cust.Pub.WS.Base.Context;
+using UFIDA.U9.Cust.Pub.WS.Context;
 using UFIDA.U9.Cust.Pub.WS.Token.Configuration;
 using UFIDA.U9.Cust.Pub.WS.Token.Models;
+using UFIDA.U9.Cust.Pub.WS.U9Context;
 using UFIDA.U9.Cust.Pub.WSM.WSTokenBE;
 using UFIDA.U9.Cust.Pub.WSM.WSTokenSV;
 using UFIDA.U9.Cust.Pub.WSM.WSTokenSV.Proxy;
@@ -23,7 +24,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         private const char TokenStrSplitSymbol = '#';
         private static ILogger _logger = LoggerManager.GetLogger(typeof (WSTokenDBProvider));
         private bool _isSameCredentialsOneToken;
-        private int _tokenSize = 200;
+        private int _tokenSize = -1;
 
         /// <summary>
         ///     Token串长度
@@ -42,7 +43,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         }
 
         /// <summary>
-        /// 是否内存缓存
+        ///     是否内存缓存
         /// </summary>
         public override bool IsMemoryCache
         {
@@ -61,9 +62,8 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         public override void Initialize(string name, NameValueCollection config)
         {
             base.Initialize(name, config);
-            _tokenSize = config["TokenSize"] == null ? DefaultTokenSize : Convert.ToInt32(config["TokenSize"]);
-            _isSameCredentialsOneToken = config["IsSameCredentialsOneToken"] != null &&
-                                         Convert.ToBoolean(config["IsSameCredentialsOneToken"]);
+            _tokenSize = config["tokenSize"] == null ? DefaultTokenSize : Convert.ToInt32(config["tokenSize"]);
+            _isSameCredentialsOneToken = config["isSameCredentialsOneToken"] == null || Convert.ToBoolean(config["isSameCredentialsOneToken"]);
         }
 
         /// <summary>
@@ -115,9 +115,9 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
             string[] tokenArr = tokenStr.Split(TokenStrSplitSymbol);
             if (tokenArr.Length <= 1) return null;
             string enterpriseID = tokenArr[0];
-            Enterprise enterprise = ContextHelper.GetEnterprise(enterpriseID);
+            Enterprise enterprise = ContextObject.GetEnterprise(enterpriseID);
             if (enterprise == null)
-                throw new TokenException(string.Format("企业:{0}不存在!", enterpriseID));
+                throw new TokenException(string.Format("企业:{0} 不存在!", enterpriseID));
             using (ContextObject contextObject = new ContextObject(enterprise))
             {
                 WSToken wsToken =
@@ -134,8 +134,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         /// <returns></returns>
         public override bool IsExpired(Token token)
         {
-            ContextInfo contextInfo = TokenHelper.GetContextInfo(token);
-            using (ContextObject contextObject = new ContextObject(contextInfo))
+            using (ContextObject contextObject = new ContextObject(token))
             {
                 WSTokenIsExpiredSVProxy proxy = new WSTokenIsExpiredSVProxy();
                 proxy.WSTokenDTO = TransToWSTokenDTOData(token);
@@ -149,8 +148,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         /// <param name="token"></param>
         public override void UpdateExpire(Token token)
         {
-            ContextInfo contextInfo = TokenHelper.GetContextInfo(token);
-            using (ContextObject contextObject = new ContextObject(contextInfo))
+            using (ContextObject contextObject = new ContextObject(token))
             {
                 UpdateExpireImpl(token);
             }
@@ -173,6 +171,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         /// </summary>
         public override void Clean()
         {
+            //由于无法获取上下文，无法在此处清除Token
         }
 
         #endregion
@@ -196,6 +195,8 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
             token.OrgID = wsToken.OrgID;
             token.OrgCode = wsToken.OrgCode;
             token.OrgName = wsToken.OrgName;
+            token.Culture = wsToken.Culture;
+            token.SupportCultureNameList = wsToken.SupportCultureNameList;
             token.CreateTime = wsToken.CreateTime;
             token.LastUpdateTime = wsToken.LastUpdateTime;
             return token;
@@ -218,6 +219,8 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
             tokenDTO.OrgID = token.OrgID;
             tokenDTO.OrgCode = token.OrgCode;
             tokenDTO.OrgName = token.OrgName;
+            tokenDTO.Culture = token.Culture;
+            tokenDTO.SupportCultureNameList = token.SupportCultureNameList;
             tokenDTO.CreateTime = token.CreateTime;
             tokenDTO.LastUpdateTime = token.LastUpdateTime;
             return tokenDTO;

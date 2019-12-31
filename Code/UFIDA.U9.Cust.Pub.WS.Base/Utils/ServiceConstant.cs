@@ -7,8 +7,9 @@
     {
         public static readonly string AllowAnonymousSvcPages = "AllowAnonymousSvcPages";
         public static readonly string AllowAnonymousSvcHelpPages = "AllowAnonymousSvcHelpPages";
-        public const string HeaderEnterpriseIDName = "EnterpriseID";
-        public const string DateTimeFormatName = "DateTimeFormat";
+        public const string DateTimeFormatName = "JsonDateTimeFormat";
+        public const string ResponeJsonNoStartsWithBOMName = "ResponeJsonNoStartsWithBOM";
+        public const string ResponeJsonFormattingName = "ResponeJsonFormatting";
 
     }
 }

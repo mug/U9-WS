@@ -1,10 +1,9 @@
 ﻿using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Web.WebSockets;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
+using UFIDA.U9.Cust.Pub.WS.Json;
+using UFIDA.U9.Cust.Pub.WS.Json.Converters;
+using UFIDA.U9.Cust.Pub.WS.Json.Serialization;
 
 namespace UFIDA.U9.Cust.Pub.WS.Base.Utils
 {
@@ -13,10 +12,11 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Utils
     /// </summary>
     public static class JsonHelper
     {
-        private const string DefaultDateTimeFormat = "yyyy-MM-ddTHH:mm:ssZ";
+        private const string DefaultDateTimeFormat = "yyyy-MM-dd HH:mm:ss";
+        private const Formatting DefaulResponeJsonFormatting = Formatting.None;
 
         /// <summary>
-        /// 获取默认Json序列化配置
+        ///     获取默认Json序列化配置
         /// </summary>
         /// <returns></returns>
         public static JsonSerializerSettings GetDefaultJsonSerializerSettings()
@@ -25,7 +25,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Utils
         }
 
         /// <summary>
-        /// 获取Json序列化配置
+        ///     获取Json序列化配置
         /// </summary>
         /// <returns></returns>
         public static JsonSerializerSettings GetJsonSerializerSettings(IContractResolver resolver)
@@ -52,7 +52,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Utils
         }
 
         /// <summary>
-        /// 获取JsonSerializer
+        ///     获取JsonSerializer
         /// </summary>
         /// <param name="resolver"></param>
         /// <returns></returns>
@@ -83,22 +83,30 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Utils
         }
 
         /// <summary>
-        ///     获取JsonBody
+        ///     获取返回JsonBody
         /// </summary>
         /// <param name="obj"></param>
-        /// <param name="isBOM"></param>
         /// <returns></returns>
-        public static byte[] GetJsonBody(object obj, bool isBOM = true)
+        public static byte[] GetReturnJsonBody(object obj)
         {
             byte[] body;
-            var serializer = GetDefaultJsonSerializer();
+            JsonSerializer serializer = GetDefaultJsonSerializer();
+            string strReturnJsonNoStartsWithBOM =
+                ConfigurationHelper.GetAppSettingValue(ServiceConstant.ResponeJsonNoStartsWithBOMName);
+            bool returnJsonNoStartsWithBOM = !string.IsNullOrEmpty(strReturnJsonNoStartsWithBOM) &&
+                                             strReturnJsonNoStartsWithBOM.ToLower() == "true";
+            string returnJsonFormatting =
+                ConfigurationHelper.GetAppSettingValue(ServiceConstant.ResponeJsonFormattingName);
             using (MemoryStream ms = new MemoryStream())
             {
-                using (StreamWriter sw = new StreamWriter(ms, new UTF8Encoding(isBOM)))
+                using (StreamWriter sw = new StreamWriter(ms, new UTF8Encoding(returnJsonNoStartsWithBOM)))
                 {
                     using (JsonWriter writer = new JsonTextWriter(sw))
                     {
-                        //writer.Formatting = Newtonsoft.Json.Formatting.Indented;
+                        writer.Formatting = !string.IsNullOrEmpty(returnJsonFormatting) &&
+                                            returnJsonFormatting.ToLower() == "indented"
+                            ? Formatting.Indented
+                            : DefaulResponeJsonFormatting;
                         serializer.Serialize(writer, obj);
                         sw.Flush();
                         body = ms.ToArray();

@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\yonyou\U9V60\Portal\bin\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -71,14 +67,9 @@
     <Compile Include="Behavior\Endpoint\Log4NetEndpointBehaviorExtension.cs" />
     <Compile Include="Behavior\Endpoint\Log4NetEndpointBehavior.cs" />
     <Compile Include="Behavior\WebHttp\ExtendErrorHandler.cs" />
-    <Compile Include="Behavior\Endpoint\SetU9ContextBySingleUserEndpointBehaviorExtension.cs" />
-    <Compile Include="Behavior\Endpoint\SetU9ContextBySingleUserEndpointBehavior.cs" />
-    <Compile Include="Context\ContextObject.cs" />
     <Compile Include="Services\ErrorLogHttpModule.cs" />
     <Compile Include="Utils\ConfigurationHelper.cs" />
     <Compile Include="Utils\ServiceConstant.cs" />
-    <Compile Include="Context\ContextHelper.cs" />
-    <Compile Include="Context\ContextInfoManager.cs" />
     <Compile Include="Interfaces\IReturnMessage.cs" />
     <Compile Include="Behavior\WebHttp\NewtonsoftJsonBehavior.cs" />
     <Compile Include="Behavior\WebHttp\NewtonsoftJsonBehaviorExtension.cs" />
@@ -91,7 +82,12 @@
     <Compile Include="Services\IISHostFactory.cs" />
     <Compile Include="Utils\JsonHelper.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Json\UFIDA.U9.Cust.Pub.WS.Json.csproj">
+      <Project>{AE6D00EA-5BEE-48D7-B385-F9F6C7EB7799}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.Json</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

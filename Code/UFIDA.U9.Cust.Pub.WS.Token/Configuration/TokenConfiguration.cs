@@ -28,6 +28,13 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.Configuration
             set { base["defaultProvider"] = value; }
         }
 
+        [ConfigurationProperty("clearInvalidTokenSeconds", DefaultValue = -1)]
+        public int ClearInvalidTokenSeconds
+        {
+            get { return (int)base["clearInvalidTokenSeconds"]; }
+            set { base["clearInvalidTokenSeconds"] = value; }
+        }
+
         [ConfigurationProperty("providers")]
         public ProviderSettingsCollection Providers
         {

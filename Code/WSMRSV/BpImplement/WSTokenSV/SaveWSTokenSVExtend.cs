@@ -50,6 +50,10 @@ namespace UFIDA.U9.Cust.Pub.WSM.WSTokenSV
                 wsToken.OrgCode = wsTokenDTO.OrgCode;
                 //OrgName 组织名称
                 wsToken.OrgName = wsTokenDTO.OrgName;
+                //Culture 语言
+                wsToken.Culture = wsTokenDTO.Culture;
+                //SupportCultureNameList 支持语言列表
+                wsToken.SupportCultureNameList = wsTokenDTO.SupportCultureNameList;
                 //CreateTime 创建时间
                 wsToken.CreateTime = wsTokenDTO.CreateTime;
                 //LastUpdateTime 最后更新时间

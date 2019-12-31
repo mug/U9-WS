@@ -3,8 +3,9 @@ using System.Security.Authentication;
 using System.Security.Cryptography;
 using System.Text;
 using UFIDA.U9.Base.UserRole;
-using UFIDA.U9.Cust.Pub.WS.Base.Context;
+using UFIDA.U9.Cust.Pub.WS.Context;
 using UFIDA.U9.Cust.Pub.WS.Token.Models;
+using UFIDA.U9.Cust.Pub.WS.U9Context;
 using UFIDA.UBF.SystemManage;
 using Organization = UFIDA.U9.Base.Organization.Organization;
 
@@ -15,25 +16,6 @@ namespace UFIDA.U9.Cust.Pub.WS.Token
     /// </summary>
     public static class TokenHelper
     {
-        /// <summary>
-        ///     获取上下文环境信息
-        /// </summary>
-        /// <param name="token"></param>
-        /// <returns></returns>
-        public static ContextInfo GetContextInfo(Token token)
-        {
-            ContextInfo contextInfo = new ContextInfo();
-            contextInfo.EnterpriseID = token.EnterpriseID;
-            contextInfo.EnterpriseName = token.EnterpriseName;
-            contextInfo.OrgID = token.OrgID;
-            contextInfo.OrgCode = token.OrgCode;
-            contextInfo.OrgName = token.OrgName;
-            contextInfo.UserID = token.UserID;
-            contextInfo.UserCode = token.UserCode;
-            contextInfo.UserName = token.UserName;
-            return contextInfo;
-        }
-
         /// <summary>
         ///     获取上下文环境信息
         /// </summary>
@@ -48,7 +30,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token
                 throw new AuthenticationException("组织不能为空");
             if (string.IsNullOrWhiteSpace(creds.UserCode))
                 throw new AuthenticationException("用户不能为空");
-            Enterprise enterprise = ContextHelper.GetEnterprise(creds.EnterpriseID);
+            Enterprise enterprise = ContextObject.GetEnterprise(creds.EnterpriseID);
             if (enterprise == null)
                 throw new TokenException(string.Format("企业:{0}不存在!", creds.EnterpriseID));
             using (ContextObject contextObject = new ContextObject(enterprise))
@@ -68,7 +50,8 @@ namespace UFIDA.U9.Cust.Pub.WS.Token
                 Organization org = Organization.FindByCode(creds.OrgCode);
                 if (org == null)
                     throw new TokenException(string.Format("组织:{0}不存在", creds.OrgCode));
-                return ContextHelper.GetContext(enterprise, org, user);
+                return ContextInfo.GetContext(enterprise, org, user, creds.Culture,
+                    creds.SupportCultureNameList);
             }
         }
 
@@ -90,6 +73,8 @@ namespace UFIDA.U9.Cust.Pub.WS.Token
             token.OrgID = contextInfo.OrgID;
             token.OrgCode = contextInfo.OrgCode;
             token.OrgName = contextInfo.OrgName;
+            token.Culture = contextInfo.Culture;
+            token.SupportCultureNameList = contextInfo.SupportCultureNameList;
             token.CreateTime = DateTime.Now;
             token.LastUpdateTime = DateTime.Now;
             return token;
