@@ -135,9 +135,19 @@ namespace UFIDA.U9.Cust.Pub.WS.Json.Serialization
         private void SerializeValue(JsonWriter writer, object value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)
         {
             //yt update 2016-5-28
+            bool isOverWritingDepth = false;
+            if (writer.MaxWritingDepth.HasValue && writer.MaxWritingDepth.Value > 0)
+            {
+                string[] arrPath = writer.Path.Split('.');
+                isOverWritingDepth = arrPath.Length > writer.MaxWritingDepth;
+            }
+            if (isOverWritingDepth)
+            {
+                writer.WriteNull();
+                return;
+            }
             if (value == null && writer.IsAutoCreateMemberValue)
                 value = AutoCreateMemberValue(writer, valueContract);
-
             if (value == null)
             {
                 writer.WriteNull();
@@ -202,13 +212,6 @@ namespace UFIDA.U9.Cust.Pub.WS.Json.Serialization
         /// <returns></returns>
         private object AutoCreateMemberValue(JsonWriter writer, JsonContract valueContract)
         {
-            bool isOverWritingDepth = false;
-            if (writer.MaxWritingDepth.HasValue && writer.MaxWritingDepth.Value > 0)
-            {
-                string[] arrPath = writer.Path.Split('.');
-                isOverWritingDepth = arrPath.Length > writer.MaxWritingDepth;
-            }
-            if (isOverWritingDepth) return null;
             try
             {
                 switch (valueContract.ContractType)

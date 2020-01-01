@@ -6,7 +6,7 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Models
     /// 代理类型
     /// </summary>
     [DataContract]
-    public class ProxyRequestType
+    public class RequestProxyType
     {
         /// <summary>
         ///     类型名称

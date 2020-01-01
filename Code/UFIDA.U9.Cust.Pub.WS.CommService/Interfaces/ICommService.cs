@@ -11,16 +11,16 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Interfaces
         [OperationContract]
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare)]
-        ReturnMessage<ProxyRequestObject> GetProxyRequestObject(ProxyRequestType requestType);
+        ReturnMessage<RequestProxyObject> GetRequestProxyObject(RequestProxyType proxyType);
 
         [OperationContract]
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare)]
-        ReturnMessage<string> ProxyDo(ProxyRequestObject requestObject);
+        ReturnMessage<string> ProxyDo(RequestProxyObject proxyObject);
 
         [OperationContract]
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
           BodyStyle = WebMessageBodyStyle.Bare)]
-        ReturnMessage<bool> ProxyDoByJob(ProxyRequestObject requestObject);
+        ReturnMessage<bool> ProxyDoByJob(RequestProxyObject proxyObject);
     }
 }
