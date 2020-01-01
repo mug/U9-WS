@@ -5,25 +5,25 @@
   <UIRefInfo id="36f34cc1-7398-455c-9751-772cf53850b7" name="" displayName="" description="" help="" ProjectID="" ProjectPath="" UIModelItemID="b7472d7f-9225-4279-8a4e-ba7445d48d9e" UIFormItemID="6d422043-83cf-447e-b81c-d1d61d2a9e46" UIModelID="15710914-b49e-4998-a9ba-c06ca46be2eb" />
   <DefaultCase>
     <BasicFilters>
-      <BasicFilter id="b96277ea-ac24-426b-ad64-cf6094510747" name="UserCode" displayName="用户编码" description="" help="" />
-      <BasicFilter id="9c7bbf5e-9ab9-464c-b3bf-77161a71346f" name="OrgCode" displayName="组织编码" description="" help="" />
-      <BasicFilter id="1aa70e0e-dcb2-4c0a-9ca3-e9f25db9dafc" name="EnterpriseID" displayName="企业ID" description="" help="" />
+      <BasicFilter id="68c7ac8f-cbcc-4434-9cbf-0a058476ae5b" name="UserCode" displayName="用户编码" description="" help="" />
+      <BasicFilter id="ca7e5ab7-0614-46b8-ab56-6f855363ebeb" name="OrgCode" displayName="组织编码" description="" help="" />
+      <BasicFilter id="dbf98eaf-001b-4a7d-8c9d-f72652b87187" name="EnterpriseID" displayName="企业ID" description="" help="" />
     </BasicFilters>
     <DefaultColumns>
-      <Column id="b0b59f00-e285-4996-b5c7-69ea53f7333a" name="TokenStr" displayName="Token串" description="" help="" />
-      <Column id="5626bb05-3219-4531-83b4-345593e1310e" name="EnterpriseID" displayName="企业ID" description="" help="" />
-      <Column id="fc82dc19-bb4f-4948-9972-1b30abbfcffc" name="EnterpriseName" displayName="企业名称" description="" help="" />
-      <Column id="49175f77-a279-4256-aeb1-0fc92d63497d" name="OrgCode" displayName="组织编码" description="" help="" />
-      <Column id="69cc88ee-6b2f-450a-a340-18701af3934c" name="OrgName" displayName="组织名称" description="" help="" />
-      <Column id="c3cfda05-3888-4ae4-b479-c674cfd02314" name="UserCode" displayName="用户编码" description="" help="" />
-      <Column id="deb63d12-b6d2-4d2d-bddc-3929f8b65e90" name="UserName" displayName="用户名称" description="" help="" />
-      <Column id="c989d216-1c7d-4533-af6a-5ff0deb51906" name="CreateTime" displayName="创建时间" description="" help="" />
-      <Column id="00c092b3-bfa1-4794-9865-d0205bc0b306" name="LastUpdateTime" displayName="最后更新时间" description="" help="" />
-      <Column id="1ff55b63-d887-41ca-9555-9ba6ee5ae970" name="IsAlive" displayName="活动" description="" help="" />
-      <Column id="7774f7ea-efd3-4f93-ad44-faf21bdde2dd" name="InvalidTime" displayName="失效时间" description="" help="" />
+      <Column id="e7b06654-ae0d-48b1-827c-4501f34d0fcd" name="TokenStr" displayName="Token串" description="" help="" />
+      <Column id="7a65fb89-5bd6-4394-bfc9-db99adc76d26" name="EnterpriseID" displayName="企业ID" description="" help="" />
+      <Column id="9857740c-011c-4fd9-8efe-d5e7e011264e" name="EnterpriseName" displayName="企业名称" description="" help="" />
+      <Column id="3a837e9d-281e-40f6-b1a9-34c03c456c61" name="OrgCode" displayName="组织编码" description="" help="" />
+      <Column id="5d45927d-8257-4dde-a92f-e2ec2531dde0" name="OrgName" displayName="组织名称" description="" help="" />
+      <Column id="c92f47d9-95d5-4ad3-871e-b0ab3c6c0347" name="UserCode" displayName="用户编码" description="" help="" />
+      <Column id="82eb517a-abdd-485b-b51f-e1628a08526a" name="UserName" displayName="用户名称" description="" help="" />
+      <Column id="ffef78cd-81d3-48f1-9e7b-0635afba8260" name="CreateTime" displayName="创建时间" description="" help="" />
+      <Column id="4bba9461-6e11-4d49-aba9-ed7fa1024ec8" name="LastUpdateTime" displayName="最后更新时间" description="" help="" />
+      <Column id="0e45ae6b-8994-4c26-9cf5-b74ae5801817" name="IsAlive" displayName="活动" description="" help="" />
+      <Column id="fe060cc0-d66d-4ed5-9ddc-d16229912da0" name="InvalidTime" displayName="失效时间" description="" help="" />
     </DefaultColumns>
     <DefaultSorts>
-      <Sort id="1fe72c71-8def-4f3d-832b-e16023ed9796" name="CreateTime" displayName="" description="" help="" SortType="DESC" />
+      <Sort id="f05738a0-629c-4ad1-9265-09efe868c188" name="CreateTime" displayName="" description="" help="" SortType="DESC" />
     </DefaultSorts>
   </DefaultCase>
 </QueryComponent>

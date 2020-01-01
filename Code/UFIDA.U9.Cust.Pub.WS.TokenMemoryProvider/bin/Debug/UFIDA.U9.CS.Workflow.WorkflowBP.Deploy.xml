@@ -1,0 +1,3967 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UFIDA.U9.CS.Workflow.WorkflowBP.Deploy</name>
+    </assembly>
+    <members>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendEventData">
+            <summary>
+            EntityData: 流程挂起事件
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendEventData.Parameter">
+            <summary>
+            流程挂起数据
+            流程挂起事件.Misc.流程挂起数据
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData">
+            <summary>
+            简要处理人信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.#ctor(System.String,System.String,System.Int64,System.Int64,System.Int32,System.Int32,System.String,System.Int64,UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.m_userName">
+            <summary>
+            用户名
+            简要处理人信息.Misc.用户名
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.m_userCode">
+            <summary>
+            用户编码
+            简要处理人信息.Misc.用户编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.m_userId">
+            <summary>
+            用户标识
+            简要处理人信息.Misc.用户标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.m_processTrackId">
+            <summary>
+            对应的ProcessTrack标识
+            简要处理人信息.Misc.对应的ProcessTrack标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.m_tackState">
+            <summary>
+            处理状态
+            简要处理人信息.Misc.处理状态
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.m_operation">
+            <summary>
+            处理操作
+            简要处理人信息.Misc.处理操作
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.m_action">
+            <summary>
+            处理动作
+            简要处理人信息.Misc.处理动作
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.m_orderID">
+            <summary>
+            顺序
+            简要处理人信息.Misc.顺序
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData.m_waitingUserInfoSimpleDto">
+            <summary>
+            简要处理者信息
+            简要处理人信息.Misc.简要处理者信息
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData">
+            <summary>
+            活动授权信息DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.m_flowState">
+            <summary>
+            活动标识
+            活动授权信息DTO.Misc.活动标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.m_canTerminate">
+            <summary>
+            是否能中止
+            活动授权信息DTO.Misc.是否能中止
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.m_canRecall">
+            <summary>
+            是否能撤回
+            活动授权信息DTO.Misc.是否能撤回
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.m_canBackward">
+            <summary>
+            是否能回退
+            活动授权信息DTO.Misc.是否能回退
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.m_canAddSigner">
+            <summary>
+            是否能加签
+            活动授权信息DTO.Misc.是否能加签
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.m_canSuspend">
+            <summary>
+            是否能挂起
+            活动授权信息DTO.Misc.是否能挂起
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.m_canRedirect">
+            <summary>
+            是否能转发
+            活动授权信息DTO.Misc.是否能转发
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.m_canApproval">
+            <summary>
+            是否能审批
+            活动授权信息DTO.Misc.是否能审批
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData.m_canManualAssign">
+            <summary>
+            是否能指定处理者
+            活动授权信息DTO.Misc.是否能指定处理者
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData">
+            <summary>
+            流程实例列表信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.#ctor(System.Guid,System.Int64,System.String,System.Int32,System.String,System.String,System.String,System.Int64,System.DateTime,System.Int64,System.String,System.Int32,System.Int64,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,System.String,UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData,System.Int32,System.Int64,System.String,System.Boolean,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData},System.Boolean,System.Int64,System.String,System.Int32,System.String,System.String,System.Guid,System.Int64)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_instanceID">
+            <summary>
+            流程实例ID
+            流程实例列表信息.Misc.流程实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_entityID">
+            <summary>
+            实体实例ID
+            流程实例列表信息.Misc.实体实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_entityType">
+            <summary>
+            实体类型
+            流程实例列表信息.Misc.实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_state">
+            <summary>
+            当前运行状态
+            流程实例列表信息.Misc.当前运行状态
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_flowState">
+            <summary>
+            当前所处环节
+            流程实例列表信息.Misc.当前所处环节
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_defineXML">
+            <summary>
+            定义信息
+            流程实例列表信息.Misc.定义信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_startUser">
+            <summary>
+            提交人
+            流程实例列表信息.Misc.提交人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_startTime">
+            <summary>
+            发起时间
+            流程实例列表信息.Misc.发起时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_startOrg">
+            <summary>
+            发起组织
+            流程实例列表信息.Misc.发起组织
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_stateName">
+            <summary>
+            当前状态ID
+            流程实例列表信息.Misc.当前状态ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_version">
+            <summary>
+            版本
+            流程实例列表信息.Misc.版本
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_flowID">
+            <summary>
+            流程定义ＩＤ
+            流程实例列表信息.Misc.流程定义ＩＤ
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_ownerState">
+            <summary>
+            子流程所在节点名称
+            流程实例列表信息.Misc.子流程所在节点名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_ownerBranch">
+            <summary>
+            子流程所属分支
+            流程实例列表信息.Misc.子流程所属分支
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_startUserName">
+            <summary>
+            提交人名称
+            流程实例列表信息.Misc.提交人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_startOrgName">
+            <summary>
+            发起组织名称
+            流程实例列表信息.Misc.发起组织名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_stateDisplayName">
+            <summary>
+            当前状态名称
+            流程实例列表信息.Misc.当前状态名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_businessType">
+            <summary>
+            业务类型
+            流程实例列表信息.Misc.业务类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_mainFlowInstanceID">
+            <summary>
+            主流程实例ID
+            流程实例列表信息.Misc.主流程实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_flowGID">
+            <summary>
+            流程定义唯一标示
+            流程实例列表信息.Misc.流程定义唯一标示
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_refForm">
+            <summary>
+            关联表单信息
+            流程实例列表信息.Misc.关联表单信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_approvalResult">
+            <summary>
+            审批结果
+            流程实例列表信息.Misc.审批结果
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_sourceUser">
+            <summary>
+            发起人
+            流程实例列表信息.Misc.发起人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_sourceUserName">
+            <summary>
+            发起人名称
+            流程实例列表信息.Misc.发起人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_isCurrentStateIsRow">
+            <summary>
+            当前节点是否为行审节点
+            流程实例列表信息.Misc.当前节点是否为行审节点
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_rowInfoList">
+            <summary>
+            行信息DTO
+            流程实例列表信息.Misc.行信息DTO
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_hasProcessed">
+            <summary>
+            是否处理过
+            流程实例列表信息.Misc.是否处理过
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_manualAssignUser">
+            <summary>
+            设置处理者的用户标识
+            流程实例列表信息.Misc.设置处理者的用户标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_manualAssignState">
+            <summary>
+            设置处理者的活动标识
+            流程实例列表信息.Misc.设置处理者的活动标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_innerDefineVersion">
+            <summary>
+            内部流程定义版本
+            流程实例列表信息.Misc.内部流程定义版本
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_startCulture">
+            <summary>
+            提交人语种
+            流程实例列表信息.Misc.提交人语种
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_sourceCulture">
+            <summary>
+            发起人语种
+            流程实例列表信息.Misc.发起人语种
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_preInstance">
+            <summary>
+            被重审流程实例
+            流程实例列表信息.Misc.被重审流程实例
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.m_versionId">
+            <summary>
+            流程定义版本标识
+            流程实例列表信息.Misc.流程定义版本标识
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.Title">
+            <summary>
+            标题
+            流程实例列表信息.Misc.标题
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.Multi_Title">
+            <summary>
+            多语属性: 标题
+            流程实例列表信息.Misc.标题
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.Memo">
+            <summary>
+            流程备注
+            流程实例列表信息.Misc.流程备注
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData.Multi_Memo">
+            <summary>
+            多语属性: 流程备注
+            流程实例列表信息.Misc.流程备注
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.SubmitingAndTerminatingInstanceDTOData">
+            <summary>
+            终止中与提交中流程信息DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.SubmitingAndTerminatingInstanceDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.SubmitingAndTerminatingInstanceDTOData.#ctor(System.Guid,System.String,System.Int64,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.SubmitingAndTerminatingInstanceDTOData.m_instance">
+            <summary>
+            实例GUID
+            终止中与提交中流程信息DTO.Misc.实例GUID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.SubmitingAndTerminatingInstanceDTOData.m_defineXML">
+            <summary>
+            设计信息
+            终止中与提交中流程信息DTO.Misc.设计信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.SubmitingAndTerminatingInstanceDTOData.m_flowInstanceID">
+            <summary>
+            流程实例ID
+            终止中与提交中流程信息DTO.Misc.流程实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.SubmitingAndTerminatingInstanceDTOData.m_state">
+            <summary>
+            流程状态
+            终止中与提交中流程信息DTO.Misc.流程状态
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData">
+            <summary>
+            流程定义处理信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData.#ctor(UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData,System.Int64,System.Int32,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.DoFlowInfoDTOData},System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData.m_flowStateInfoDTO">
+            <summary>
+            流程状态信息
+            流程定义处理信息.Misc.流程状态信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData.m_defUID">
+            <summary>
+            定义处理者ID
+            流程定义处理信息.Misc.定义处理者ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData.m_defUType">
+            <summary>
+            定义处理者类型
+            流程定义处理信息.Misc.定义处理者类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData.m_doflowInfo">
+            <summary>
+            处理信息
+            流程定义处理信息.Misc.处理信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData.m_defUName">
+            <summary>
+            定义处理者名称
+            流程定义处理信息.Misc.定义处理者名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData.m_defUTypeName">
+            <summary>
+            类型名称
+            流程定义处理信息.Misc.类型名称
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData">
+            <summary>
+            自由流程上一处理人信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData.#ctor(System.Int64,System.String,System.DateTime,System.DateTime,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData.m_userID">
+            <summary>
+            用户ID
+            自由流程上一处理人信息.Misc.用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData.m_remark">
+            <summary>
+            处理意见
+            自由流程上一处理人信息.Misc.处理意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData.m_assignTime">
+            <summary>
+            到达时间
+            自由流程上一处理人信息.Misc.到达时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData.m_doTime">
+            <summary>
+            处理时间
+            自由流程上一处理人信息.Misc.处理时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData.m_action">
+            <summary>
+            操作Code
+            自由流程上一处理人信息.Misc.操作Code
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData.m_userName">
+            <summary>
+            处理人名称
+            自由流程上一处理人信息.Misc.处理人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData.m_actionName">
+            <summary>
+            操作名称
+            自由流程上一处理人信息.Misc.操作名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PreviousUserDTOData.m_isStartUser">
+            <summary>
+            是否发起人
+            自由流程上一处理人信息.Misc.是否发起人
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.CustomFormBP.CustomAttributeDTOData">
+            <summary>
+            字段权限列表 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.CustomFormBP.CustomAttributeDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.CustomFormBP.CustomAttributeDTOData.#ctor(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.CustomFormBP.CustomAttributeDTOData.m_typeID">
+            <summary>
+            类型ID
+            字段权限列表.Misc.类型ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.CustomFormBP.CustomAttributeDTOData.m_attributeName">
+            <summary>
+            属性
+            字段权限列表.Misc.属性
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.CustomFormBP.CustomAttributeDTOData.m_attributeID">
+            <summary>
+            属性1
+            字段权限列表.Misc.属性1
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.CustomFormBP.CustomAttributeDTOData.m_access">
+            <summary>
+            属性2
+            字段权限列表.Misc.属性2
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.StateFinishedEventData">
+            <summary>
+            EntityData: 状态结束事件
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.StateFinishedEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.Event.StateFinishedEventData.Parameter">
+            <summary>
+            状态结束数据
+            状态结束事件.Misc.状态结束数据
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.ApprovalDocDTOData">
+            <summary>
+            审批对象信息DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ApprovalDocDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ApprovalDocDTOData.#ctor(System.String,System.String,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.ApprovalDocDTOData},UFIDA.U9.CS.Workflow.WorkflowBP.ApprovalDocDTOData)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ApprovalDocDTOData.m_entityType">
+            <summary>
+            单据类型
+            审批对象信息DTO.Misc.单据类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ApprovalDocDTOData.m_parentToChild">
+            <summary>
+            父对象到子对象路径
+            审批对象信息DTO.Misc.父对象到子对象路径
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ApprovalDocDTOData.m_children">
+            <summary>
+            子审批对象
+            审批对象信息DTO.Misc.子审批对象
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ApprovalDocDTOData.m_parent">
+            <summary>
+            子审批对象信息DTO
+            审批对象信息DTO.Misc.子审批对象信息DTO
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowCountDTOData">
+            <summary>
+            流程数量DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowCountDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowCountDTOData.#ctor(System.String,System.Int64,System.Int32,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowCountDTOData.m_entityType">
+            <summary>
+            单据类型
+            流程数量DTO.Misc.单据类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowCountDTOData.m_count">
+            <summary>
+            数量
+            流程数量DTO.Misc.数量
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowCountDTOData.m_instanceState">
+            <summary>
+            流程实例状态
+            流程数量DTO.Misc.流程实例状态
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowCountDTOData.m_flowStateType">
+            <summary>
+            当前活动类型
+            流程数量DTO.Misc.当前活动类型
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.ManualAssignOperatorDTOData">
+            <summary>
+            手工指定处理者DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ManualAssignOperatorDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ManualAssignOperatorDTOData.#ctor(UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData,System.Collections.Generic.List{System.Int64},System.Collections.Generic.List{System.Int64},System.String,System.Int64,System.Boolean)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ManualAssignOperatorDTOData.m_currentOperator">
+            <summary>
+            处理者
+            手工指定处理者DTO.Misc.处理者
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ManualAssignOperatorDTOData.m_userList">
+            <summary>
+            处理者下的用户
+            手工指定处理者DTO.Misc.处理者下的用户
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ManualAssignOperatorDTOData.m_rowList">
+            <summary>
+            处理的行
+            手工指定处理者DTO.Misc.处理的行
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ManualAssignOperatorDTOData.m_rowType">
+            <summary>
+            行类型
+            手工指定处理者DTO.Misc.行类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ManualAssignOperatorDTOData.m_association">
+            <summary>
+            关系标识
+            手工指定处理者DTO.Misc.关系标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ManualAssignOperatorDTOData.m_isChildEntity">
+            <summary>
+            是否是关系的子实体
+            手工指定处理者DTO.Misc.是否是关系的子实体
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.ProcessUserDTOData">
+            <summary>
+            处理者用户DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ProcessUserDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ProcessUserDTOData.#ctor(System.Int64,System.String,System.Int32,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ProcessUserDTOData.m_userID">
+            <summary>
+            处理者ID
+            处理者用户DTO.Misc.处理者ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ProcessUserDTOData.m_stateName">
+            <summary>
+            节点名称
+            处理者用户DTO.Misc.节点名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ProcessUserDTOData.m_tackState">
+            <summary>
+            处理状态
+            处理者用户DTO.Misc.处理状态
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ProcessUserDTOData.m_stateInfo">
+            <summary>
+            节点状态
+            处理者用户DTO.Misc.节点状态
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData">
+            <summary>
+            流程表单信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.#ctor(System.String,System.String,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.PartParameterData},UFIDA.U9.CS.Workflow.WorkflowBP.RefEntityDTOData,System.String,System.Int64,System.String,System.Int32,System.String,UFSoft.UBF.Business.BusinessEntity.EntityKey,System.Int32,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_partID">
+            <summary>
+            PartID
+            流程表单信息.Misc.PartID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_uRI">
+            <summary>
+            页面URI
+            流程表单信息.Misc.页面URI
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_partParameters">
+            <summary>
+            参数
+            流程表单信息.Misc.参数
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_refEntityInfo">
+            <summary>
+            关联实体元数据信息
+            流程表单信息.Misc.关联实体元数据信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_partName">
+            <summary>
+            窗体名称
+            流程表单信息.Misc.窗体名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_entityID">
+            <summary>
+            关联实体的实例ID
+            流程表单信息.Misc.关联实体的实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_entityType">
+            <summary>
+            关联实体的全名
+            流程表单信息.Misc.关联实体的全名
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_partApp">
+            <summary>
+            表单应用类型
+            流程表单信息.Misc.表单应用类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_pageID">
+            <summary>
+            页面ID
+            流程表单信息.Misc.页面ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_owner">
+            <summary>
+            表单类型
+            流程表单信息.Misc.表单类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_width">
+            <summary>
+            宽度
+            流程表单信息.Misc.宽度
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData.m_height">
+            <summary>
+            高度
+            流程表单信息.Misc.高度
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorNameDataData">
+            <summary>
+            操作者的名称 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorNameDataData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorNameDataData.#ctor(System.String,System.Int64,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorNameDataData.m_name">
+            <summary>
+            名称
+            操作者的名称.Misc.名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorNameDataData.m_iD">
+            <summary>
+            ID
+            操作者的名称.Misc.ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.OperatorNameDataData.m_type">
+            <summary>
+            类型
+            操作者的名称.Misc.类型
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData">
+            <summary>
+            自由流程处理过程信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.#ctor(System.Int64,System.String,System.DateTime,System.DateTime,System.String,UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData},System.String,System.String,UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData,System.Int64)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_userID">
+            <summary>
+            用户ID
+            自由流程处理过程信息.Misc.用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_remark">
+            <summary>
+            处理意见
+            自由流程处理过程信息.Misc.处理意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_assignTime">
+            <summary>
+            到达时间
+            自由流程处理过程信息.Misc.到达时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_doTime">
+            <summary>
+            处理时间
+            自由流程处理过程信息.Misc.处理时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_action">
+            <summary>
+            操作Code
+            自由流程处理过程信息.Misc.操作Code
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_preDoUser">
+            <summary>
+            上一处理人
+            自由流程处理过程信息.Misc.上一处理人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_nextUsers">
+            <summary>
+            加签人员信息
+            自由流程处理过程信息.Misc.加签人员信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_userName">
+            <summary>
+            处理人名称
+            自由流程处理过程信息.Misc.处理人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_actionName">
+            <summary>
+            操作名称
+            自由流程处理过程信息.Misc.操作名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_startFlowUser">
+            <summary>
+            发起人
+            自由流程处理过程信息.Misc.发起人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData.m_processTrackID">
+            <summary>
+            ProcessTrackID
+            自由流程处理过程信息.Misc.ProcessTrackID
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedEventData">
+            <summary>
+            EntityData: 流程中止事件
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedEventData.Parameter">
+            <summary>
+            流程中止数据
+            流程中止事件.Misc.流程中止数据
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.StateEnterDTOData">
+            <summary>
+            状态进入数据 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.StateEnterDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.StateEnterDTOData.#ctor(System.Guid,System.String,System.Int64,System.DateTime,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateEnterDTOData.m_instanceID">
+            <summary>
+            流程实例ID
+            状态进入数据.Misc.流程实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateEnterDTOData.m_entityType">
+            <summary>
+            关联实体类型
+            状态进入数据.Misc.关联实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateEnterDTOData.m_entityID">
+            <summary>
+            关联实体ID
+            状态进入数据.Misc.关联实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateEnterDTOData.m_enterTime">
+            <summary>
+            启动时间
+            状态进入数据.Misc.启动时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateEnterDTOData.m_stateID">
+            <summary>
+            状态ID
+            状态进入数据.Misc.状态ID
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.EmployeeArchiveIsNull">
+            <summary>
+            异常类型: 员工工作记录为空异常
+            
+             员工工作记录为空异常
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.EmployeeArchiveIsNull.#ctor(System.String,System.Int64,System.String)">
+            <summary>
+            异常类型: 员工工作记录为空异常 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.EmployeeArchiveIsNull.#ctor">
+            <summary>
+            异常类型: 员工工作记录为空异常 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.EmployeeArchiveIsNull.#ctor(System.Exception)">
+            <summary>
+            异常类型: 员工工作记录为空异常 Constructor
+            </summary>
+            <param name="innerException">InnerException</param>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.DoFlowInfoDTOData">
+            <summary>
+            流程处理信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.DoFlowInfoDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.DoFlowInfoDTOData.#ctor(System.Int64,System.String,System.DateTime,System.String,System.String,UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DoFlowInfoDTOData.m_doUserID">
+            <summary>
+            处理人ID
+            流程处理信息.Misc.处理人ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DoFlowInfoDTOData.m_doUserName">
+            <summary>
+            处理人名称
+            流程处理信息.Misc.处理人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DoFlowInfoDTOData.m_doTime">
+            <summary>
+            处理时间
+            流程处理信息.Misc.处理时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DoFlowInfoDTOData.m_action">
+            <summary>
+            处理动作
+            流程处理信息.Misc.处理动作
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DoFlowInfoDTOData.m_remark">
+            <summary>
+            处理意见
+            流程处理信息.Misc.处理意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DoFlowInfoDTOData.m_flowDefInfoDTO">
+            <summary>
+            流程定义处理信息
+            流程处理信息.Misc.流程定义处理信息
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.ColumnRightDTOData">
+            <summary>
+            字段权限列表 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ColumnRightDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ColumnRightDTOData.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ColumnRightDTOData.m_name">
+            <summary>
+            字段名称
+            字段权限列表.Misc.字段名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ColumnRightDTOData.m_colRight">
+            <summary>
+            权限
+            字段权限列表.Misc.权限
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.StateEnterEventData">
+            <summary>
+            EntityData: 状态进入事件
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.StateEnterEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.Event.StateEnterEventData.Parameter">
+            <summary>
+            状态进入数据
+            状态进入事件.Misc.状态进入数据
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.WorkflowStartEventData">
+            <summary>
+            EntityData: 流程启动事件
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowStartEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.Event.WorkflowStartEventData.Parameter">
+            <summary>
+            流程启动数据
+            流程启动事件.Misc.流程启动数据
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.MultiLgSupportDTOData">
+            <summary>
+            支持多语信息的DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.MultiLgSupportDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.MultiLgSupportDTOData.#ctor(System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.MultiLgSupportDTOData.DisplayName">
+            <summary>
+            显示名称
+            支持多语信息的DTO.Misc.显示名称
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.MultiLgSupportDTOData.Multi_DisplayName">
+            <summary>
+            多语属性: 显示名称
+            支持多语信息的DTO.Misc.显示名称
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowExceptionDTOData">
+            <summary>
+            工作流异常DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowExceptionDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowExceptionDTOData.#ctor(System.Guid,System.Int64,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowExceptionDTOData.m_flowInstance">
+            <summary>
+            流程标识
+            工作流异常DTO.Misc.流程标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowExceptionDTOData.m_userId">
+            <summary>
+            操作用户标识
+            工作流异常DTO.Misc.操作用户标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowExceptionDTOData.m_title">
+            <summary>
+            标题
+            工作流异常DTO.Misc.标题
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowExceptionDTOData.m_description">
+            <summary>
+            描述
+            工作流异常DTO.Misc.描述
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInteroperInfoDtoData">
+            <summary>
+            流程交互类信息DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInteroperInfoDtoData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInteroperInfoDtoData.#ctor(System.String,System.String,System.Byte[],System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInteroperInfoDtoData.m_assemblyName">
+            <summary>
+            交互类所在程序集
+            流程交互类信息DTO.Misc.交互类所在程序集
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInteroperInfoDtoData.m_typeFullName">
+            <summary>
+            交互类全名
+            流程交互类信息DTO.Misc.交互类全名
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInteroperInfoDtoData.m_datas">
+            <summary>
+            二进制序例化数据
+            流程交互类信息DTO.Misc.二进制序例化数据
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInteroperInfoDtoData.m_interopType">
+            <summary>
+            支持的交互类型
+            流程交互类信息DTO.Misc.支持的交互类型
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData">
+            <summary>
+            流程状态信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData.#ctor(UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData,System.String,System.DateTime,System.DateTime,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.FlowDefInfoDTOData},System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData},System.Int32,System.Int64)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData.m_defWorkflowInfoDTO">
+            <summary>
+            定义流程发起信息
+            流程状态信息.Misc.定义流程发起信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData.m_stateID">
+            <summary>
+            状态ID
+            流程状态信息.Misc.状态ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData.m_enterTime">
+            <summary>
+            进入时间
+            流程状态信息.Misc.进入时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData.m_overTime">
+            <summary>
+            结束时间
+            流程状态信息.Misc.结束时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData.m_doInfos">
+            <summary>
+            处理信息
+            流程状态信息.Misc.处理信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData.m_childFlow">
+            <summary>
+            子流程信息
+            流程状态信息.Misc.子流程信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData.m_stateType">
+            <summary>
+            状态类型
+            流程状态信息.Misc.状态类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData.m_iD">
+            <summary>
+            属性
+            流程状态信息.Misc.属性
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData">
+            <summary>
+            发起人 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData.#ctor(System.Int64,System.String,System.DateTime,System.Int64,System.String,System.String,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.FreeWorkflowDoInfoDTOData})">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData.m_userID">
+            <summary>
+            用户ID
+            发起人.Misc.用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData.m_userName">
+            <summary>
+            用户名称
+            发起人.Misc.用户名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData.m_startTime">
+            <summary>
+            发起时间
+            发起人.Misc.发起时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData.m_entityID">
+            <summary>
+            实体ID
+            发起人.Misc.实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData.m_entityType">
+            <summary>
+            实体类型
+            发起人.Misc.实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData.m_flowTitle">
+            <summary>
+            流程标题
+            发起人.Misc.流程标题
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.StartFlowUserDTOData.m_nextUsers">
+            <summary>
+            下一处理人
+            发起人.Misc.下一处理人
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.UserManagerDTOData">
+            <summary>
+            用户上级信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.UserManagerDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.UserManagerDTOData.#ctor(System.Int64,System.Int32,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserManagerDTOData.m_uID">
+            <summary>
+            上级ID
+            用户上级信息.Misc.上级ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserManagerDTOData.m_uType">
+            <summary>
+            上级类型
+            用户上级信息.Misc.上级类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserManagerDTOData.m_deptID">
+            <summary>
+            上级所在部门ID
+            用户上级信息.Misc.上级所在部门ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserManagerDTOData.m_workOrg">
+            <summary>
+            工作组织
+            用户上级信息.Misc.工作组织
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserManagerDTOData.m_businessOrg">
+            <summary>
+            业务组织
+            用户上级信息.Misc.业务组织
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData">
+            <summary>
+            流程挂起数据 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData.#ctor(System.Guid,System.String,System.Int64,System.Int64,System.DateTime,System.String,System.Boolean,System.Int64)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData.m_instanceID">
+            <summary>
+            流程实例ID
+            流程挂起数据.Misc.流程实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData.m_entityType">
+            <summary>
+            关联实体类型
+            流程挂起数据.Misc.关联实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData.m_entityID">
+            <summary>
+            关联实体ID
+            流程挂起数据.Misc.关联实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData.m_suspendUser">
+            <summary>
+            挂起用户ID
+            流程挂起数据.Misc.挂起用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData.m_suspendTime">
+            <summary>
+            启动时间
+            流程挂起数据.Misc.启动时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData.m_suspendReason">
+            <summary>
+            挂起原因
+            流程挂起数据.Misc.挂起原因
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData.m_isSuspend">
+            <summary>
+            是否挂起
+            流程挂起数据.Misc.是否挂起
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowSuspendDTOData.m_processTrackId">
+            <summary>
+            用户处理记录ID
+            流程挂起数据.Misc.用户处理记录ID
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData">
+            <summary>
+            流程中止数据 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.#ctor(System.Guid,System.String,System.Int64,System.DateTime,System.String,System.Int32,System.Int64,System.String,System.String,System.Int64,System.String,System.Int64)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_instanceID">
+            <summary>
+            流程实例ID
+            流程中止数据.Misc.流程实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_entityType">
+            <summary>
+            关联实体类型
+            流程中止数据.Misc.关联实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_entityID">
+            <summary>
+            关联实体ID
+            流程中止数据.Misc.关联实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_terminatedTime">
+            <summary>
+            启动时间
+            流程中止数据.Misc.启动时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_terminatedContent">
+            <summary>
+            中止原因
+            流程中止数据.Misc.中止原因
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_terminateType">
+            <summary>
+            中止类型
+            流程中止数据.Misc.中止类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_operateUserID">
+            <summary>
+            操作用户ID
+            流程中止数据.Misc.操作用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_operateUserCode">
+            <summary>
+            操作用户编码
+            流程中止数据.Misc.操作用户编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_operateUserName">
+            <summary>
+            操作用户名称
+            流程中止数据.Misc.操作用户名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_orgID">
+            <summary>
+            组织ID
+            流程中止数据.Misc.组织ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_orgCode">
+            <summary>
+            组织编码
+            流程中止数据.Misc.组织编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowTerminatedDTOData.m_processTrackID">
+            <summary>
+            用户处理记录ID
+            流程中止数据.Misc.用户处理记录ID
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadDTOData">
+            <summary>
+            流程撤销退回数据 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadDTOData.#ctor(System.Guid,System.String,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData},System.Int64,System.String,System.Boolean)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadDTOData.m_instanceID">
+            <summary>
+            流程实例ＩＤ
+            流程撤销退回数据.Misc.流程实例ＩＤ
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadDTOData.m_stateID">
+            <summary>
+            当前环节ＩＤ
+            流程撤销退回数据.Misc.当前环节ＩＤ
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadDTOData.m_userlist">
+            <summary>
+            用户信息
+            流程撤销退回数据.Misc.用户信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadDTOData.m_entityID">
+            <summary>
+            实体ID
+            流程撤销退回数据.Misc.实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadDTOData.m_entityType">
+            <summary>
+            实体类型
+            流程撤销退回数据.Misc.实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadDTOData.m_isUntread">
+            <summary>
+            是否退回
+            流程撤销退回数据.Misc.是否退回
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.AssignWorkflowDTOData">
+            <summary>
+            分配工作数据对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.AssignWorkflowDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.AssignWorkflowDTOData.#ctor(System.Guid,System.String,System.Int32,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData},System.Int64,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.AssignWorkflowDTOData.m_instanceID">
+            <summary>
+            流程实例ID
+            分配工作数据对象.Misc.流程实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.AssignWorkflowDTOData.m_stateID">
+            <summary>
+            当前环节ID
+            分配工作数据对象.Misc.当前环节ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.AssignWorkflowDTOData.m_doModel">
+            <summary>
+            环节处理模式
+            分配工作数据对象.Misc.环节处理模式
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.AssignWorkflowDTOData.m_userlist">
+            <summary>
+            用户信息
+            分配工作数据对象.Misc.用户信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.AssignWorkflowDTOData.m_entityID">
+            <summary>
+            实体ID
+            分配工作数据对象.Misc.实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.AssignWorkflowDTOData.m_entityType">
+            <summary>
+            实体类型
+            分配工作数据对象.Misc.实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.AssignWorkflowDTOData.m_remark">
+            <summary>
+            备注信息
+            分配工作数据对象.Misc.备注信息
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData">
+            <summary>
+            简要处理者信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.#ctor(UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData,System.String,System.Int32,System.Int32,System.Int64,System.Int32,System.Int32,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.OperatorInfoSimpleDtoData},System.Int64)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.m_flowStateInfoSimpleDto">
+            <summary>
+            简要活动信息
+            简要处理者信息.Misc.简要活动信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.m_operatorID">
+            <summary>
+            处理者定义标识
+            简要处理者信息.Misc.处理者定义标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.m_doModel">
+            <summary>
+            处理模式
+            简要处理者信息.Misc.处理模式
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.m_uType">
+            <summary>
+            用户类型
+            简要处理者信息.Misc.用户类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.m_uID">
+            <summary>
+            定义处理者ID
+            简要处理者信息.Misc.定义处理者ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.m_orderID">
+            <summary>
+            处理顺序
+            简要处理者信息.Misc.处理顺序
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.m_doFlag">
+            <summary>
+            处理信息
+            简要处理者信息.Misc.处理信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.m_processTracks">
+            <summary>
+            处理人集合
+            简要处理者信息.Misc.处理人集合
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData.m_waitingUserId">
+            <summary>
+            对应的WaitingUser标识
+            简要处理者信息.Misc.对应的WaitingUser标识
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularNameData">
+            <summary>
+            规则名称列表 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularNameData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularNameData.#ctor(System.Int64,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularNameData.m_fieldID">
+            <summary>
+            字段
+            规则名称列表.Misc.字段
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularNameData.m_regularName">
+            <summary>
+            规则名称
+            规则名称列表.Misc.规则名称
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData">
+            <summary>
+            流程结束数据 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.#ctor(System.Guid,System.String,System.Int64,System.DateTime,System.Int32,System.Int64,System.String,System.String,System.Int64,System.String,System.Int64,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_instanceID">
+            <summary>
+            流程实例ID
+            流程结束数据.Misc.流程实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_entityType">
+            <summary>
+            关联实体类型
+            流程结束数据.Misc.关联实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_entityID">
+            <summary>
+            关联实体ID
+            流程结束数据.Misc.关联实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_endTime">
+            <summary>
+            启动时间
+            流程结束数据.Misc.启动时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_approvalState">
+            <summary>
+            审批状态
+            流程结束数据.Misc.审批状态
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_operateUserID">
+            <summary>
+            操作用户ID
+            流程结束数据.Misc.操作用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_operateUserCode">
+            <summary>
+            操作用户编码
+            流程结束数据.Misc.操作用户编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_operateUserName">
+            <summary>
+            操作用户姓名
+            流程结束数据.Misc.操作用户姓名
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_orgID">
+            <summary>
+            组织ID
+            流程结束数据.Misc.组织ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_orgCode">
+            <summary>
+            组织编码
+            流程结束数据.Misc.组织编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_processTrackID">
+            <summary>
+            用户处理记录ID
+            流程结束数据.Misc.用户处理记录ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedDTOData.m_remark">
+            <summary>
+            备注信息
+            流程结束数据.Misc.备注信息
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.InteropException">
+            <summary>
+            异常类型: 流程交互操作异常
+            
+             流程交互操作异常
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.InteropException.#ctor(System.String,System.Int64,System.Int32,System.String,System.String,System.Int64,System.String)">
+            <summary>
+            异常类型: 流程交互操作异常 Constructor
+            </summary>
+            <param name="flowInstance">流程实例标识</param>
+            <param name="userId">用户标识</param>
+            <param name="interopType">交互类型</param>
+            <param name="excptionMessage">异常信息</param>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.InteropException.#ctor(System.String,System.Int64,System.Int32,System.String)">
+            <summary>
+            异常类型: 流程交互操作异常 Constructor
+            </summary>
+            <param name="flowInstance">流程实例标识</param>
+            <param name="userId">用户标识</param>
+            <param name="interopType">交互类型</param>
+            <param name="excptionMessage">异常信息</param>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.InteropException.#ctor(System.String,System.Int64,System.Int32,System.String,System.Exception)">
+            <summary>
+            异常类型: 流程交互操作异常 Constructor
+            </summary>
+            <param name="flowInstance">流程实例标识</param>
+            <param name="userId">用户标识</param>
+            <param name="interopType">交互类型</param>
+            <param name="excptionMessage">异常信息</param>
+            <param name="innerException">InnerException</param>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.InteropException.FlowInstance">
+            <summary>
+            流程实例标识
+            流程交互操作异常.Misc.流程实例标识
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.InteropException.UserId">
+            <summary>
+            用户标识
+            流程交互操作异常.Misc.用户标识
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.InteropException.InteropType">
+            <summary>
+            交互类型
+            流程交互操作异常.Misc.交互类型
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.InteropException.ExcptionMessage">
+            <summary>
+            异常信息
+            流程交互操作异常.Misc.异常信息
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.CantFindWorkflowException">
+            <summary>
+            异常类型: 选定的流程不存在
+            
+             选定的流程不存在
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.CantFindWorkflowException.#ctor(System.String,System.Int64,System.String)">
+            <summary>
+            异常类型: 选定的流程不存在 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.CantFindWorkflowException.#ctor">
+            <summary>
+            异常类型: 选定的流程不存在 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.CantFindWorkflowException.#ctor(System.Exception)">
+            <summary>
+            异常类型: 选定的流程不存在 Constructor
+            </summary>
+            <param name="innerException">InnerException</param>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData">
+            <summary>
+            表单信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.#ctor(System.String,System.String,System.String,System.Int64,System.String,System.String,UFSoft.UBF.Business.BusinessEntity.EntityKey,System.Int32,System.Int32,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.PartParameterData},UFIDA.U9.CS.Workflow.WorkflowBP.RefEntityDTOData,System.Int32,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_partID">
+            <summary>
+            PartID
+            表单信息.Misc.PartID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_uRI">
+            <summary>
+            页面URI
+            表单信息.Misc.页面URI
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_partName">
+            <summary>
+            窗体名称
+            表单信息.Misc.窗体名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_entityID">
+            <summary>
+            关联实体的实例ID
+            表单信息.Misc.关联实体的实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_entityType">
+            <summary>
+            关联实体的全名
+            表单信息.Misc.关联实体的全名
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_pageID">
+            <summary>
+            页面ID
+            表单信息.Misc.页面ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_owner">
+            <summary>
+            表单类型
+            表单信息.Misc.表单类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_width">
+            <summary>
+            宽度
+            表单信息.Misc.宽度
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_height">
+            <summary>
+            高度
+            表单信息.Misc.高度
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_partParameters">
+            <summary>
+            参数
+            表单信息.Misc.参数
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_refEntityInfo">
+            <summary>
+            关联实体元数据信息
+            表单信息.Misc.关联实体元数据信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_partApp">
+            <summary>
+            表单应用类型
+            表单信息.Misc.表单应用类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData.m_applicationID">
+            <summary>
+            应用ID
+            表单信息.Misc.应用ID
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.AttrRightDTOData">
+            <summary>
+            属性权限列表 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.AttrRightDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.AttrRightDTOData.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.AttrRightDTOData.m_uID">
+            <summary>
+            属性UID
+            属性权限列表.Misc.属性UID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.AttrRightDTOData.m_attrRight">
+            <summary>
+            属性权限值
+            属性权限列表.Misc.属性权限值
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadEventData">
+            <summary>
+            EntityData: 撤销或退回事件
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.Event.RecallOrUntreadEventData.Paramater">
+            <summary>
+            流程撤销退回数据
+            撤销或退回事件.Misc.流程撤销退回数据
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.UserDoWorkflowEventData">
+            <summary>
+            EntityData: 用户处理流程事件
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.UserDoWorkflowEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData">
+            <summary>
+            用户处理流程数据 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.#ctor(System.Guid,System.String,System.Int64,System.String,System.String,System.String,System.String,System.String,System.DateTime,System.String,System.Boolean,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.Event.RowApprovalDTOData})">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_flowInstanceID">
+            <summary>
+            流程实例ID
+            用户处理流程数据.Misc.流程实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_stateID">
+            <summary>
+            流程当前状态ID
+            用户处理流程数据.Misc.流程当前状态ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_userID">
+            <summary>
+            用户ID
+            用户处理流程数据.Misc.用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_userOPCode">
+            <summary>
+            用户操作的Code
+            用户处理流程数据.Misc.用户操作的Code
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_remark">
+            <summary>
+            用户处理意见
+            用户处理流程数据.Misc.用户处理意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_additionalInfo">
+            <summary>
+            额外信息
+            用户处理流程数据.Misc.额外信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_entityID">
+            <summary>
+            实体ID
+            用户处理流程数据.Misc.实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_entityType">
+            <summary>
+            实体类型
+            用户处理流程数据.Misc.实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_assignTime">
+            <summary>
+            分配时间
+            用户处理流程数据.Misc.分配时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_actionType">
+            <summary>
+            操作类型
+            用户处理流程数据.Misc.操作类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_isRowApproval">
+            <summary>
+            是否行审信息
+            用户处理流程数据.Misc.是否行审信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData.m_rowApprovalInfo">
+            <summary>
+            行审信息集合
+            用户处理流程数据.Misc.行审信息集合
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.UserActionNotExist">
+            <summary>
+            异常类型: 请求的用户操作记录不存在。
+            
+             请求的用户操作记录不存在。
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.UserActionNotExist.#ctor(System.String,System.Int64,System.String)">
+            <summary>
+            异常类型: 请求的用户操作记录不存在。 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.UserActionNotExist.#ctor">
+            <summary>
+            异常类型: 请求的用户操作记录不存在。 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.UserActionNotExist.#ctor(System.Exception)">
+            <summary>
+            异常类型: 请求的用户操作记录不存在。 Constructor
+            </summary>
+            <param name="innerException">InnerException</param>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData">
+            <summary>
+            简要活动信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData.#ctor(UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData,System.String,System.String,System.Int64,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.WaitingUserInfoSimpleDtoData},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData.m_flowInstanceInfoSimpleDto">
+            <summary>
+            简要流程实例信息
+            简要活动信息.Misc.简要流程实例信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData.m_stateName">
+            <summary>
+            活动标识
+            简要活动信息.Misc.活动标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData.m_stateDisplayName">
+            <summary>
+            活动名称
+            简要活动信息.Misc.活动名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData.m_flowStateId">
+            <summary>
+            标识
+            简要活动信息.Misc.标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData.m_waitingUsers">
+            <summary>
+            处理者集合
+            简要活动信息.Misc.处理者集合
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData.m_stateType">
+            <summary>
+            活动类型
+            简要活动信息.Misc.活动类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData.m_stateInfo">
+            <summary>
+            处理状态
+            简要活动信息.Misc.处理状态
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData.m_doModel">
+            <summary>
+            处理模式
+            简要活动信息.Misc.处理模式
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData">
+            <summary>
+            行信息数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.#ctor(System.Int64,System.DateTime,System.String,System.DateTime,System.String,System.Int64,System.Int64,System.String,System.Int64,System.Int64,System.Int64,System.Int64,System.String,System.String,System.DateTime,System.Int64,System.String,System.String,UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceListDTOData,UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_iD">
+            <summary>
+            ID
+            行信息数据传输对象.Key.ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_createdOn">
+            <summary>
+            创建时间
+            行信息数据传输对象.Sys.创建时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_createdBy">
+            <summary>
+            创建人
+            行信息数据传输对象.Sys.创建人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_modifiedOn">
+            <summary>
+            修改时间
+            行信息数据传输对象.Sys.修改时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_modifiedBy">
+            <summary>
+            修改人
+            行信息数据传输对象.Sys.修改人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_sysVersion">
+            <summary>
+            事务版本
+            行信息数据传输对象.Sys.事务版本
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_rowID">
+            <summary>
+            行ID
+            行信息数据传输对象.Misc.行ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_rowType">
+            <summary>
+            行类型
+            行信息数据传输对象.Misc.行类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_flowInstance">
+            <summary>
+            流程实例
+            行信息数据传输对象.Misc.流程实例
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_uID">
+            <summary>
+            处理者ID
+            行信息数据传输对象.Misc.处理者ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_flowState">
+            <summary>
+            流程运行状态信息
+            行信息数据传输对象.Misc.流程运行状态信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_waitingUser">
+            <summary>
+            等待处理的用户信息
+            行信息数据传输对象.Misc.等待处理的用户信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_action">
+            <summary>
+            动作
+            行信息数据传输对象.Misc.动作
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_rowTitle">
+            <summary>
+            行标题
+            行信息数据传输对象.Misc.行标题
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_doTime">
+            <summary>
+            处理时间
+            行信息数据传输对象.Misc.处理时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_operateUser">
+            <summary>
+            处理人
+            行信息数据传输对象.Misc.处理人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_remark">
+            <summary>
+            备注
+            行信息数据传输对象.Misc.备注
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_doContext">
+            <summary>
+            处理上下文
+            行信息数据传输对象.Misc.处理上下文
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_flowInstanceListDTO">
+            <summary>
+            流程实例列表信息
+            行信息数据传输对象.Misc.流程实例列表信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData.m_currentStateInfo">
+            <summary>
+            当前流程状态信息
+            行信息数据传输对象.Misc.当前流程状态信息
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData">
+            <summary>
+            处理者 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.#ctor(System.Int64,System.Int32,System.Int64,System.Int32,System.Int64,System.Int64,System.Int64,System.String,System.String,System.String,System.Int64,System.Boolean,System.Int64,System.Boolean,System.Boolean,System.Int32,System.Single,System.DateTime,System.DateTime,System.Int64,System.String,System.Boolean)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_uID">
+            <summary>
+            ID
+            处理者.Misc.ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_uType">
+            <summary>
+            类型
+            处理者.Misc.类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_deptID">
+            <summary>
+            部门
+            处理者.Misc.部门
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_doMode">
+            <summary>
+            处理模式
+            处理者.Misc.处理模式
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_workOrg">
+            <summary>
+            工作组织
+            处理者.Misc.工作组织
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_businessOrg">
+            <summary>
+            业务组织
+            处理者.Misc.业务组织
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_iD">
+            <summary>
+            待处理实例ID
+            处理者.Misc.待处理实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_uCode">
+            <summary>
+            处理者Code
+            处理者.Misc.处理者Code
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_operatorID">
+            <summary>
+            处理者定义ID
+            处理者.Misc.处理者定义ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_uName">
+            <summary>
+            处理人名称
+            处理者.Misc.处理人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_processTrackID">
+            <summary>
+            用户处理记录ID
+            处理者.Misc.用户处理记录ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_isAssignedUser">
+            <summary>
+            是否被加签用户
+            处理者.Misc.是否被加签用户
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_orderID">
+            <summary>
+            顺序
+            处理者.Misc.顺序
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_excludeStartUser">
+            <summary>
+            排除提交人
+            处理者.Misc.排除提交人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_excludeSourceUser">
+            <summary>
+            排除发起人
+            处理者.Misc.排除发起人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_receiveMessageType">
+            <summary>
+            接收消息类型
+            处理者.Misc.接收消息类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_timeLimit">
+            <summary>
+            处理时限
+            处理者.Misc.处理时限
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_expireTime">
+            <summary>
+            到期时间
+            处理者.Misc.到期时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_realExpireTime">
+            <summary>
+            实际到期时限
+            处理者.Misc.实际到期时限
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_workCalendar">
+            <summary>
+            工作日历
+            处理者.Misc.工作日历
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_messageCulture">
+            <summary>
+            接收消息语种
+            处理者.Misc.接收消息语种
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentOperatorDTOData.m_isJump">
+            <summary>
+            是否跳过
+            处理者.Misc.是否跳过
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.RefEntityDTOData">
+            <summary>
+            关联实体元数据信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.RefEntityDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.RefEntityDTOData.#ctor(System.String,System.String,System.String,System.Int64)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefEntityDTOData.m_entityType">
+            <summary>
+            实体全名
+            关联实体元数据信息.Misc.实体全名
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefEntityDTOData.m_entityDisplayName">
+            <summary>
+            实体显示名
+            关联实体元数据信息.Misc.实体显示名
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefEntityDTOData.m_entityUID">
+            <summary>
+            实体唯一ID
+            关联实体元数据信息.Misc.实体唯一ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.RefEntityDTOData.m_entityID">
+            <summary>
+            实体元数据ID
+            关联实体元数据信息.Misc.实体元数据ID
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData">
+            <summary>
+            流程启动数据 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData.#ctor(System.Guid,System.String,System.Int64,System.Int64,System.DateTime,System.Int64,System.String,System.Int64)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData.m_instanceID">
+            <summary>
+            流程实例GUID
+            流程启动数据.Misc.流程实例GUID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData.m_entityType">
+            <summary>
+            关联实体类型
+            流程启动数据.Misc.关联实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData.m_entityID">
+            <summary>
+            关联实体ID
+            流程启动数据.Misc.关联实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData.m_startUser">
+            <summary>
+            启动用户ID
+            流程启动数据.Misc.启动用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData.m_startTime">
+            <summary>
+            启动时间
+            流程启动数据.Misc.启动时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData.m_flowDefineID">
+            <summary>
+            流程定义ID
+            流程启动数据.Misc.流程定义ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData.m_cSContext">
+            <summary>
+            自定义信息
+            流程启动数据.Misc.自定义信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.WorkflowStartDTOData.m_flowInstance">
+            <summary>
+            流程ID
+            流程启动数据.Misc.流程ID
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateNotExist">
+            <summary>
+            异常类型: 请求的状态信息不存在。
+            
+             请求的状态信息不存在。
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateNotExist.#ctor(System.String,System.Int64,System.String)">
+            <summary>
+            异常类型: 请求的状态信息不存在。 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateNotExist.#ctor">
+            <summary>
+            异常类型: 请求的状态信息不存在。 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateNotExist.#ctor(System.Exception)">
+            <summary>
+            异常类型: 请求的状态信息不存在。 Constructor
+            </summary>
+            <param name="innerException">InnerException</param>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.TemporarilyMemoDTOData">
+            <summary>
+            暂存信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.TemporarilyMemoDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.TemporarilyMemoDTOData.#ctor(System.Int64,System.DateTime,System.String,System.String,System.Int64,System.Int64)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.TemporarilyMemoDTOData.m_oPUser">
+            <summary>
+            用户ID
+            暂存信息.Misc.用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.TemporarilyMemoDTOData.m_oPDateTime">
+            <summary>
+            暂存时间
+            暂存信息.Misc.暂存时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.TemporarilyMemoDTOData.m_memo">
+            <summary>
+            处理意见
+            暂存信息.Misc.处理意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.TemporarilyMemoDTOData.m_action">
+            <summary>
+            操作
+            暂存信息.Misc.操作
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.TemporarilyMemoDTOData.m_waitingUser">
+            <summary>
+            等待处理的用户信息
+            暂存信息.Misc.等待处理的用户信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.TemporarilyMemoDTOData.m_rowInfoID">
+            <summary>
+            行信息ID
+            暂存信息.Misc.行信息ID
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.ParentFlowInfoDTOData">
+            <summary>
+            主流程信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ParentFlowInfoDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ParentFlowInfoDTOData.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ParentFlowInfoDTOData.m_parentInsID">
+            <summary>
+            主流程ID
+            主流程信息.Misc.主流程ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ParentFlowInfoDTOData.m_ownerState">
+            <summary>
+            所属环节
+            主流程信息.Misc.所属环节
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ParentFlowInfoDTOData.m_ownerBranch">
+            <summary>
+            所属分支
+            主流程信息.Misc.所属分支
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularValueData">
+            <summary>
+            规则值列表 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularValueData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularValueData.#ctor(System.Int64,System.Object,System.String,System.Guid)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularValueData.m_fieldID">
+            <summary>
+            字段
+            规则值列表.Misc.字段
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularValueData.m_regularValue">
+            <summary>
+            规则值
+            规则值列表.Misc.规则值
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularValueData.m_fieldName">
+            <summary>
+            字段名称
+            规则值列表.Misc.字段名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.CustomFormBP.FieldRegularValueData.m_fieldUID">
+            <summary>
+            字段合局ID
+            规则值列表.Misc.字段合局ID
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.RowApprovalDTOData">
+            <summary>
+            行审信息DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.RowApprovalDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.RowApprovalDTOData.#ctor(System.Int64,System.String,System.String,System.String,UFIDA.U9.CS.Workflow.Event.UserDoDataDTOData)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RowApprovalDTOData.m_rowID">
+            <summary>
+            行ID
+            行审信息DTO.Misc.行ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RowApprovalDTOData.m_rowType">
+            <summary>
+            行类型
+            行审信息DTO.Misc.行类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RowApprovalDTOData.m_action">
+            <summary>
+            动作
+            行审信息DTO.Misc.动作
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RowApprovalDTOData.m_remark">
+            <summary>
+            备注
+            行审信息DTO.Misc.备注
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.RowApprovalDTOData.m_userDoDataDTO">
+            <summary>
+            用户处理流程数据
+            行审信息DTO.Misc.用户处理流程数据
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.WFServiceCannotVisitException">
+            <summary>
+            异常类型: 工作流服务无法访问该数据库异常
+            
+             工作流服务无法访问该数据库异常
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WFServiceCannotVisitException.#ctor(System.String,System.DateTime,System.String,System.Int64,System.String)">
+            <summary>
+            异常类型: 工作流服务无法访问该数据库异常 Constructor
+            </summary>
+            <param name="hostName">主机名</param>
+            <param name="visitTime">访问时间</param>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WFServiceCannotVisitException.#ctor(System.String,System.DateTime)">
+            <summary>
+            异常类型: 工作流服务无法访问该数据库异常 Constructor
+            </summary>
+            <param name="hostName">主机名</param>
+            <param name="visitTime">访问时间</param>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WFServiceCannotVisitException.#ctor(System.String,System.DateTime,System.Exception)">
+            <summary>
+            异常类型: 工作流服务无法访问该数据库异常 Constructor
+            </summary>
+            <param name="hostName">主机名</param>
+            <param name="visitTime">访问时间</param>
+            <param name="innerException">InnerException</param>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.WFServiceCannotVisitException.HostName">
+            <summary>
+            主机名
+            工作流服务无法访问该数据库异常.Misc.主机名
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.WFServiceCannotVisitException.VisitTime">
+            <summary>
+            访问时间
+            工作流服务无法访问该数据库异常.Misc.访问时间
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.PartParameterData">
+            <summary>
+            关联窗体参数 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.PartParameterData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.PartParameterData.#ctor(System.String,System.String,UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData,UFIDA.U9.CS.Workflow.WorkflowBP.FormDTOData)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PartParameterData.m_paraName">
+            <summary>
+            参数名称
+            关联窗体参数.Misc.参数名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PartParameterData.m_paraValue">
+            <summary>
+            参数值
+            关联窗体参数.Misc.参数值
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PartParameterData.m_refFormDTO">
+            <summary>
+            流程表单信息
+            关联窗体参数.Misc.流程表单信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.PartParameterData.m_formDTO">
+            <summary>
+            表单信息
+            关联窗体参数.Misc.表单信息
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData">
+            <summary>
+            定义流程发起信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.#ctor(System.Guid,System.Int64,System.String,System.Int64,System.String,System.DateTime,System.String,System.Int64,System.String,System.DateTime,System.String,System.String,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData},UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoDTOData,UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData,System.String,UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData,System.Int64,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_instance">
+            <summary>
+            实例ID
+            定义流程发起信息.Misc.实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_entityID">
+            <summary>
+            实体ID
+            定义流程发起信息.Misc.实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_entityType">
+            <summary>
+            实体类型
+            定义流程发起信息.Misc.实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_startUser">
+            <summary>
+            发起人ID
+            定义流程发起信息.Misc.发起人ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_statrtUserName">
+            <summary>
+            发起人名称
+            定义流程发起信息.Misc.发起人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_startTime">
+            <summary>
+            发起时间
+            定义流程发起信息.Misc.发起时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_title">
+            <summary>
+            标题
+            定义流程发起信息.Misc.标题
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_startUserORG">
+            <summary>
+            发起组织ID
+            定义流程发起信息.Misc.发起组织ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_startUserORGName">
+            <summary>
+            发起组织名称
+            定义流程发起信息.Misc.发起组织名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_closeTime">
+            <summary>
+            结束时间
+            定义流程发起信息.Misc.结束时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_defineXML">
+            <summary>
+            定义信息
+            定义流程发起信息.Misc.定义信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_memo">
+            <summary>
+            备注
+            定义流程发起信息.Misc.备注
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_flowStates">
+            <summary>
+            流转状态信息
+            定义流程发起信息.Misc.流转状态信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_flowStateInfoDTO">
+            <summary>
+            流程状态信息
+            定义流程发起信息.Misc.流程状态信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_parentFlow">
+            <summary>
+            父流程信息
+            定义流程发起信息.Misc.父流程信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_ownerBranch">
+            <summary>
+            所在分支
+            定义流程发起信息.Misc.所在分支
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_refForm">
+            <summary>
+            关联表单信息
+            定义流程发起信息.Misc.关联表单信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_defineVersion">
+            <summary>
+            流程定义版本
+            定义流程发起信息.Misc.流程定义版本
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.DefWorkflowInfoDTOData.m_innerDefineVersion">
+            <summary>
+            内部版本号
+            定义流程发起信息.Misc.内部版本号
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.Resource">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.Resource.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.WorkflowBP.Resource.Culture">
+            <summary>
+              为使用此强类型资源类的所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData">
+            <summary>
+            简要流程实例信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.#ctor(System.Guid,System.Int64,System.String,System.DateTime,System.Int32,System.String,System.String,System.Int32,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.FlowStateInfoSimpleDtoData},UFSoft.UBF.Business.BusinessEntity.EntityKey,System.Int64,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_instance">
+            <summary>
+            实例标识
+            简要流程实例信息.Misc.实例标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_instanceId">
+            <summary>
+            实例Id
+            简要流程实例信息.Misc.实例Id
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_title">
+            <summary>
+            标题
+            简要流程实例信息.Misc.标题
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_startTime">
+            <summary>
+            开始时间
+            简要流程实例信息.Misc.开始时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_state">
+            <summary>
+            状态
+            简要流程实例信息.Misc.状态
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_startUserName">
+            <summary>
+            提交人名称
+            简要流程实例信息.Misc.提交人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_startUserCode">
+            <summary>
+            提交人编码
+            简要流程实例信息.Misc.提交人编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_approvalResult">
+            <summary>
+            审批结果
+            简要流程实例信息.Misc.审批结果
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_effective">
+            <summary>
+            是否有效
+            简要流程实例信息.Misc.是否有效
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_memo">
+            <summary>
+            备注
+            简要流程实例信息.Misc.备注
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_sourceUserName">
+            <summary>
+            发起人名称
+            简要流程实例信息.Misc.发起人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_sourceUserCode">
+            <summary>
+            发起人编码
+            简要流程实例信息.Misc.发起人编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_stateName">
+            <summary>
+            状态显示名称
+            简要流程实例信息.Misc.状态显示名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_approvalResultName">
+            <summary>
+            处理结果显示名称
+            简要流程实例信息.Misc.处理结果显示名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_innerVersion">
+            <summary>
+            流程定义内部版本号
+            简要流程实例信息.Misc.流程定义内部版本号
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_flowStates">
+            <summary>
+            活动集合
+            简要流程实例信息.Misc.活动集合
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_ownerEntity">
+            <summary>
+            关联实体
+            简要流程实例信息.Misc.关联实体
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_currentFlowState">
+            <summary>
+            当前活动标识
+            简要流程实例信息.Misc.当前活动标识
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.FlowInstanceInfoSimpleDtoData.m_currentFlowStateName">
+            <summary>
+            当前活动限定名
+            简要流程实例信息.Misc.当前活动限定名
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.WFAuthorizationDTOData">
+            <summary>
+            流程授权信息DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WFAuthorizationDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WFAuthorizationDTOData.#ctor(System.Int64,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.WFStateAuthorizationDTOData})">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFAuthorizationDTOData.m_wFDefineVersion">
+            <summary>
+            流程版本
+            流程授权信息DTO.Misc.流程版本
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFAuthorizationDTOData.m_details">
+            <summary>
+            具体活动的授权信息
+            流程授权信息DTO.Misc.具体活动的授权信息
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.WFActionData">
+            <summary>
+            自定义操作 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WFActionData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WFActionData.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFActionData.m_code">
+            <summary>
+            代码
+            自定义操作.Misc.代码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFActionData.m_iD">
+            <summary>
+            定义ID
+            自定义操作.Misc.定义ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFActionData.m_target">
+            <summary>
+            目标环节ID
+            自定义操作.Misc.目标环节ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WFActionData.m_title">
+            <summary>
+            显称
+            自定义操作.Misc.显称
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData">
+            <summary>
+            流程列表信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.#ctor(System.String,System.String,System.String,System.Int64,System.DateTime,System.Int32,System.Int64,System.Int32,System.String,System.Int64,System.String,System.String,UFIDA.U9.CS.Workflow.WorkflowBP.RefFormDTOData)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_flowGID">
+            <summary>
+            流程定义唯一标示
+            流程列表信息.Misc.流程定义唯一标示
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_title">
+            <summary>
+            名称
+            流程列表信息.Misc.名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_content">
+            <summary>
+            设计信息
+            流程列表信息.Misc.设计信息
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_creatUserUser">
+            <summary>
+            定义人
+            流程列表信息.Misc.定义人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_createTime">
+            <summary>
+            定义时间
+            流程列表信息.Misc.定义时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_state">
+            <summary>
+            状态
+            流程列表信息.Misc.状态
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_defaultOrg">
+            <summary>
+            默认组织
+            流程列表信息.Misc.默认组织
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_version">
+            <summary>
+            版本号
+            流程列表信息.Misc.版本号
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_description">
+            <summary>
+            描述
+            流程列表信息.Misc.描述
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_iD">
+            <summary>
+            流程ID
+            流程列表信息.Misc.流程ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_creatUserName">
+            <summary>
+            用户名称
+            流程列表信息.Misc.用户名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_defaultOrgName">
+            <summary>
+            默认组织名称
+            流程列表信息.Misc.默认组织名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowListDTOData.m_refForm">
+            <summary>
+            关联表单信息
+            流程列表信息.Misc.关联表单信息
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.UserOrgRoleDTOData">
+            <summary>
+            用户组织角色 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.UserOrgRoleDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.UserOrgRoleDTOData.#ctor(System.Int64,System.Int64,System.Int64,System.String,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserOrgRoleDTOData.m_userID">
+            <summary>
+            用户
+            用户组织角色.Misc.用户
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserOrgRoleDTOData.m_orgID">
+            <summary>
+            组织
+            用户组织角色.Misc.组织
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserOrgRoleDTOData.m_roleID">
+            <summary>
+            角色
+            用户组织角色.Misc.角色
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserOrgRoleDTOData.m_userCode">
+            <summary>
+            用户
+            用户组织角色.Misc.用户
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserOrgRoleDTOData.m_orgCode">
+            <summary>
+            组织
+            用户组织角色.Misc.组织
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.UserOrgRoleDTOData.m_roleCode">
+            <summary>
+            角色
+            用户组织角色.Misc.角色
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.AssignWorkToUserEventData">
+            <summary>
+            EntityData: 分配工作流任务给用户
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.AssignWorkToUserEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.WorkflowResumedEventData">
+            <summary>
+            EntityData: 启动挂起流程事件
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowResumedEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.Event.WorkflowResumedEventData.Parameter">
+            <summary>
+            流程启动数据
+            启动挂起流程事件.Misc.流程启动数据
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedEventData">
+            <summary>
+            EntityData: 流程结束事件
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.CS.Workflow.Event.WorkflowCompletedEventData.Parameter">
+            <summary>
+            流程结束数据
+            流程结束事件.Misc.流程结束数据
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.StateFinishedDTOData">
+            <summary>
+            状态结束数据 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.StateFinishedDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.StateFinishedDTOData.#ctor(System.Guid,System.String,System.Int64,System.String,System.DateTime,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateFinishedDTOData.m_instanceID">
+            <summary>
+            流程实例ID
+            状态结束数据.Misc.流程实例ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateFinishedDTOData.m_entityType">
+            <summary>
+            关联实体类型
+            状态结束数据.Misc.关联实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateFinishedDTOData.m_entityID">
+            <summary>
+            关联实体ID
+            状态结束数据.Misc.关联实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateFinishedDTOData.m_stateID">
+            <summary>
+            状态ID
+            状态结束数据.Misc.状态ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateFinishedDTOData.m_finishedTime">
+            <summary>
+            结束时间
+            状态结束数据.Misc.结束时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.Event.StateFinishedDTOData.m_outAction">
+            <summary>
+            流程走向
+            状态结束数据.Misc.流程走向
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.VoteNotMatchException">
+            <summary>
+            异常类型: 所有投票都不满足
+            
+             所有投票都不满足
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.VoteNotMatchException.#ctor(System.String,System.Int64,System.String)">
+            <summary>
+            异常类型: 所有投票都不满足 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.VoteNotMatchException.#ctor">
+            <summary>
+            异常类型: 所有投票都不满足 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.VoteNotMatchException.#ctor(System.Exception)">
+            <summary>
+            异常类型: 所有投票都不满足 Constructor
+            </summary>
+            <param name="innerException">InnerException</param>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.ApproveUserDTOData">
+            <summary>
+            审批用户信息DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ApproveUserDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.ApproveUserDTOData.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ApproveUserDTOData.m_userName">
+            <summary>
+            用户名称
+            审批用户信息DTO.Misc.用户名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ApproveUserDTOData.m_mobilePhone">
+            <summary>
+            移动号码
+            审批用户信息DTO.Misc.移动号码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.ApproveUserDTOData.m_deptName">
+            <summary>
+            部门名称
+            审批用户信息DTO.Misc.部门名称
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData">
+            <summary>
+            当前流程状态信息 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.#ctor(System.String,System.Int64,System.String,System.String,System.Guid,System.String,System.Int64,System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.String,System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.WFActionData},System.Int64,System.Boolean,System.String,System.Int64,System.Boolean,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.RowInfoBEDTOData},System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{UFIDA.U9.CS.Workflow.WorkflowBP.WFActionData},System.Int64,System.String,System.Int32,System.Int32,System.Boolean,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_entityType">
+            <summary>
+            实体类型
+            当前流程状态信息.Misc.实体类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_entityID">
+            <summary>
+            实体ID
+            当前流程状态信息.Misc.实体ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_childAttributeName">
+            <summary>
+            子行字段
+            当前流程状态信息.Misc.子行字段
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_childEntityFilter">
+            <summary>
+            子行条件
+            当前流程状态信息.Misc.子行条件
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_instanceID">
+            <summary>
+            流程ID
+            当前流程状态信息.Misc.流程ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_flowDefine">
+            <summary>
+            流程定义
+            当前流程状态信息.Misc.流程定义
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_flowDefineID">
+            <summary>
+            流程定义ID
+            当前流程状态信息.Misc.流程定义ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_status">
+            <summary>
+            流程状态
+            当前流程状态信息.Misc.流程状态
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_currentState">
+            <summary>
+            当前活动
+            当前流程状态信息.Misc.当前活动
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_stateDisplayName">
+            <summary>
+            活动名称
+            当前流程状态信息.Misc.活动名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_startUserName">
+            <summary>
+            提交人名称
+            当前流程状态信息.Misc.提交人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_startTime">
+            <summary>
+            发起时间
+            当前流程状态信息.Misc.发起时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_stateName">
+            <summary>
+            当前活动ID
+            当前流程状态信息.Misc.当前活动ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_title">
+            <summary>
+            标题
+            当前流程状态信息.Misc.标题
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_mainInstance">
+            <summary>
+            主流程ID
+            当前流程状态信息.Misc.主流程ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_canTerminate">
+            <summary>
+            是否可以终止
+            当前流程状态信息.Misc.是否可以终止
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_canAssign">
+            <summary>
+            是否可以转发
+            当前流程状态信息.Misc.是否可以转发
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_canAddSign">
+            <summary>
+            是否可以加签
+            当前流程状态信息.Misc.是否可以加签
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_canUntread">
+            <summary>
+            是否可以退回
+            当前流程状态信息.Misc.是否可以退回
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_canRecall">
+            <summary>
+            是否可以撤回
+            当前流程状态信息.Misc.是否可以撤回
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_actions">
+            <summary>
+            当前动作
+            当前流程状态信息.Misc.当前动作
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_startUserID">
+            <summary>
+            提交人ID
+            当前流程状态信息.Misc.提交人ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_canDo">
+            <summary>
+            是否可以处理
+            当前流程状态信息.Misc.是否可以处理
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_sourceUserName">
+            <summary>
+            发起人名称
+            当前流程状态信息.Misc.发起人名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_sourceUserID">
+            <summary>
+            发起人ID
+            当前流程状态信息.Misc.发起人ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_isRowState">
+            <summary>
+            是否为行审节点
+            当前流程状态信息.Misc.是否为行审节点
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_rowInfoList">
+            <summary>
+            行信息集合
+            当前流程状态信息.Misc.行信息集合
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_hasProcessed">
+            <summary>
+            是否处理过
+            当前流程状态信息.Misc.是否处理过
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_canSuspend">
+            <summary>
+            是否可以挂起
+            当前流程状态信息.Misc.是否可以挂起
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_canManualAssign">
+            <summary>
+            是否能手工指定下一活动处理者
+            当前流程状态信息.Misc.是否能手工指定下一活动处理者
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_needManualAssignActions">
+            <summary>
+            需要手工指定处理者的动作
+            当前流程状态信息.Misc.需要手工指定处理者的动作
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_manualAssginUser">
+            <summary>
+            指定处理者的用户
+            当前流程状态信息.Misc.指定处理者的用户
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_manualAssignState">
+            <summary>
+            手工指定处理者的活动
+            当前流程状态信息.Misc.手工指定处理者的活动
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_innerDefineVersion">
+            <summary>
+            流程定义内部版本
+            当前流程状态信息.Misc.流程定义内部版本
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_flowDefineVersion">
+            <summary>
+            流程定义版本
+            当前流程状态信息.Misc.流程定义版本
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_canLeapfrogUntread">
+            <summary>
+            是否可以越级退回
+            当前流程状态信息.Misc.是否可以越级退回
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.CurrentStateInfoData.m_currentStateTag">
+            <summary>
+            当前活动Tag信息
+            当前流程状态信息.Misc.当前活动Tag信息
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.Event.BeforeDoWorkflowEventData">
+            <summary>
+            EntityData: 流程处理前事件
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.Event.BeforeDoWorkflowEventData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowInstanceNotExist">
+            <summary>
+            异常类型: 流程实例不存在。
+            
+             流程实例不存在，可能被中止或已经完成。
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowInstanceNotExist.#ctor(System.String,System.Int64,System.String)">
+            <summary>
+            异常类型: 流程实例不存在。 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowInstanceNotExist.#ctor">
+            <summary>
+            异常类型: 流程实例不存在。 Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowInstanceNotExist.#ctor(System.Exception)">
+            <summary>
+            异常类型: 流程实例不存在。 Constructor
+            </summary>
+            <param name="innerException">InnerException</param>
+        </member>
+        <member name="T:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowProcessLogInfoDTOData">
+            <summary>
+            WorkflowProcessLogInfoDTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowProcessLogInfoDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowProcessLogInfoDTOData.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowProcessLogInfoDTOData.m_operateUser">
+            <summary>
+            审核人
+            WorkflowProcessLogInfoDTO.Misc.审核人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowProcessLogInfoDTOData.m_action">
+            <summary>
+            审核动作
+            WorkflowProcessLogInfoDTO.Misc.审核动作
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowProcessLogInfoDTOData.m_approveOptions">
+            <summary>
+            审核意见
+            WorkflowProcessLogInfoDTO.Misc.审核意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowProcessLogInfoDTOData.m_approveTime">
+            <summary>
+            审核时间
+            WorkflowProcessLogInfoDTO.Misc.审核时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowProcessLogInfoDTOData.m_startTime">
+            <summary>
+            提交时间
+            WorkflowProcessLogInfoDTO.Misc.提交时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.CS.Workflow.WorkflowBP.WorkflowProcessLogInfoDTOData.m_entityID">
+            <summary>
+            实体ID
+            WorkflowProcessLogInfoDTO.Misc.实体ID
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UFIDA.U9.Security.SecurityBP.Deploy</name>
+    </assembly>
+    <members>
+        <member name="T:UFIDA.U9.Security.Authority.AuthorityCredentialDTOData">
+            <summary>
+            权限凭证数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AuthorityCredentialDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AuthorityCredentialDTOData.#ctor(System.Int64,System.Int64,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityCredentialDTOData.m_authorityItem">
+            <summary>
+            权限项目ID
+            权限凭证数据传输对象.Misc.权限项目ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityCredentialDTOData.m_authorityItemType">
+            <summary>
+            权限条目类别
+            权限凭证数据传输对象.Misc.权限条目类别
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityCredentialDTOData.m_opinion">
+            <summary>
+            意见
+            权限凭证数据传输对象.Misc.意见
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.AuthorityItemDTOData">
+            <summary>
+            权限条目数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AuthorityItemDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AuthorityItemDTOData.#ctor(System.Int64,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityItemDTOData.m_iD">
+            <summary>
+            权限项目ID
+            权限条目数据传输对象.Misc.权限项目ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityItemDTOData.m_authorityItemType">
+            <summary>
+            权限项目类型
+            权限条目数据传输对象.Misc.权限项目类型
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.Right_TaskDTOData">
+            <summary>
+            权限任务关联视图数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.Right_TaskDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.Right_TaskDTOData.#ctor(System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Int64,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_iD">
+            <summary>
+            ID
+            权限任务关联视图数据传输对象.Key.ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_rightId">
+            <summary>
+            RightId
+            权限任务关联视图数据传输对象.Misc.RightId
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_taskId">
+            <summary>
+            任务Id
+            权限任务关联视图数据传输对象.Misc.任务Id
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_authorityItemId">
+            <summary>
+            权限项目ID
+            权限任务关联视图数据传输对象.Misc.权限项目ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_roleId">
+            <summary>
+            角色ID
+            权限任务关联视图数据传输对象.Misc.角色ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_taskTypeId">
+            <summary>
+            任务类型Id
+            权限任务关联视图数据传输对象.Misc.任务类型Id
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_authorityItemTypeId">
+            <summary>
+            权限项目类型Id
+            权限任务关联视图数据传输对象.Misc.权限项目类型Id
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_rightAssignId">
+            <summary>
+            Id
+            权限任务关联视图数据传输对象.Misc.Id
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_orgId">
+            <summary>
+            组织ID
+            权限任务关联视图数据传输对象.Misc.组织ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_roleName">
+            <summary>
+            角色名称
+            权限任务关联视图数据传输对象.Misc.角色名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_opinion">
+            <summary>
+            意见
+            权限任务关联视图数据传输对象.Misc.意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_dynamicView">
+            <summary>
+            动态视图名称
+            权限任务关联视图数据传输对象.Misc.动态视图名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_context">
+            <summary>
+            上下文
+            权限任务关联视图数据传输对象.Misc.上下文
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_taskTypeName">
+            <summary>
+            任务类型名称
+            权限任务关联视图数据传输对象.Misc.任务类型名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_authorityItemTypeName">
+            <summary>
+            权限项目类型名称
+            权限任务关联视图数据传输对象.Misc.权限项目类型名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_dynamicViewId">
+            <summary>
+            动态视图Id
+            权限任务关联视图数据传输对象.Misc.动态视图Id
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_orgName">
+            <summary>
+            组织名称
+            权限任务关联视图数据传输对象.Misc.组织名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_orgCode">
+            <summary>
+            组织编码
+            权限任务关联视图数据传输对象.Misc.组织编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_roleCode">
+            <summary>
+            角色编码
+            权限任务关联视图数据传输对象.Misc.角色编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.Right_TaskDTOData.m_taskTypeCode">
+            <summary>
+            任务类型编码
+            权限任务关联视图数据传输对象.Misc.任务类型编码
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.MenuObjDtoData">
+            <summary>
+            Menu数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.MenuObjDtoData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.MenuObjDtoData.#ctor(System.Int64,System.String,System.String,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuObjDtoData.m_menuID">
+            <summary>
+            菜单
+            Menu数据传输对象.Misc.菜单
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuObjDtoData.m_menuCode">
+            <summary>
+            菜单编码
+            Menu数据传输对象.Misc.菜单编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuObjDtoData.m_menuName">
+            <summary>
+            菜单名称
+            Menu数据传输对象.Misc.菜单名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuObjDtoData.m_access">
+            <summary>
+            访问之意见
+            Menu数据传输对象.Misc.访问之意见
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.LeafMenuAuthorityDTOData">
+            <summary>
+            菜单权限数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.LeafMenuAuthorityDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.LeafMenuAuthorityDTOData.#ctor(System.Int64,System.Int32,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.LeafMenuAuthorityDTOData.m_iD">
+            <summary>
+            ID
+            菜单权限数据传输对象.Misc.ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.LeafMenuAuthorityDTOData.m_opinion">
+            <summary>
+            意见
+            菜单权限数据传输对象.Misc.意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.LeafMenuAuthorityDTOData.m_encoder">
+            <summary>
+            Encoder
+            菜单权限数据传输对象.Misc.Encoder
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.BPObjDtoData">
+            <summary>
+            BP数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.BPObjDtoData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.BPObjDtoData.#ctor(System.Int64,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BPObjDtoData.m_bPID">
+            <summary>
+            BP
+            BP数据传输对象.Misc.BP
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BPObjDtoData.m_bPUID">
+            <summary>
+            BPUID
+            BP数据传输对象.Misc.BPUID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BPObjDtoData.m_bPName">
+            <summary>
+            BP名称
+            BP数据传输对象.Misc.BP名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BPObjDtoData.m_excute">
+            <summary>
+            执行之意见
+            BP数据传输对象.Misc.执行之意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BPObjDtoData.m_bPFullName">
+            <summary>
+            类名
+            BP数据传输对象.Misc.类名
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.BEObjDtoData">
+            <summary>
+            BE数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.BEObjDtoData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.BEObjDtoData.#ctor(System.Int64,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int64,System.String,System.String,System.String,System.Int64,System.String,System.String,System.Int64,System.String,System.String,System.Int64,System.String,System.String,System.Int32,System.Int64,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_bEID">
+            <summary>
+            BE
+            BE数据传输对象.Misc.BE
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_bEUID">
+            <summary>
+            BEUID
+            BE数据传输对象.Misc.BEUID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_bEName">
+            <summary>
+            BE名称
+            BE数据传输对象.Misc.BE名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_bECreate">
+            <summary>
+            增加之意见
+            BE数据传输对象.Misc.增加之意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_bEDelete">
+            <summary>
+            删除之意见
+            BE数据传输对象.Misc.删除之意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_bERead">
+            <summary>
+            读取之意见
+            BE数据传输对象.Misc.读取之意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_bEUpdate">
+            <summary>
+            更新之意见
+            BE数据传输对象.Misc.更新之意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicCreateID">
+            <summary>
+            DynamicID
+            BE数据传输对象.Misc.DynamicID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicCreateCode">
+            <summary>
+            动态视图Code
+            BE数据传输对象.Misc.动态视图Code
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicCreateName">
+            <summary>
+            动态视图Name
+            BE数据传输对象.Misc.动态视图Name
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_bEFullName">
+            <summary>
+            类名
+            BE数据传输对象.Misc.类名
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicDeleteID">
+            <summary>
+            DynamicID
+            BE数据传输对象.Misc.DynamicID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicDeleteCode">
+            <summary>
+            动态视图Code
+            BE数据传输对象.Misc.动态视图Code
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicDeleteName">
+            <summary>
+            动态视图Name
+            BE数据传输对象.Misc.动态视图Name
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicUpdateID">
+            <summary>
+            DynamicID
+            BE数据传输对象.Misc.DynamicID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicUpdateCode">
+            <summary>
+            动态视图Code
+            BE数据传输对象.Misc.动态视图Code
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicUpdateName">
+            <summary>
+            动态视图Name
+            BE数据传输对象.Misc.动态视图Name
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicSearchID">
+            <summary>
+            DynamicID
+            BE数据传输对象.Misc.DynamicID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicSearchCode">
+            <summary>
+            动态视图Code
+            BE数据传输对象.Misc.动态视图Code
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicSearchName">
+            <summary>
+            动态视图Name
+            BE数据传输对象.Misc.动态视图Name
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_bEApproval">
+            <summary>
+            审核之意见
+            BE数据传输对象.Misc.审核之意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicApprovalID">
+            <summary>
+            DynamicID
+            BE数据传输对象.Misc.DynamicID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicApprovalCode">
+            <summary>
+            动态视图Code
+            BE数据传输对象.Misc.动态视图Code
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEObjDtoData.m_dynamicApprovalName">
+            <summary>
+            动态视图Name
+            BE数据传输对象.Misc.动态视图Name
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData">
+            <summary>
+            BE权限凭证数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.#ctor(System.Int64,System.Int64,System.Int32,System.Int32,System.Int32,System.Int32,UFIDA.U9.Security.Authority.DynamicViewData,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_authorityItem">
+            <summary>
+            权限项目ID
+            BE权限凭证数据传输对象.Misc.权限项目ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_authorityItemType">
+            <summary>
+            权限条目类别
+            BE权限凭证数据传输对象.Misc.权限条目类别
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_bE_Create">
+            <summary>
+            增加
+            BE权限凭证数据传输对象.Misc.增加
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_bE_Delete">
+            <summary>
+            删除
+            BE权限凭证数据传输对象.Misc.删除
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_bE_Read">
+            <summary>
+            读取
+            BE权限凭证数据传输对象.Misc.读取
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_bE_Update">
+            <summary>
+            更新
+            BE权限凭证数据传输对象.Misc.更新
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_dynamic">
+            <summary>
+            动态视图
+            BE权限凭证数据传输对象.Misc.动态视图
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_createDV">
+            <summary>
+            增加动态视图
+            BE权限凭证数据传输对象.Misc.增加动态视图
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_deleteDV">
+            <summary>
+            删除动态视图
+            BE权限凭证数据传输对象.Misc.删除动态视图
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_updateDV">
+            <summary>
+            修改动态视图
+            BE权限凭证数据传输对象.Misc.修改动态视图
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.BEAuthorityCredentialDTOData.m_readDV">
+            <summary>
+            读取动态视图
+            BE权限凭证数据传输对象.Misc.读取动态视图
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData">
+            <summary>
+            菜单权限凭证数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData.#ctor(System.Int64,System.Int64,System.String,System.String,System.String,System.Int32,System.Collections.Generic.List{UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData},System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData.m_authorityItem">
+            <summary>
+            权限项目ID
+            菜单权限凭证数据传输对象.Misc.权限项目ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData.m_authorityItemType">
+            <summary>
+            权限条目类别
+            菜单权限凭证数据传输对象.Misc.权限条目类别
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData.m_encoder">
+            <summary>
+            Encoder
+            菜单权限凭证数据传输对象.Misc.Encoder
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData.m_uRI">
+            <summary>
+            URI
+            菜单权限凭证数据传输对象.Misc.URI
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData.m_title">
+            <summary>
+            Title
+            菜单权限凭证数据传输对象.Misc.Title
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData.m_access">
+            <summary>
+            访问
+            菜单权限凭证数据传输对象.Misc.访问
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData.m_nodes">
+            <summary>
+            叶子结点集合
+            菜单权限凭证数据传输对象.Misc.叶子结点集合
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.MenuAuthorityCredentialDTOData.m_code">
+            <summary>
+            菜单编码
+            菜单权限凭证数据传输对象.Misc.菜单编码
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.FormObjDtoData">
+            <summary>
+            Form数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.FormObjDtoData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.FormObjDtoData.#ctor(System.Int64,System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormObjDtoData.m_formID">
+            <summary>
+            BP
+            Form数据传输对象.Misc.BP
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormObjDtoData.m_formUID">
+            <summary>
+            BPUID
+            Form数据传输对象.Misc.BPUID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormObjDtoData.m_fromName">
+            <summary>
+            BP名称
+            Form数据传输对象.Misc.BP名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormObjDtoData.m_access">
+            <summary>
+            访问之意见
+            Form数据传输对象.Misc.访问之意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormObjDtoData.m_individuation">
+            <summary>
+            个性化意见
+            Form数据传输对象.Misc.个性化意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormObjDtoData.m_templateAssign">
+            <summary>
+            模板分配意见
+            Form数据传输对象.Misc.模板分配意见
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.FormCredentialDTOData">
+            <summary>
+            Form权限凭证数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.FormCredentialDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.FormCredentialDTOData.#ctor(System.Int64,System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormCredentialDTOData.m_iD">
+            <summary>
+            ID
+            Form权限凭证数据传输对象.Misc.ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormCredentialDTOData.m_name">
+            <summary>
+            名称
+            Form权限凭证数据传输对象.Misc.名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormCredentialDTOData.m_taskType">
+            <summary>
+            类型
+            Form权限凭证数据传输对象.Misc.类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormCredentialDTOData.m_opinion">
+            <summary>
+            权限
+            Form权限凭证数据传输对象.Misc.权限
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormCredentialDTOData.m_uID">
+            <summary>
+            UID
+            Form权限凭证数据传输对象.Misc.UID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormCredentialDTOData.m_className">
+            <summary>
+            ClassName
+            Form权限凭证数据传输对象.Misc.ClassName
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.AuthorityAssignDTOData">
+            <summary>
+            权限设置DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.#ctor(System.Int64,System.Int32,System.Int32,System.Int64,System.Int32,System.String,System.Int64,System.Boolean,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.m_authorityItemID">
+            <summary>
+            条目
+            权限设置DTO.Misc.条目
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.m_authorityItemType">
+            <summary>
+            条目类别
+            权限设置DTO.Misc.条目类别
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.m_taskType">
+            <summary>
+            任务
+            权限设置DTO.Misc.任务
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.m_roleID">
+            <summary>
+            角色
+            权限设置DTO.Misc.角色
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.m_opinion">
+            <summary>
+            意见
+            权限设置DTO.Misc.意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.m_rightContext">
+            <summary>
+            上下文
+            权限设置DTO.Misc.上下文
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.m_dynamicViewId">
+            <summary>
+            动态视图
+            权限设置DTO.Misc.动态视图
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.m_isAdd">
+            <summary>
+            是否增加
+            权限设置DTO.Misc.是否增加
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthorityAssignDTOData.m_token">
+            <summary>
+            Token
+            权限设置DTO.Misc.Token
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.FormActionObjDTOData">
+            <summary>
+            表单动作数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.FormActionObjDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.FormActionObjDTOData.#ctor(System.Int64,System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormActionObjDTOData.m_action">
+            <summary>
+            动作ID
+            表单动作数据传输对象.Misc.动作ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormActionObjDTOData.m_actionUID">
+            <summary>
+            动作编码
+            表单动作数据传输对象.Misc.动作编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormActionObjDTOData.m_actionName">
+            <summary>
+            动作名称
+            表单动作数据传输对象.Misc.动作名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormActionObjDTOData.m_excute">
+            <summary>
+            执行
+            表单动作数据传输对象.Misc.执行
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormActionObjDTOData.m_description">
+            <summary>
+            描述
+            表单动作数据传输对象.Misc.描述
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormActionObjDTOData.m_code">
+            <summary>
+            编码
+            表单动作数据传输对象.Misc.编码
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.FormFieldObjDTOData">
+            <summary>
+            表单子段数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.FormFieldObjDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.FormFieldObjDTOData.#ctor(System.Int64,System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormFieldObjDTOData.m_fieldID">
+            <summary>
+            字段ID
+            表单子段数据传输对象.Misc.字段ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormFieldObjDTOData.m_fieldUID">
+            <summary>
+            字段UID
+            表单子段数据传输对象.Misc.字段UID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormFieldObjDTOData.m_fieldName">
+            <summary>
+            字段名称
+            表单子段数据传输对象.Misc.字段名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormFieldObjDTOData.m_display">
+            <summary>
+            显示
+            表单子段数据传输对象.Misc.显示
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormFieldObjDTOData.m_edit">
+            <summary>
+            编辑
+            表单子段数据传输对象.Misc.编辑
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.FormFieldObjDTOData.m_description">
+            <summary>
+            描述
+            表单子段数据传输对象.Misc.描述
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.PartToPageDTOData">
+            <summary>
+            Part对应Page DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.PartToPageDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.PartToPageDTOData.#ctor(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.PartToPageDTOData.m_formGUID">
+            <summary>
+            FormGUID
+            Part对应Page.Misc.FormGUID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.PartToPageDTOData.m_formClassName">
+            <summary>
+            FormClassName
+            Part对应Page.Misc.FormClassName
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.PartToPageDTOData.m_pageGUID">
+            <summary>
+            PageGUID
+            Part对应Page.Misc.PageGUID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.PartToPageDTOData.m_pageURI">
+            <summary>
+            PageURI
+            Part对应Page.Misc.PageURI
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.PartToPageDTOData.m_appID">
+            <summary>
+            AppID
+            Part对应Page.Misc.AppID
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.PageURLAuthoirtyDTOData">
+            <summary>
+            PageURL权限 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.PageURLAuthoirtyDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.PageURLAuthoirtyDTOData.#ctor(System.String,System.String,System.Collections.Generic.List{UFIDA.U9.Security.Authority.URLPareterData})">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.PageURLAuthoirtyDTOData.m_pageGUID">
+            <summary>
+            PageGUID
+            PageURL权限.Misc.PageGUID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.PageURLAuthoirtyDTOData.m_pageURI">
+            <summary>
+            PageURI
+            PageURL权限.Misc.PageURI
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.PageURLAuthoirtyDTOData.m_parameterCollection">
+            <summary>
+            ParameterCollection
+            PageURL权限.Misc.ParameterCollection
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.URLPareterData">
+            <summary>
+            URLPareter DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.URLPareterData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.URLPareterData.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.URLPareterData.m_parameterName">
+            <summary>
+            ParameterName
+            URLPareter.Misc.ParameterName
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.URLPareterData.m_paremeterValue">
+            <summary>
+            ParemeterValue
+            URLPareter.Misc.ParemeterValue
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.URLPareterData.m_opinion">
+            <summary>
+            属性
+            URLPareter.Misc.属性
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.AttributeAuthorityDTOData">
+            <summary>
+            属性权限DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AttributeAuthorityDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AttributeAuthorityDTOData.#ctor(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AttributeAuthorityDTOData.m_fullName">
+            <summary>
+            FullName
+            属性权限DTO.Misc.FullName
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AttributeAuthorityDTOData.m_notGrantColumn">
+            <summary>
+            不可访问列
+            属性权限DTO.Misc.不可访问列
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.DelegateDTOData">
+            <summary>
+            委托授权DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.DelegateDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.DelegateDTOData.#ctor(System.Int64,System.Int32,System.Int64,System.Int64,System.Int32,System.Int64,System.Int64,UFIDA.U9.Base.PropertyTypes.EffectiveData,System.String,System.Int32,System.Int64,System.String,System.Int32,System.Int64,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_authorityItemID">
+            <summary>
+            权限条目
+            委托授权DTO.Misc.权限条目
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_taskType">
+            <summary>
+            任务类型分类
+            委托授权DTO.Misc.任务类型分类
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_consignerUser">
+            <summary>
+            委托人
+            委托授权DTO.Misc.委托人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_consignerOrgID">
+            <summary>
+            委托人组织机构
+            委托授权DTO.Misc.委托人组织机构
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_delegateEnum">
+            <summary>
+            委托枚举
+            委托授权DTO.Misc.委托枚举
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_userID">
+            <summary>
+            用户ID
+            委托授权DTO.Misc.用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_orgID">
+            <summary>
+            组织ID
+            委托授权DTO.Misc.组织ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_effective">
+            <summary>
+            有效性
+            委托授权DTO.Misc.有效性
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_delegateContext">
+            <summary>
+            上下文
+            委托授权DTO.Misc.上下文
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_authorityItemType">
+            <summary>
+            权限项目类型
+            委托授权DTO.Misc.权限项目类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_roleID">
+            <summary>
+            角色ID
+            委托授权DTO.Misc.角色ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_uRL">
+            <summary>
+            URL
+            委托授权DTO.Misc.URL
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_opinion">
+            <summary>
+            意见
+            委托授权DTO.Misc.意见
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_dynamicID">
+            <summary>
+            DynamicID
+            委托授权DTO.Misc.DynamicID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.DelegateDTOData.m_fullName">
+            <summary>
+            实体名
+            委托授权DTO.Misc.实体名
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.AuthoritySearchDTOData">
+            <summary>
+            权限查询DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.#ctor(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int64,System.Int64,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_userName">
+            <summary>
+            用户名称
+            权限查询DTO.Misc.用户名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_userCode">
+            <summary>
+            用户编码
+            权限查询DTO.Misc.用户编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_roleName">
+            <summary>
+            角色名称
+            权限查询DTO.Misc.角色名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_roleCode">
+            <summary>
+            角色编码
+            权限查询DTO.Misc.角色编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_searchItemName">
+            <summary>
+            权限项名称
+            权限查询DTO.Misc.权限项名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_opinion">
+            <summary>
+            权限
+            权限查询DTO.Misc.权限
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_taskType">
+            <summary>
+            任务类型
+            权限查询DTO.Misc.任务类型
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_searchItemID">
+            <summary>
+            ItemID
+            权限查询DTO.Misc.ItemID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_dynamicID">
+            <summary>
+            动态视图ID
+            权限查询DTO.Misc.动态视图ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_dynamicName">
+            <summary>
+            动态视图名字
+            权限查询DTO.Misc.动态视图名字
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_formName">
+            <summary>
+            表单名称
+            权限查询DTO.Misc.表单名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_bEName">
+            <summary>
+            实体名称
+            权限查询DTO.Misc.实体名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AuthoritySearchDTOData.m_modelName">
+            <summary>
+            模块名称
+            权限查询DTO.Misc.模块名称
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.Authority.AssociatedEntityDTOData">
+            <summary>
+            关联实体数据传输对象 DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AssociatedEntityDTOData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Security.Authority.AssociatedEntityDTOData.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Constructor Full Argument
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AssociatedEntityDTOData.m_entityFullName">
+            <summary>
+            关联实体全名
+            关联实体数据传输对象.Misc.关联实体全名
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AssociatedEntityDTOData.m_oPath">
+            <summary>
+            条件
+            关联实体数据传输对象.Misc.条件
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Security.Authority.AssociatedEntityDTOData.m_isMustInclude">
+            <summary>
+            是否必须权限受控（组合可达实体）
+            关联实体数据传输对象.Misc.是否必须权限受控（组合可达实体）
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Security.SecurityBP.Resource">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Security.SecurityBP.Resource.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Security.SecurityBP.Resource.Culture">
+            <summary>
+              为使用此强类型资源类的所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+    </members>
+</doc>

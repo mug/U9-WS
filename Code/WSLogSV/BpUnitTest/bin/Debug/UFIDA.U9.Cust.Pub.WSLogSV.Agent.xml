@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UFIDA.U9.Cust.Pub.WSLogSV.Agent</name>
+    </assembly>
+    <members>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.Proxy.CreateWSLogSVProxy.WSLogDTO">
+            <summary>
+            服务日志DTO (该属性可为空,且无默认值)
+            创建服务日志服务.Misc.服务日志DTO
+            </summary>
+            <value>UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO</value>
+        </member>
+    </members>
+</doc>

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Web;
@@ -26,10 +25,14 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Action.Action
                 if (string.IsNullOrWhiteSpace(enterpriseID))
                     throw new U9ContextException("配置中指定为多企业，请求Headers需指定EnterpriseID");
                 contextInfo = ContextInfoManager.Instance.GetContext(enterpriseID);
+                if (contextInfo == null)
+                    throw new U9ContextException(string.Format("EnterpriseID:{0} no exists", enterpriseID));
             }
             else
             {
                 contextInfo = ContextInfoManager.Instance.GetContext();
+                if (contextInfo == null)
+                    throw new U9ContextException("no default enterprise exists");
             }
             return new ContextObject(contextInfo);
         }

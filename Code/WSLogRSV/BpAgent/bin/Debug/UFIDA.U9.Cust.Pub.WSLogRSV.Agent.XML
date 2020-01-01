@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UFIDA.U9.Cust.Pub.WSLogRSV.Agent</name>
+    </assembly>
+    <members>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogRSV.Proxy.CreateBeforeCallWSLogSVProxy.WSLogDTO">
+            <summary>
+            服务日志DTO (该属性可为空,且无默认值)
+            创建调用前日志服务.Misc.服务日志DTO
+            </summary>
+            <value>UFIDA.U9.Cust.Pub.WSLogRSV.WSLogDTO</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogRSV.Proxy.CreateAfterCallWSLogSVProxy.WSLogDTO">
+            <summary>
+            服务日志DTO (该属性可为空,且无默认值)
+            创建调用后日志服务.Misc.服务日志DTO
+            </summary>
+            <value>UFIDA.U9.Cust.Pub.WSLogRSV.WSLogDTO</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogRSV.Proxy.CreateCallWSLogSVProxy.WSLogDTO">
+            <summary>
+            服务日志DTO (该属性可为空,且无默认值)
+            创建调用日志服务.Misc.服务日志DTO
+            </summary>
+            <value>UFIDA.U9.Cust.Pub.WSLogRSV.WSLogDTO</value>
+        </member>
+    </members>
+</doc>

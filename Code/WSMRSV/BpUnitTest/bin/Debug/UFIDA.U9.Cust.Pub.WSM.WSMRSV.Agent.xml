@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UFIDA.U9.Cust.Pub.WSM.WSMRSV.Agent</name>
+    </assembly>
+    <members>
+        <member name="P:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.Proxy.SaveWSTokenSVProxy.WSTokenDTO">
+            <summary>
+            服务TokenDTO (该属性可为空,且无默认值)
+            保存Token服务.Misc.服务TokenDTO
+            </summary>
+            <value>UFIDA.U9.Cust.Pub.WSM.WSTokenSV.WSTokenDTO</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.Proxy.UpdateWSTokenExpireSVProxy.WSTokenDTO">
+            <summary>
+            服务TokenDTO (该属性可为空,且无默认值)
+            更新Token有效服务.Misc.服务TokenDTO
+            </summary>
+            <value>UFIDA.U9.Cust.Pub.WSM.WSTokenSV.WSTokenDTO</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.Proxy.WSTokenIsExpiredSVProxy.WSTokenDTO">
+            <summary>
+            服务TokenDTO (该属性可为空,且无默认值)
+            Toke是否失效服务.Misc.服务TokenDTO
+            </summary>
+            <value>UFIDA.U9.Cust.Pub.WSM.WSTokenSV.WSTokenDTO</value>
+        </member>
+    </members>
+</doc>

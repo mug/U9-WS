@@ -29,7 +29,7 @@
         <Size width="245" height="58" />
       </Class>
       <Class Editable="True" ID="70bef16a-1359-49b9-bca3-9632f9ab28cf" Type="Operation" ADID="d96368d6-25af-4d1d-81f6-a05bc4dac869">
-        <Location X="64" Y="63" />
+        <Location X="65" Y="63" />
         <Size width="238" height="58" />
       </Class>
     </Diagram>

@@ -1,0 +1,1337 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UFIDA.U9.Security.SecurityBP.Agent</name>
+    </assembly>
+    <members>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetTaskTypeByAuthorityItemTypeBPProxy.AuthorityItemID">
+            <summary>
+            权限条目ID (该属性可为空,但有默认值)
+            获得任务类别by权限条目.Misc.权限条目ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetTaskTypeByAuthorityItemTypeBPProxy.AuthorityItemType">
+            <summary>
+            权限条目类别 (该属性可为空,但有默认值)
+            获得任务类别by权限条目.Misc.权限条目类别
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItemTypeClassEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAuthorityItemsByTypeBPProxy.AuthorityItemType">
+            <summary>
+            权限项目类别 (该属性可为空,但有默认值)
+            获得权限条目集合by类型.Misc.权限项目类别
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItemTypeClassEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAuthorityItemsByTypeBPProxy.ParentItem">
+            <summary>
+            父权限项目 (该属性可为空,且无默认值)
+            获得权限条目集合by类型.Misc.父权限项目
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItemDTO</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAuthorityItemsByTypeBPProxy.IsLoadChild">
+            <summary>
+            是否装载子项目 (该属性可为空,但有默认值)
+            获得权限条目集合by类型.Misc.是否装载子项目
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AssignRightBPProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            权限指派.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AssignRightBPProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            权限指派.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AssignRightBPProxy.AuthorityItemID">
+            <summary>
+            权限条目ID (该属性可为空,但有默认值)
+            权限指派.Misc.权限条目ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AssignRightBPProxy.AuthorityItemType">
+            <summary>
+            权限条目类型 (该属性可为空,但有默认值)
+            权限指派.Misc.权限条目类型
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItemTypeClassEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AssignRightBPProxy.TaskType">
+            <summary>
+            任务类型 (该属性可为空,但有默认值)
+            权限指派.Misc.任务类型
+            </summary>
+            <value>UFIDA.U9.Security.Authority.TaskTypeStyleEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AssignRightBPProxy.Opinion">
+            <summary>
+            意见 (该属性可为空,但有默认值)
+            权限指派.Misc.意见
+            </summary>
+            <value>UFIDA.U9.Security.Authority.OpinionEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AssignRightBPProxy.IsAllowedToConsign">
+            <summary>
+            是否允许委托 (该属性可为空,但有默认值)
+            权限指派.Misc.是否允许委托
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AssignRightBPProxy.RightContext">
+            <summary>
+            上下文 (该属性可为空,且无默认值)
+            权限指派.Misc.上下文
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AssignRightBPProxy.DynamicViewId">
+            <summary>
+            动态视图ID (该属性可为空,但有默认值)
+            权限指派.Misc.动态视图ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.DepriveRightBPProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            剥夺权限.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.DepriveRightBPProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            剥夺权限.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.DepriveRightBPProxy.AuthorityItemID">
+            <summary>
+            权限条目 (该属性可为空,但有默认值)
+            剥夺权限.Misc.权限条目
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.DepriveRightBPProxy.AuthorityItemType">
+            <summary>
+            权限条目类型 (该属性可为空,但有默认值)
+            剥夺权限.Misc.权限条目类型
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItemTypeClassEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.DepriveRightBPProxy.TaskType">
+            <summary>
+            任务类型分类 (该属性可为空,但有默认值)
+            剥夺权限.Misc.任务类型分类
+            </summary>
+            <value>UFIDA.U9.Security.Authority.TaskTypeStyleEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.DepriveRightBPProxy.RightContext">
+            <summary>
+            上下文 (该属性可为空,且无默认值)
+            剥夺权限.Misc.上下文
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.DepriveRightBPProxy.Opinion">
+            <summary>
+            意见 (该属性可为空,但有默认值)
+            剥夺权限.Misc.意见
+            </summary>
+            <value>UFIDA.U9.Security.Authority.OpinionEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetRightTaskBPProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            获得权限任务关联集合.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetRightTaskBPProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            获得权限任务关联集合.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetRightTaskBPProxy.RightContext">
+            <summary>
+            上下文 (该属性可为空,且无默认值)
+            获得权限任务关联集合.Misc.上下文
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetRightTaskBPProxy.AuthorityItem">
+            <summary>
+            权限条目 (该属性可为空,且无默认值)
+            获得权限任务关联集合.Misc.权限条目
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItem</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightBPProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            检查用户权限.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightBPProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            检查用户权限.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightBPProxy.AuthorityItem">
+            <summary>
+            权限条目 (该属性可为空,且无默认值)
+            检查用户权限.Misc.权限条目
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItem</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightBPProxy.TaskType">
+            <summary>
+            任务类型 (该属性可为空,但有默认值)
+            检查用户权限.Misc.任务类型
+            </summary>
+            <value>UFIDA.U9.Security.Authority.TaskTypeStyleEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightBPProxy.RightContext">
+            <summary>
+            上下文 (该属性可为空,且无默认值)
+            检查用户权限.Misc.上下文
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightBPProxy.ItemCode">
+            <summary>
+            编码 (该属性可为空,且无默认值)
+            检查用户权限.Misc.编码
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightBPProxy.UserCode">
+            <summary>
+            用户编码 (该属性可为空,且无默认值)
+            检查用户权限.Misc.用户编码
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AddDelegateBPProxy.DelegateItems">
+            <summary>
+            委托条目集合 (该属性可为空,且无默认值)
+            增加委托.Misc.委托条目集合
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AddDelegateBPProxy.IsDeleteAction">
+            <summary>
+            是否删除动作权限 (该属性可为空,但有默认值)
+            增加委托.Misc.是否删除动作权限
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AddDelegateBPProxy.IsDeleteField">
+            <summary>
+            是否删除字段权限 (该属性可为空,但有默认值)
+            增加委托.Misc.是否删除字段权限
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.DeleteDelegateBPProxy.DelegateID">
+            <summary>
+            委托ID (该属性可为空,但有默认值)
+            删除委托.Misc.委托ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.AuthorityItemID">
+            <summary>
+            权限条目ID (该属性可为空,但有默认值)
+            更新委托.Misc.权限条目ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.TaskType">
+            <summary>
+            任务类型分类 (该属性可为空,但有默认值)
+            更新委托.Misc.任务类型分类
+            </summary>
+            <value>UFIDA.U9.Security.Authority.TaskTypeStyleEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.ConsignerUser">
+            <summary>
+            委托人 (该属性可为空,且无默认值)
+            更新委托.Misc.委托人
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.ConsignerOrgID">
+            <summary>
+            委托人组织 (该属性可为空,但有默认值)
+            更新委托.Misc.委托人组织
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.DelegateEnum">
+            <summary>
+            委托枚举 (该属性可为空,但有默认值)
+            更新委托.Misc.委托枚举
+            </summary>
+            <value>UFIDA.U9.Security.Authority.DelegateEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            更新委托.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            更新委托.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.Effective">
+            <summary>
+            有效性 (该属性可为空,且无默认值)
+            更新委托.Misc.有效性
+            </summary>
+            <value>UFIDA.U9.Base.PropertyTypes.Effective</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.DelegateID">
+            <summary>
+            委托ID (该属性可为空,但有默认值)
+            更新委托.Misc.委托ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.DelegateContext">
+            <summary>
+            上下文 (该属性可为空,且无默认值)
+            更新委托.Misc.上下文
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.AuthorityItemType">
+            <summary>
+            权限项目类型 (该属性可为空,但有默认值)
+            更新委托.Misc.权限项目类型
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItemTypeClassEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateDelegateBPProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            更新委托.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUserOrgAuthorityItemTaskBPProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            获得用户组织条目的可控权限.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUserOrgAuthorityItemTaskBPProxy.AuthorityItemType">
+            <summary>
+            权限项目类型枚 (该属性可为空,但有默认值)
+            获得用户组织条目的可控权限.Misc.权限项目类型枚
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItemTypeClassEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUserOrgAuthorityItemTaskBPProxy.ParentItem">
+            <summary>
+            父权限项目 (该属性可为空,且无默认值)
+            获得用户组织条目的可控权限.Misc.父权限项目
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItemDTO</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUserOrgAuthorityItemTaskBPProxy.IsLoadChild">
+            <summary>
+            是否装载子项目 (该属性可为空,但有默认值)
+            获得用户组织条目的可控权限.Misc.是否装载子项目
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUserOrgAuthorityItemTaskBPProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            获得用户组织条目的可控权限.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAuthorityTaskTypeListBPProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            获取用户权限条目权任务列表.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAuthorityTaskTypeListBPProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            获取用户权限条目权任务列表.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAuthorityTaskTypeListBPProxy.AuthorityItemID">
+            <summary>
+            权限条目ID (该属性可为空,但有默认值)
+            获取用户权限条目权任务列表.Misc.权限条目ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAuthorityTaskTypeListBPProxy.RightContext">
+            <summary>
+            上下文 (该属性可为空,且无默认值)
+            获取用户权限条目权任务列表.Misc.上下文
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAuthorityTaskTypeListBPProxy.AuthorityItemType">
+            <summary>
+            权限条目类别 (该属性可为空,但有默认值)
+            获取用户权限条目权任务列表.Misc.权限条目类别
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItemTypeClassEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightListBPProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            批量检查用户权限.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightListBPProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            批量检查用户权限.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightListBPProxy.TaskType">
+            <summary>
+            任务类型 (该属性可为空,但有默认值)
+            批量检查用户权限.Misc.任务类型
+            </summary>
+            <value>UFIDA.U9.Security.Authority.TaskTypeStyleEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightListBPProxy.RightContext">
+            <summary>
+            上下文 (该属性可为空,且无默认值)
+            批量检查用户权限.Misc.上下文
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightListBPProxy.AuthorityItemList">
+            <summary>
+            权限条目 (该属性可为空,且无默认值)
+            批量检查用户权限.Misc.权限条目
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckUserRightListBPProxy.AuthorityItemType">
+            <summary>
+            权限条目类型 (该属性可为空,但有默认值)
+            批量检查用户权限.Misc.权限条目类型
+            </summary>
+            <value>UFIDA.U9.Security.Authority.AuthorityItemTypeClassEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetMenuObjsProxy.Org">
+            <summary>
+            组织 (该属性可为空,但有默认值)
+            获得菜单授权项集合.Misc.组织
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetMenuObjsProxy.Role">
+            <summary>
+            角色 (该属性可为空,但有默认值)
+            获得菜单授权项集合.Misc.角色
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetMenuObjsProxy.Application">
+            <summary>
+            应用 (该属性可为空,但有默认值)
+            获得菜单授权项集合.Misc.应用
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUserLeafMenuBPProxy.UserID">
+            <summary>
+            UserID (该属性可为空,但有默认值)
+            获得用户权限菜单末级.Misc.UserID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUserLeafMenuBPProxy.OrgID">
+            <summary>
+            OrgID (该属性可为空,但有默认值)
+            获得用户权限菜单末级.Misc.OrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBPObjsProxy.Org">
+            <summary>
+            组织 (该属性可为空,但有默认值)
+            获得BP授权项集合.Misc.组织
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBPObjsProxy.Role">
+            <summary>
+            角色 (该属性可为空,但有默认值)
+            获得BP授权项集合.Misc.角色
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBPObjsProxy.Application">
+            <summary>
+            应用 (该属性可为空,但有默认值)
+            获得BP授权项集合.Misc.应用
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBPListOpthByModelProxy.ModelID">
+            <summary>
+            模块 (该属性可为空,但有默认值)
+            获得BPListOpthByModel.Misc.模块
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEListOpthByModelProxy.ModelID">
+            <summary>
+            模块 (该属性可为空,但有默认值)
+            获得BEListOpthByModel.Misc.模块
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEObjsProxy.Org">
+            <summary>
+            组织 (该属性可为空,但有默认值)
+            获得BE授权项集合.Misc.组织
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEObjsProxy.Role">
+            <summary>
+            角色 (该属性可为空,但有默认值)
+            获得BE授权项集合.Misc.角色
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEObjsProxy.Application">
+            <summary>
+            应用 (该属性可为空,但有默认值)
+            获得BE授权项集合.Misc.应用
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBECredentialBPProxy.UserID">
+            <summary>
+            UserID (该属性可为空,但有默认值)
+            获得UserOrgBE权限凭证.Misc.UserID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBECredentialBPProxy.OrgID">
+            <summary>
+            OrgID (该属性可为空,但有默认值)
+            获得UserOrgBE权限凭证.Misc.OrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetRootMenuCredentialBPProxy.UserID">
+            <summary>
+            UserID (该属性可为空,但有默认值)
+            获得一二级或三四级菜单权限凭证.Misc.UserID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetRootMenuCredentialBPProxy.OrgID">
+            <summary>
+            OrgID (该属性可为空,但有默认值)
+            获得一二级或三四级菜单权限凭证.Misc.OrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetRootMenuCredentialBPProxy.MenuID">
+            <summary>
+            菜单ID (该属性可为空,但有默认值)
+            获得一二级或三四级菜单权限凭证.Misc.菜单ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFromListOpthByModelProxy.ModelID">
+            <summary>
+            模块 (该属性可为空,但有默认值)
+            获得FromListOpthByModel.Misc.模块
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormObjsProxy.Org">
+            <summary>
+            组织 (该属性可为空,但有默认值)
+            获得Form授权项集合.Misc.组织
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormObjsProxy.Role">
+            <summary>
+            角色 (该属性可为空,但有默认值)
+            获得Form授权项集合.Misc.角色
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormObjsProxy.Application">
+            <summary>
+            应用 (该属性可为空,但有默认值)
+            获得Form授权项集合.Misc.应用
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetMenuListOpthByModelProxy.ModelID">
+            <summary>
+            模块 (该属性可为空,但有默认值)
+            获得MenuListOpthByModel.Misc.模块
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFieldListOpthByFormProxy.FormID">
+            <summary>
+            属性 (该属性可为空,但有默认值)
+            获得FieldListOpthByForm.Misc.属性
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetActionListOpthByFormProxy.FormID">
+            <summary>
+            属性 (该属性可为空,但有默认值)
+            获得ActionListOpthByForm.Misc.属性
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetUserAuthorityProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            设置用户权限.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetUserAuthorityProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            设置用户权限.Misc.角色ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetUserAuthorityProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            设置用户权限.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetUserAuthorityProxy.IsSetOrRemove">
+            <summary>
+            设置或取消 (该属性可为空,但有默认值)
+            设置用户权限.Misc.设置或取消
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetUserAuthorityProxy.UserOrgID">
+            <summary>
+            UserOrgID (该属性可为空,但有默认值)
+            设置用户权限.Misc.UserOrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.JudgeUserHasRoleProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            判断用户角色.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.JudgeUserHasRoleProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            判断用户角色.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.JudgeUserHasRoleProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            判断用户角色.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetOrgAdminAuthorityProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            设置组织管理员权限.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetOrgAdminAuthorityProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            设置组织管理员权限.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetAppAdminAuthorityProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            设置应用管理员权限.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetAppAdminAuthorityProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            设置应用管理员权限.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetAppAdminAuthorityProxy.ApplicationID">
+            <summary>
+            应用ID (该属性可为空,但有默认值)
+            设置应用管理员权限.Misc.应用ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetAppAdminAuthorityProxy.IsStart">
+            <summary>
+            是否启用 (该属性可为空,但有默认值)
+            设置应用管理员权限.Misc.是否启用
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CompilerAuthorityProxy.IsTotal">
+            <summary>
+            是否全编译 (该属性可为空,但有默认值)
+            权限编译.Misc.是否全编译
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CompilerAuthorityProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            权限编译.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CompilerAuthorityProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            权限编译.Misc.角色ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CompilerAuthorityProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            权限编译.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CompilerAuthorityProxy.AuthorityItemType">
+            <summary>
+            条目类型 (该属性可为空,但有默认值)
+            权限编译.Misc.条目类型
+            </summary>
+            <value>System.Int32</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CompilerAuthorityProxy.ApplicationID">
+            <summary>
+            应用ID (该属性可为空,但有默认值)
+            权限编译.Misc.应用ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CompilerAuthorityProxy.AuthorityItems">
+            <summary>
+            条目集合 (该属性可为空,且无默认值)
+            权限编译.Misc.条目集合
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormAuthorityBPProxy.ModelID">
+            <summary>
+            ModelID (该属性可为空,且无默认值)
+            获得Form操作权限.Misc.ModelID
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormAuthorityBPProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            获得Form操作权限.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormAuthorityBPProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            获得Form操作权限.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.BatchAssignBPProxy.AuthorityDTOList">
+            <summary>
+            权限设置集合 (该属性可为空,且无默认值)
+            批量权限设置.Misc.权限设置集合
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetRoleApplicationProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            获取角色对应应用集合.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetRoleApplicationProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            获取角色对应应用集合.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetRoleApplicationProxy.UserID">
+            <summary>
+            UserID (该属性可为空,但有默认值)
+            获取角色对应应用集合.Misc.UserID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUserAssignRoleListProxy.UserID">
+            <summary>
+            UserID (该属性可为空,但有默认值)
+            获得用户可授权角色列表.Misc.UserID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUserAssignRoleListProxy.OrgID">
+            <summary>
+            OrgID (该属性可为空,但有默认值)
+            获得用户可授权角色列表.Misc.OrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUserAssignRoleListProxy.ApplicationID">
+            <summary>
+            ApplicationID (该属性可为空,但有默认值)
+            获得用户可授权角色列表.Misc.ApplicationID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormAuthorityCredentialBPProxy.UserID">
+            <summary>
+            UserID (该属性可为空,但有默认值)
+            获取Form权限凭证.Misc.UserID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormAuthorityCredentialBPProxy.OrgID">
+            <summary>
+            OrgID (该属性可为空,但有默认值)
+            获取Form权限凭证.Misc.OrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.DeleteUserOrgAuthorityProxy.UserID">
+            <summary>
+            UserID (该属性可为空,但有默认值)
+            删除用户组织下权限.Misc.UserID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.DeleteUserOrgAuthorityProxy.OrgID">
+            <summary>
+            OrgID (该属性可为空,但有默认值)
+            删除用户组织下权限.Misc.OrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormActionObjsProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            获得GetFormActionObjs.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormActionObjsProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            获得GetFormActionObjs.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormActionObjsProxy.FormID">
+            <summary>
+            表单ID (该属性可为空,但有默认值)
+            获得GetFormActionObjs.Misc.表单ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormActionObjsProxy.ApplicationID">
+            <summary>
+            应用 (该属性可为空,但有默认值)
+            获得GetFormActionObjs.Misc.应用
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormActionObjsProxy.IsCs">
+            <summary>
+            是否协同 (该属性可为空,但有默认值)
+            获得GetFormActionObjs.Misc.是否协同
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormFieldObjsProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            获得GetFormFieldObjs.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormFieldObjsProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            获得GetFormFieldObjs.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormFieldObjsProxy.FormID">
+            <summary>
+            表单ID (该属性可为空,但有默认值)
+            获得GetFormFieldObjs.Misc.表单ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormFieldObjsProxy.ApplicationID">
+            <summary>
+            应用ID (该属性可为空,但有默认值)
+            获得GetFormFieldObjs.Misc.应用ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetFormFieldObjsProxy.IsCs">
+            <summary>
+            是否协同 (该属性可为空,但有默认值)
+            获得GetFormFieldObjs.Misc.是否协同
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetDelegateAuthorityBPProxy.Consigner">
+            <summary>
+            委托人 (该属性可为空,但有默认值)
+            获得委托权限.Misc.委托人
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetDelegateAuthorityBPProxy.DelegateUser">
+            <summary>
+            受托人 (该属性可为空,但有默认值)
+            获得委托权限.Misc.受托人
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetDelegateAuthorityBPProxy.DelegateContext">
+            <summary>
+            委托上下文 (该属性可为空,且无默认值)
+            获得委托权限.Misc.委托上下文
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetGrantFormProxy.FormItems">
+            <summary>
+            FormItems (该属性可为空,且无默认值)
+            协同获取Form权限.Misc.FormItems
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CSClearBEAuthorityProxy.OrgID">
+            <summary>
+            OrgID (该属性可为空,但有默认值)
+            协同区清除数据权限缓存.Misc.OrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CSClearBEAuthorityProxy.Users">
+            <summary>
+            Users (该属性可为空,但有默认值)
+            协同区清除数据权限缓存.Misc.Users
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEAttributeObjsProxy.OrgID">
+            <summary>
+            OrgID (该属性可为空,但有默认值)
+            获得GetBEAttributeObjs.Misc.OrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEAttributeObjsProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            获得GetBEAttributeObjs.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEAttributeObjsProxy.BEID">
+            <summary>
+            BEID (该属性可为空,但有默认值)
+            获得GetBEAttributeObjs.Misc.BEID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEAttributeObjsProxy.IsCS">
+            <summary>
+            是否协同 (该属性可为空,但有默认值)
+            获得GetBEAttributeObjs.Misc.是否协同
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEUIDProxy.BEID">
+            <summary>
+            BEID (该属性可为空,但有默认值)
+            GetBEUID.Misc.BEID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.UpdateCatchByDynamicBPProxy.DynamicID">
+            <summary>
+            动态视图ID (该属性可为空,但有默认值)
+            更新缓存by动态视图.Misc.动态视图ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckOQLValidityProxy.EntityID">
+            <summary>
+            实体ID (该属性可为空,但有默认值)
+            检查OQL合法性.Misc.实体ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckOQLValidityProxy.Opth">
+            <summary>
+            Opth (该属性可为空,且无默认值)
+            检查OQL合法性.Misc.Opth
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CheckOQLValidityProxy.DynamicID">
+            <summary>
+            DynamicID (该属性可为空,但有默认值)
+            检查OQL合法性.Misc.DynamicID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetNotGrantColumnProxy.FieldItems">
+            <summary>
+            FieldItems (该属性可为空,且无默认值)
+            协同获得BE字段权限.Misc.FieldItems
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEAttributeAuthorityProxy.UserID">
+            <summary>
+            UserID (该属性可为空,但有默认值)
+            获得BE列权限.Misc.UserID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetBEAttributeAuthorityProxy.OrgID">
+            <summary>
+            OrgID (该属性可为空,但有默认值)
+            获得BE列权限.Misc.OrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetModelIDByFormIDProxy.FormID">
+            <summary>
+            FormID (该属性可为空,但有默认值)
+            获得ModelIDBYFormID.Misc.FormID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUsersByOrgRolesProxy.Roles">
+            <summary>
+            Roles (该属性可为空,且无默认值)
+            获得User列表byOrgRoles.Misc.Roles
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetUsersByOrgRolesProxy.Org">
+            <summary>
+            组织 (该属性可为空,但有默认值)
+            获得User列表byOrgRoles.Misc.组织
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetUserDefaultAuthorityInOrgProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            设置新建用户默认权限.Misc.用户ID
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.SetUserDefaultAuthorityInOrgProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            设置新建用户默认权限.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CSGetBEAuthorityOpthBPProxy.OrgID">
+            <summary>
+            OrgID (该属性可为空,但有默认值)
+            协同获取BE原有授权权限.Misc.OrgID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CSGetBEAuthorityOpthBPProxy.UserID">
+            <summary>
+            UserID (该属性可为空,但有默认值)
+            协同获取BE原有授权权限.Misc.UserID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CSGetBEAuthorityOpthBPProxy.BEID">
+            <summary>
+            属性 (该属性可为空,但有默认值)
+            协同获取BE原有授权权限.Misc.属性
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AuthoritySearchBPProxy.UserID">
+            <summary>
+            用户ID (该属性可为空,但有默认值)
+            权限查询BP.Misc.用户ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AuthoritySearchBPProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            权限查询BP.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AuthoritySearchBPProxy.ModelID">
+            <summary>
+            模块ID (该属性可为空,但有默认值)
+            权限查询BP.Misc.模块ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AuthoritySearchBPProxy.ItemType">
+            <summary>
+            权限项类型 (该属性可为空,但有默认值)
+            权限查询BP.Misc.权限项类型
+            </summary>
+            <value>System.Int32</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AuthoritySearchBPProxy.Item">
+            <summary>
+            权限项 (该属性可为空,但有默认值)
+            权限查询BP.Misc.权限项
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AuthoritySearchBPProxy.ParentItem">
+            <summary>
+            父属性 (该属性可为空,但有默认值)
+            权限查询BP.Misc.父属性
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AuthoritySearchBPProxy.IsOnlyRole">
+            <summary>
+            查询角色授权明细 (该属性可为空,但有默认值)
+            权限查询BP.Misc.查询角色授权明细
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CopyUserPrivateAuthorityProxy.OrgID">
+            <summary>
+            组织ID (该属性可为空,但有默认值)
+            复制私有角色.Misc.组织ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CopyUserPrivateAuthorityProxy.SoruceUserID">
+            <summary>
+            源UserId (该属性可为空,但有默认值)
+            复制私有角色.Misc.源UserId
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CopyUserPrivateAuthorityProxy.ObjectUserIDs">
+            <summary>
+            目标用户ID列表 (该属性可为空,且无默认值)
+            复制私有角色.Misc.目标用户ID列表
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetModeByRoleIDProxy.RoleID">
+            <summary>
+            角色ID (该属性可为空,但有默认值)
+            根据角色ID获得应用信息.Misc.角色ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAssociatedEntityProxy.EntityFullName">
+            <summary>
+            实体全名 (该属性可为空,且无默认值)
+            获得关联实体.Misc.实体全名
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAssociatedEntityProxy.OPath">
+            <summary>
+            条件 (该属性可为空,且无默认值)
+            获得关联实体.Misc.条件
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.GetAssociatedEntityProxy.IsOnlyMainEntity">
+            <summary>
+            是否只获取主实体 (该属性可为空,且无默认值)
+            获得关联实体.Misc.是否只获取主实体
+            </summary>
+            <value>System.Boolean</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPrivateRoleAuthBPProxy.SourceOrg_SKey">
+            <summary>
+            来源组织 序列化Key属性。（传递跨组织序列列字段）
+            跨组织复制私有角色权限.Misc.来源组织
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPrivateRoleAuthBPProxy.SourceOrg">
+            <summary>
+            来源组织 (该属性可为空,且无默认值)
+            跨组织复制私有角色权限.Misc.来源组织
+            </summary>
+            <value>UFIDA.U9.Base.Organization.Organization</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPrivateRoleAuthBPProxy.SourceRole_SKey">
+            <summary>
+            来源角色 序列化Key属性。（传递跨组织序列列字段）
+            跨组织复制私有角色权限.Misc.来源角色
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPrivateRoleAuthBPProxy.SourceRole">
+            <summary>
+            来源角色 (该属性可为空,且无默认值)
+            跨组织复制私有角色权限.Misc.来源角色
+            </summary>
+            <value>UFIDA.U9.Base.UserRole.Role</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPrivateRoleAuthBPProxy.TargetOrg_SKey">
+            <summary>
+            目标组织 序列化Key属性。（传递跨组织序列列字段）
+            跨组织复制私有角色权限.Misc.目标组织
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPrivateRoleAuthBPProxy.TargetOrg">
+            <summary>
+            目标组织 (该属性可为空,且无默认值)
+            跨组织复制私有角色权限.Misc.目标组织
+            </summary>
+            <value>UFIDA.U9.Base.Organization.Organization</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPrivateRoleAuthBPProxy.TargetRoleList_SKey">
+            <summary>
+            目标角色列表 序列化Key属性集合。（传递跨组织序列列字段）
+             平台使用.开发人员不可使用该属性赋值.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPrivateRoleAuthBPProxy.TargetRoleList">
+            <summary>
+            目标角色列表 (该属性可为空,且无默认值)
+            跨组织复制私有角色权限.Misc.目标角色列表
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPublicRoleAuthBPProxy.SourceOrg_SKey">
+            <summary>
+            来源组织 序列化Key属性。（传递跨组织序列列字段）
+            跨组织复制公有角色权限.Misc.来源组织
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPublicRoleAuthBPProxy.SourceOrg">
+            <summary>
+            来源组织 (该属性可为空,且无默认值)
+            跨组织复制公有角色权限.Misc.来源组织
+            </summary>
+            <value>UFIDA.U9.Base.Organization.Organization</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPublicRoleAuthBPProxy.SourceRoleList_SKey">
+            <summary>
+            来源角色列表 序列化Key属性集合。（传递跨组织序列列字段）
+             平台使用.开发人员不可使用该属性赋值.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPublicRoleAuthBPProxy.SourceRoleList">
+            <summary>
+            来源角色列表 (该属性可为空,且无默认值)
+            跨组织复制公有角色权限.Misc.来源角色列表
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPublicRoleAuthBPProxy.TargetOrgList_SKey">
+            <summary>
+            目的组织列表 序列化Key属性集合。（传递跨组织序列列字段）
+             平台使用.开发人员不可使用该属性赋值.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.AcrossOrgCopyPublicRoleAuthBPProxy.TargetOrgList">
+            <summary>
+            目的组织列表 (该属性可为空,且无默认值)
+            跨组织复制公有角色权限.Misc.目的组织列表
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CSGetUsersByOrgMenuCodeBPProxy.MenuCode">
+            <summary>
+            菜单编码 (该属性可为空,且无默认值)
+            根据组织和菜单编码获取有权限的用户.Misc.菜单编码
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CSGetUsersByOrgMenuCodeBPProxy.Organization_SKey">
+            <summary>
+            组织 序列化Key属性。（传递跨组织序列列字段）
+            根据组织和菜单编码获取有权限的用户.Misc.组织
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Security.Authority.Proxy.CSGetUsersByOrgMenuCodeBPProxy.Organization">
+            <summary>
+            组织 (该属性可为空,且无默认值)
+            根据组织和菜单编码获取有权限的用户.Misc.组织
+            </summary>
+            <value>UFIDA.U9.Base.Organization.Organization</value>
+        </member>
+    </members>
+</doc>

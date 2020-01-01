@@ -1,0 +1,16 @@
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFIDA.U9.Cust.Pub.WSLogBP.Deploy.dll
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFIDA.U9.Cust.Pub.WSLogBP.Deploy.pdb
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFIDA.U9.Base.BaseBE.Deploy.dll
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFIDA.U9.Cust.Pub.WSLogBE.Deploy.dll
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFIDA.UBF.MD.Entity.Deploy.dll
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFSoft.UBF.ExportService.PrintReferenceBE.Deploy.dll
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFIDA.U9.Cust.Pub.WSLogBE.Deploy.pdb
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFIDA.U9.Cust.Pub.WSLogBE.Deploy.xml
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFIDA.U9.Base.BaseBE.Deploy.xml
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFIDA.UBF.MD.Entity.Deploy.xml
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\bin\Debug\UFSoft.UBF.ExportService.PrintReferenceBE.Deploy.xml
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\obj\Debug\UFIDA.U9.Cust.Pub.WSLogBP.Deploy.csprojResolveAssemblyReference.cache
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\obj\Debug\UFIDA.U9.Cust.Pub.WSLogBP.Resource.resources
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\obj\Debug\UFIDA.U9.Cust.Pub.WSLogBP.Deploy.csproj.GenerateResource.Cache
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\obj\Debug\UFIDA.U9.Cust.Pub.WSLogBP.Deploy.dll
+D:\Works\Pub_U9\38WS\Code\WSLogBP\Deploy\obj\Debug\UFIDA.U9.Cust.Pub.WSLogBP.Deploy.pdb

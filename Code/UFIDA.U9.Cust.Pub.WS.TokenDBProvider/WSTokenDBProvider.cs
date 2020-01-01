@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Specialized;
+using System.Reflection.Emit;
 using UFIDA.U9.Cust.Pub.WS.Context;
 using UFIDA.U9.Cust.Pub.WS.Token.Configuration;
 using UFIDA.U9.Cust.Pub.WS.Token.Models;
@@ -63,7 +64,8 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         {
             base.Initialize(name, config);
             _tokenSize = config["tokenSize"] == null ? DefaultTokenSize : Convert.ToInt32(config["tokenSize"]);
-            _isSameCredentialsOneToken = config["isSameCredentialsOneToken"] == null || Convert.ToBoolean(config["isSameCredentialsOneToken"]);
+            _isSameCredentialsOneToken = config["isSameCredentialsOneToken"] == null ||
+                                         Convert.ToBoolean(config["isSameCredentialsOneToken"]);
         }
 
         /// <summary>
@@ -75,7 +77,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         {
             ContextInfo contextInfo = TokenHelper.GetContextInfo(creds);
             Token token;
-            using (ContextObject contextObject = new ContextObject(contextInfo))
+            using (ContextObject context = new ContextObject(contextInfo))
             {
                 if (IsSameCredentialsOneToken)
                 {
@@ -89,7 +91,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
                         token = TransToToken(wsToken);
                         token.LastUpdateTime = DateTime.Now;
                         //更新有效期
-                        UpdateExpireImpl(token);
+                        UpdateExpire(token);
                         return token;
                     }
                 }
@@ -111,6 +113,30 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         /// <returns></returns>
         public override Token Get(string tokenStr)
         {
+            Enterprise enterprise = GetEnterpriseByTokenStr(tokenStr);
+            return Get(tokenStr, enterprise);
+        }
+
+        /// <summary>
+        /// 获取Token
+        /// </summary>
+        /// <param name="tokenStr"></param>
+        /// <param name="enterprise"></param>
+        /// <returns></returns>
+        private Token Get(string tokenStr, Enterprise enterprise)
+        {
+            using (ContextObject context = new ContextObject(enterprise))
+            {
+                WSToken wsToken =
+                    WSToken.Finder.Find(@"TokenStr = @TokenStr and IsAlive = 1",
+                        new OqlParam("TokenStr", tokenStr));
+                return wsToken == null ? null : TransToToken(wsToken);
+            }
+        }
+
+
+        private static Enterprise GetEnterpriseByTokenStr(string tokenStr)
+        {
             if (string.IsNullOrEmpty(tokenStr)) return null;
             string[] tokenArr = tokenStr.Split(TokenStrSplitSymbol);
             if (tokenArr.Length <= 1) return null;
@@ -118,13 +144,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
             Enterprise enterprise = ContextObject.GetEnterprise(enterpriseID);
             if (enterprise == null)
                 throw new TokenException(string.Format("企业:{0} 不存在!", enterpriseID));
-            using (ContextObject contextObject = new ContextObject(enterprise))
-            {
-                WSToken wsToken =
-                    WSToken.Finder.Find(@"TokenStr = @TokenStr and IsAlive = 1",
-                        new OqlParam("TokenStr", tokenStr));
-                return wsToken == null ? null : TransToToken(wsToken);
-            }
+            return enterprise;
         }
 
         /// <summary>
@@ -134,7 +154,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         /// <returns></returns>
         public override bool IsExpired(Token token)
         {
-            using (ContextObject contextObject = new ContextObject(token))
+            using (ContextObject context = new ContextObject(token))
             {
                 WSTokenIsExpiredSVProxy proxy = new WSTokenIsExpiredSVProxy();
                 proxy.WSTokenDTO = TransToWSTokenDTOData(token);
@@ -148,22 +168,13 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         /// <param name="token"></param>
         public override void UpdateExpire(Token token)
         {
-            using (ContextObject contextObject = new ContextObject(token))
+            using (ContextObject context = new ContextObject(token))
             {
-                UpdateExpireImpl(token);
+                token.LastUpdateTime = DateTime.Now;
+                UpdateWSTokenExpireSVProxy proxy = new UpdateWSTokenExpireSVProxy();
+                proxy.WSTokenDTO = TransToWSTokenDTOData(token);
+                proxy.Do();
             }
-        }
-
-        /// <summary>
-        ///     更新有效期
-        /// </summary>
-        /// <param name="token"></param>
-        private void UpdateExpireImpl(Token token)
-        {
-            token.LastUpdateTime = DateTime.Now;
-            UpdateWSTokenExpireSVProxy proxy = new UpdateWSTokenExpireSVProxy();
-            proxy.WSTokenDTO = TransToWSTokenDTOData(token);
-            proxy.Do();
         }
 
         /// <summary>

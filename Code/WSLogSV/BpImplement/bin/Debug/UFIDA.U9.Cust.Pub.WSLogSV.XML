@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UFIDA.U9.Cust.Pub.WSLogSV</name>
+    </assembly>
+    <members>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO">
+            <summary>
+            服务日志DTO DTO :自定义的数据传输类型 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.FromEntityData(UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTOData)">
+            <summary>
+            Copy Entity From EntityData
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.ToEntityData">
+            <summary>
+            Create EntityData From Entity
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.ToEntityData(UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTOData,System.Collections.IDictionary)">
+            <summary>
+            Create EntityData From Entity - used by ubf 
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.#ctor(System.String,System.String,System.String,System.DateTime,System.DateTime,System.Decimal,System.String,System.String,UFIDA.U9.Cust.Pub.WSLogBE.CallResultEnum,System.String,System.Int64,System.String)">
+            <summary>
+            Constructor with Full Argument 
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.RequestUrl">
+            <summary>
+            请求地址 (该属性可为空,且无默认值)
+            服务日志DTO.Misc.请求地址
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.ClassName">
+            <summary>
+            类名 (该属性可为空,且无默认值)
+            服务日志DTO.Misc.类名
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.MethodName">
+            <summary>
+            方法名 (该属性可为空,且无默认值)
+            服务日志DTO.Misc.方法名
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.StartTime">
+            <summary>
+            开始时间 (该属性可为空,且无默认值)
+            服务日志DTO.Misc.开始时间
+            </summary>
+            <value>System.DateTime</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.EndTime">
+            <summary>
+            结束时间 (该属性可为空,且无默认值)
+            服务日志DTO.Misc.结束时间
+            </summary>
+            <value>System.DateTime</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.ElapsedSecond">
+            <summary>
+            历时(秒) (该属性可为空,但有默认值)
+            服务日志DTO.Misc.历时(秒)
+            </summary>
+            <value>System.Decimal</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.RequestContent">
+            <summary>
+            请求内容 (该属性可为空,且无默认值)
+            服务日志DTO.Misc.请求内容
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.ResponseContent">
+            <summary>
+            返回内容 (该属性可为空,且无默认值)
+            服务日志DTO.Misc.返回内容
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.CallResult">
+            <summary>
+            调用结果 (该属性可为空,但有默认值)
+            服务日志DTO.Misc.调用结果
+            </summary>
+            <value>UFIDA.U9.Cust.Pub.WSLogBE.CallResultEnum</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.ErrorMessage">
+            <summary>
+            错误信息 (该属性可为空,且无默认值)
+            服务日志DTO.Misc.错误信息
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.LogID">
+            <summary>
+            日志ID (该属性可为空,但有默认值)
+            服务日志DTO.Misc.日志ID
+            </summary>
+            <value>System.Int64</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.MethodDescription">
+            <summary>
+            方法描述 (该属性可为空,且无默认值)
+            服务日志DTO.Misc.方法描述
+            </summary>
+            <value>System.String</value>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_TypeName">
+            <summary>
+            服务日志DTO的显示名称资源--已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_RequestUrl">
+            <summary>
+            请求地址的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_ClassName">
+            <summary>
+            类名的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_MethodName">
+            <summary>
+            方法名的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_StartTime">
+            <summary>
+            开始时间的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_EndTime">
+            <summary>
+            结束时间的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_ElapsedSecond">
+            <summary>
+            历时(秒)的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_RequestContent">
+            <summary>
+            请求内容的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_ResponseContent">
+            <summary>
+            返回内容的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_CallResult">
+            <summary>
+            调用结果的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_ErrorMessage">
+            <summary>
+            错误信息的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_LogID">
+            <summary>
+            日志ID的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.WSLogDTO.Res_MethodDescription">
+            <summary>
+            方法描述的显示名称资源 -- 已经废弃，不使用.
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogSV.CreateWSLogSV">
+            <summary>
+            创建服务日志服务 business operation
+            
+            </summary>
+            <summary>
+                CreateWSLogSV partial
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogSV.CreateWSLogSV.WSLogDTO">
+            <summary>
+            服务日志DTO	
+            创建服务日志服务.Misc.服务日志DTO
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogSV.CreateWSLogSVImpementStrategy">
+            <summary>
+                Impement Implement
+            </summary>
+        </member>
+    </members>
+</doc>

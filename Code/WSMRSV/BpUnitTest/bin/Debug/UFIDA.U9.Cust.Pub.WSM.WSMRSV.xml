@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UFIDA.U9.Cust.Pub.WSM.WSMRSV</name>
+    </assembly>
+    <members>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSMRSV.WSHelper">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSM.WSMRSV.WSHelper.GetTokenTimeoutSecond">
+            <summary>
+                获取Token操时时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.SaveWSTokenSV">
+            <summary>
+            保存Token服务 business operation
+            
+            </summary>
+            <summary>
+                SaveWSTokenSV partial
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.SaveWSTokenSV.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.SaveWSTokenSV.WSTokenDTO">
+            <summary>
+            服务TokenDTO	
+            保存Token服务.Misc.服务TokenDTO
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.SaveWSTokenSVImpementStrategy">
+            <summary>
+                Impement Implement
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.ISaveWSTokenSV">
+            <summary>
+             ISaveWSTokenSV Interface
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.SaveWSTokenSVStub">
+            <summary>
+             SaveWSTokenSVStub Class
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.UpdateWSTokenExpireSV">
+            <summary>
+            更新Token有效服务 business operation
+            
+            </summary>
+            <summary>
+                UpdateWSTokenExpireSV partial
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.UpdateWSTokenExpireSV.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.UpdateWSTokenExpireSV.WSTokenDTO">
+            <summary>
+            服务TokenDTO	
+            更新Token有效服务.Misc.服务TokenDTO
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.UpdateWSTokenExpireSVImpementStrategy">
+            <summary>
+                Impement Implement
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.IUpdateWSTokenExpireSV">
+            <summary>
+             IUpdateWSTokenExpireSV Interface
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.UpdateWSTokenExpireSVStub">
+            <summary>
+             UpdateWSTokenExpireSVStub Class
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.CleanWSTokenSV">
+            <summary>
+            清理Token超时服务 business operation
+            
+            </summary>
+            <summary>
+                CleanWSTokenSV partial
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.CleanWSTokenSV.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.CleanWSTokenSVImpementStrategy">
+            <summary>
+                Impement Implement
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.ICleanWSTokenSV">
+            <summary>
+             ICleanWSTokenSV Interface
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.CleanWSTokenSVStub">
+            <summary>
+             CleanWSTokenSVStub Class
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.WSTokenIsExpiredSV">
+            <summary>
+            Toke是否失效服务 business operation
+            
+            </summary>
+            <summary>
+                WSTokenIsExpiredSV partial
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.WSTokenIsExpiredSV.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.WSTokenIsExpiredSV.WSTokenDTO">
+            <summary>
+            服务TokenDTO	
+            Toke是否失效服务.Misc.服务TokenDTO
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.WSTokenIsExpiredSVImpementStrategy">
+            <summary>
+                Impement Implement
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.IWSTokenIsExpiredSV">
+            <summary>
+             IWSTokenIsExpiredSV Interface
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenSV.WSTokenIsExpiredSVStub">
+            <summary>
+             WSTokenIsExpiredSVStub Class
+            </summary>
+        </member>
+    </members>
+</doc>

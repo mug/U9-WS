@@ -43,10 +43,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="UBF.System, Version=25.5401.30227.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WCFService\Bin\UBF.System.dll</HintPath>
-    </Reference>
     <Reference Include="UFIDA.U9.CBO.PubSV.Deploy">
       <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.CBO.PubSV.Deploy.dll</HintPath>
     </Reference>

@@ -44,7 +44,7 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Services
             ReturnMessage<ProxyRequestObject> ret = new ReturnMessage<ProxyRequestObject>();
             ProxyRequestObject requestObject = new ProxyRequestObject();
             requestObject.ProxyRequestType = requestType;
-            requestObject.ProxyObjectJsonString = ProxyBaseToJsonString(proxyBase, requestType.MaxExpandDepth);
+            requestObject.ProxyObjectJsonString = ProxyObjectToJsonString(proxyBase, requestType.MaxExpandDepth);
             ret.Result = requestObject;
             return ret;
         }
@@ -79,7 +79,7 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Services
             object result = methodInfo.Invoke(proxyBase, null);
             ReturnMessage<string> ret = new ReturnMessage<string>();
             ret.IsSuccess = true;
-            ret.Result = result == null ? string.Empty : ObjectToJsonString(result, requestType.MaxExpandDepth);
+            ret.Result = result == null ? string.Empty : ProxyResultToJsonString(result, requestType.MaxExpandDepth);
             return ret;
         }
 
@@ -166,7 +166,7 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Services
         /// <param name="obj"></param>
         /// <param name="maxExpandDepth"></param>
         /// <returns></returns>
-        private static string ProxyBaseToJsonString(object obj, int maxExpandDepth)
+        private static string ProxyObjectToJsonString(object obj, int maxExpandDepth)
         {
             if (obj == null) return string.Empty;
             JsonSerializerSettings settings = CommServiceJsonHelper.GetJsonSerializerSettings(new ProxyBaseContractResolver());
@@ -181,7 +181,7 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Services
         /// <param name="obj"></param>
         /// <param name="maxExpandDepth"></param>
         /// <returns></returns>
-        private static string ObjectToJsonString(object obj, int maxExpandDepth)
+        private static string ProxyResultToJsonString(object obj, int maxExpandDepth)
         {
             if (obj == null) return string.Empty;
             var settings = CommServiceJsonHelper.GetDefaultJsonSerializerSettings();

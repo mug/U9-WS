@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UFIDA.U9.Cust.Pub.WSMBE.Deploy</name>
+    </assembly>
+    <members>
+        <member name="T:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData">
+            <summary>
+            服务Token 缺省DTO 
+            
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_iD">
+            <summary>
+            ID
+            服务Token.Key.ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_createdOn">
+            <summary>
+            创建时间
+            服务Token.Sys.创建时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_createdBy">
+            <summary>
+            创建人
+            服务Token.Sys.创建人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_modifiedOn">
+            <summary>
+            修改时间
+            服务Token.Sys.修改时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_modifiedBy">
+            <summary>
+            修改人
+            服务Token.Sys.修改人
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_sysVersion">
+            <summary>
+            事务版本
+            服务Token.Sys.事务版本
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_tokenStr">
+            <summary>
+            Token串
+            服务Token.Misc.Token串
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_userCode">
+            <summary>
+            用户编码
+            服务Token.Misc.用户编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_userName">
+            <summary>
+            用户名称
+            服务Token.Misc.用户名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_orgCode">
+            <summary>
+            组织编码
+            服务Token.Misc.组织编码
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_orgName">
+            <summary>
+            组织名称
+            服务Token.Misc.组织名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_lastUpdateTime">
+            <summary>
+            最后更新时间
+            服务Token.Misc.最后更新时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_isAlive">
+            <summary>
+            活动
+            服务Token.Misc.活动
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_invalidTime">
+            <summary>
+            失效时间
+            服务Token.Misc.失效时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_userID">
+            <summary>
+            用户ID
+            服务Token.Misc.用户ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_orgID">
+            <summary>
+            组织ID
+            服务Token.Misc.组织ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_enterpriseID">
+            <summary>
+            企业ID
+            服务Token.Misc.企业ID
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_enterpriseName">
+            <summary>
+            企业名称
+            服务Token.Misc.企业名称
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_createTime">
+            <summary>
+            创建时间
+            服务Token.Misc.创建时间
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_culture">
+            <summary>
+            语言
+            服务Token.Misc.语言
+            </summary>
+        </member>
+        <member name="F:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.m_supportCultureNameList">
+            <summary>
+            支持语言列表
+            服务Token.Misc.支持语言列表
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSM.WSTokenBE.WSTokenData.SysEntityType">
+            <summary>
+             实体类型. 
+             </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSMBE.Resource">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSMBE.Resource.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSMBE.Resource.Culture">
+            <summary>
+              为使用此强类型资源类的所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+    </members>
+</doc>

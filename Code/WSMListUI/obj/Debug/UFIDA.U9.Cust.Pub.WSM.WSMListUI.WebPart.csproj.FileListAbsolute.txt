@@ -1,0 +1,14 @@
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\UFIDA.U9.Cust.Pub.WSM.WSMListUI.WebPart.dll
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\UFIDA.U9.Cust.Pub.WSM.WSMListUI.WebPart.pdb
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\UBF.System.dll
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\UFSoft.UBF.UI.UIFormPersonalization.dll
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\UFSoft.UBF.UI.UIFormPersonalization.Library.dll
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\UFSoft.UBF.UI.DefaultValue.CommonService.dll
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\UFSoft.UBF.UI.UIFormPersonalization.xml
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\UFSoft.UBF.UI.UIFormPersonalization.Library.xml
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\UBF.System.xml
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\UFSoft.UBF.UI.DefaultValue.CommonService.xml
+D:\Works\Pub_U9\38WS\Code\WSMListUI\bin\Debug\zh-CN\UFSoft.UBF.UI.UIFormPersonalization.resources.dll
+D:\Works\Pub_U9\38WS\Code\WSMListUI\obj\Debug\UFIDA.U9.Cust.Pub.WSM.WSMListUI.WebPart.csprojResolveAssemblyReference.cache
+D:\Works\Pub_U9\38WS\Code\WSMListUI\obj\Debug\UFIDA.U9.Cust.Pub.WSM.WSMListUI.WebPart.dll
+D:\Works\Pub_U9\38WS\Code\WSMListUI\obj\Debug\UFIDA.U9.Cust.Pub.WSM.WSMListUI.WebPart.pdb

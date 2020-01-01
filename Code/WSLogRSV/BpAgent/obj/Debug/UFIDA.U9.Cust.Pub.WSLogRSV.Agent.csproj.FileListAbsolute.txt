@@ -1,0 +1,8 @@
+D:\Works\Pub_U9\38WS\Code\WSLogRSV\BPAgent\bin\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Agent.dll
+D:\Works\Pub_U9\38WS\Code\WSLogRSV\BPAgent\bin\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Agent.pdb
+D:\Works\Pub_U9\38WS\Code\WSLogRSV\BPAgent\bin\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Deploy.dll
+D:\Works\Pub_U9\38WS\Code\WSLogRSV\BPAgent\bin\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Deploy.pdb
+D:\Works\Pub_U9\38WS\Code\WSLogRSV\BPAgent\bin\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Deploy.xml
+D:\Works\Pub_U9\38WS\Code\WSLogRSV\BPAgent\obj\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Agent.csprojResolveAssemblyReference.cache
+D:\Works\Pub_U9\38WS\Code\WSLogRSV\BPAgent\obj\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Agent.dll
+D:\Works\Pub_U9\38WS\Code\WSLogRSV\BPAgent\obj\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Agent.pdb

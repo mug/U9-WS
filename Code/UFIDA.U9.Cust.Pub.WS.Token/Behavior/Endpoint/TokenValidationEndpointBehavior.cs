@@ -6,6 +6,7 @@ using System.ServiceModel.Dispatcher;
 using System.ServiceModel.Web;
 using UFIDA.U9.Cust.Pub.WS.Base.Models;
 using UFIDA.U9.Cust.Pub.WS.Token.Services;
+using UFIDA.U9.Cust.Pub.WS.U9Context;
 
 namespace UFIDA.U9.Cust.Pub.WS.Token.Behavior.Endpoint
 {

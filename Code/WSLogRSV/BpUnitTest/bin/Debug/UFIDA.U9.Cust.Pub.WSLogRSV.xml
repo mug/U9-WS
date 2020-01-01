@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UFIDA.U9.Cust.Pub.WSLogRSV</name>
+    </assembly>
+    <members>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.CreateBeforeCallWSLogSV">
+            <summary>
+            创建调用前日志服务 business operation
+            
+            </summary>
+            <summary>
+                CreateBeforeCallWSLogSV partial
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSLogRSV.CreateBeforeCallWSLogSV.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogRSV.CreateBeforeCallWSLogSV.WSLogDTO">
+            <summary>
+            服务日志DTO	
+            创建调用前日志服务.Misc.服务日志DTO
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.CreateBeforeCallWSLogSVImpementStrategy">
+            <summary>
+                Impement Implement
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.ICreateBeforeCallWSLogSV">
+            <summary>
+             ICreateBeforeCallWSLogSV Interface
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.CreateBeforeCallWSLogSVStub">
+            <summary>
+             CreateBeforeCallWSLogSVStub Class
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.CreateAfterCallWSLogSV">
+            <summary>
+            创建调用后日志服务 business operation
+            
+            </summary>
+            <summary>
+                CreateAfterCallWSLogSV partial
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSLogRSV.CreateAfterCallWSLogSV.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogRSV.CreateAfterCallWSLogSV.WSLogDTO">
+            <summary>
+            服务日志DTO	
+            创建调用后日志服务.Misc.服务日志DTO
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.CreateAfterCallWSLogSVImpementStrategy">
+            <summary>
+                Impement Implement
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.ICreateAfterCallWSLogSV">
+            <summary>
+             ICreateAfterCallWSLogSV Interface
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.CreateAfterCallWSLogSVStub">
+            <summary>
+             CreateAfterCallWSLogSVStub Class
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.CreateCallWSLogSV">
+            <summary>
+            创建调用日志服务 business operation
+            
+            </summary>
+            <summary>
+                CreateCallWSLogSV partial
+            </summary>
+        </member>
+        <member name="M:UFIDA.U9.Cust.Pub.WSLogRSV.CreateCallWSLogSV.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:UFIDA.U9.Cust.Pub.WSLogRSV.CreateCallWSLogSV.WSLogDTO">
+            <summary>
+            服务日志DTO	
+            创建调用日志服务.Misc.服务日志DTO
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.CreateCallWSLogSVImpementStrategy">
+            <summary>
+                Impement Implement
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.ICreateCallWSLogSV">
+            <summary>
+             ICreateCallWSLogSV Interface
+            </summary>
+        </member>
+        <member name="T:UFIDA.U9.Cust.Pub.WSLogRSV.CreateCallWSLogSVStub">
+            <summary>
+             CreateCallWSLogSVStub Class
+            </summary>
+        </member>
+    </members>
+</doc>

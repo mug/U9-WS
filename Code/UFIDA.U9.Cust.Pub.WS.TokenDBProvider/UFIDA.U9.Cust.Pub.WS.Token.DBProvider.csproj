@@ -61,7 +61,7 @@
       <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\bin\UFIDA.UBF.SystemManage.Base.dll</HintPath>
     </Reference>
     <Reference Include="UFSoft.UBF.AopFrame">
-      <HintPath>..\WCFService\Bin\UFSoft.UBF.AopFrame.dll</HintPath>
+      <HintPath>..\..\..\..\..\yonyou\U9V60\Portal\bin\UFSoft.UBF.AopFrame.dll</HintPath>
     </Reference>
     <Reference Include="UFSoft.UBF.Business">
       <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\bin\UFSoft.UBF.Business.dll</HintPath>

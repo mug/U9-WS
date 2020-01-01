@@ -9,15 +9,27 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context
 {
     /// <summary>
     ///     上下文对象
+    ///     需要注意
     /// </summary>
     public class ContextObject :IDisposable
     {
         public ContextObject(IEnterprise enterprise)
         {
-            using (new SystemWritablePolicy())
+            if (enterprise == null)
+                throw new ArgumentException("enterprise is null");
+            //Context=null时,说明没有初始化过，如果有初始化过，不再初始化
+            if (ServiceSession.Context == null)
             {
-                PlatformContext.Current.EnterpriseID = enterprise.Code;
-                PlatformContext.Current.EnterpriseName = enterprise.Name;
+                using (new SystemWritablePolicy())
+                {
+                    PlatformContext.Current.EnterpriseID = enterprise.Code;
+                    PlatformContext.Current.EnterpriseName = enterprise.Name;
+                }
+            }
+            else
+            {
+                if (PlatformContext.Current.EnterpriseID != enterprise.Code)
+                    throw new U9ContextException("同一个请求中，不允许切换不同的企业ID");
             }
             //初始化上下文
             InitContext();
@@ -25,6 +37,8 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context
 
         public ContextObject(ContextInfo contextInfo)
         {
+            if(contextInfo==null)
+                throw new ArgumentException("contextInfo is null");
             //初始化上下文
             InitContext();
             //设置上下文
