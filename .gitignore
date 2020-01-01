@@ -1,2 +1,5 @@
-Other/
+﻿Other/
 补丁文件/
+**/.vs:
+**/.bin:
+**/.obj:
