@@ -87,10 +87,10 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context
             lock (InitLock)
             {
                 if (_isInited) return;
-                Logger.Debug("U9ContextManager初始化");
+                Logger.Debug("ContextInfoManager初始化");
                 if (_contextInfoDict != null) return;
                 _contextInfoDict = new Dictionary<string, ContextInfo>();
-                U9ActionSectionGroup u9ActionSectionGroup = U9ActionSectionGroup.GetConfig();
+                U9ContextSectionGroup u9ActionSectionGroup = U9ContextSectionGroup.GetConfig();
                 if (u9ActionSectionGroup == null) return;
                 MultiEnterprise = u9ActionSectionGroup.MultiEnterprise;
                 foreach (U9ContextSection u9ContextSection in u9ActionSectionGroup.U9Contexts)

@@ -11,7 +11,7 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context
     ///     上下文对象
     ///     需要注意
     /// </summary>
-    public class ContextObject :IDisposable
+    public class ContextObject : IDisposable
     {
         public ContextObject(IEnterprise enterprise)
         {
@@ -29,7 +29,7 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context
             else
             {
                 if (PlatformContext.Current.EnterpriseID != enterprise.Code)
-                    throw new U9ContextException("同一个请求中，不允许切换不同的企业ID");
+                    throw new U9ContextException("同一个请求中，不允许切换不同的企业");
             }
             //初始化上下文
             InitContext();
@@ -37,7 +37,7 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context
 
         public ContextObject(ContextInfo contextInfo)
         {
-            if(contextInfo==null)
+            if (contextInfo == null)
                 throw new ArgumentException("contextInfo is null");
             //初始化上下文
             InitContext();

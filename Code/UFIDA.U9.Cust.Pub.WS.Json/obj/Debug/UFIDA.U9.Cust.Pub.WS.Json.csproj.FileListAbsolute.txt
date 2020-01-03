@@ -2,3 +2,4 @@ D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.Json\bin\Debug\UFIDA.U9.Cust.Pub.
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.Json\bin\Debug\UFIDA.U9.Cust.Pub.WS.Json.pdb
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.Json\obj\Debug\UFIDA.U9.Cust.Pub.WS.Json.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.Json\obj\Debug\UFIDA.U9.Cust.Pub.WS.Json.pdb
+D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.Json\obj\Debug\UFIDA.U9.Cust.Pub.WS.Json.csprojResolveAssemblyReference.cache

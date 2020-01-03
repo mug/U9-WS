@@ -7,7 +7,7 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context.Configuration
     /// <summary>
     ///     U9上下文节点配置组
     /// </summary>
-    public class U9ActionSectionGroup : ConfigurationSection
+    public class U9ContextSectionGroup : ConfigurationSection
     {
         private const string U9ActionConfigurationName = "U9Contexts";
         private ConfigurationPropertyCollection _properties;
@@ -54,14 +54,14 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context.Configuration
         ///     获取配置
         /// </summary>
         /// <returns></returns>
-        public static U9ActionSectionGroup GetConfig()
+        public static U9ContextSectionGroup GetConfig()
         {
             System.Configuration.Configuration config = ConfigurationHelper.GetConfiguration();
             if (config == null)
             {
                 throw new Exception("config is not find");
             }
-            return (U9ActionSectionGroup) config.Sections[U9ActionConfigurationName];
+            return (U9ContextSectionGroup) config.Sections[U9ActionConfigurationName];
         }
     }
 }

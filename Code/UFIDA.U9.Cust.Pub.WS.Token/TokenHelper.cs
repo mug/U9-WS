@@ -35,21 +35,21 @@ namespace UFIDA.U9.Cust.Pub.WS.Token
                 throw new TokenException(string.Format("企业:{0}不存在!", creds.EnterpriseID));
             using (ContextObject contextObject = new ContextObject(enterprise))
             {
-                User user = User.FindByCode(creds.UserCode);
-                if (user == null)
-                    throw new AuthenticationException("用户不存在或密码不正确");
-                if (!user.IsAlive)
-                    throw new AuthenticationException("用户已失效");
-                string encryptPassword = EncryptPassword(creds.Password);
-                if (encryptPassword != user.Password)
-                {
-                    throw new AuthenticationException("用户不存在或密码不正确");
-                }
                 if (string.IsNullOrWhiteSpace(creds.OrgCode))
                     throw new AuthenticationException("组织编码不能为空");
                 Organization org = Organization.FindByCode(creds.OrgCode);
                 if (org == null)
                     throw new TokenException(string.Format("组织:{0}不存在", creds.OrgCode));
+                User user = User.FindByCode(creds.UserCode);
+                if (user == null)
+                    throw new AuthenticationException("用户不存在或密码不正确");
+                string encryptPassword = EncryptPassword(creds.Password);
+                if (encryptPassword != user.Password)
+                {
+                    throw new AuthenticationException("用户不存在或密码不正确");
+                }
+                if (!user.IsAlive)
+                    throw new AuthenticationException("用户已失效");
                 return ContextInfo.GetContext(enterprise, org, user, creds.Culture,
                     creds.SupportCultureNameList);
             }

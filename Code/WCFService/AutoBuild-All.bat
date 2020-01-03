@@ -7,7 +7,7 @@ echo beging copy componet dll to portal and appserver
 copy .\AuthTokenService.svc  D:\yonyou\U9V60\Portal\ws
 copy .\CommService.svc  D:\yonyou\U9V60\Portal\ws
 copy .\TestService.svc  D:\yonyou\U9V60\Portal\ws
-copy .\Web.config  D:\yonyou\U9V60\Portal\ws
+copy .\Web-All.config  D:\yonyou\U9V60\Portal\ws\Web.config
 
 copy .\bin\UFIDA.U9.Cust.Pub.WS.Base.dll  D:\yonyou\U9V60\Portal\bin
 copy .\bin\UFIDA.U9.Cust.Pub.WS.Base.pdb  D:\yonyou\U9V60\Portal\bin

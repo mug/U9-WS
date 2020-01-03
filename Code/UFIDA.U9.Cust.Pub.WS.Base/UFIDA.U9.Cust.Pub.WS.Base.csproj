@@ -68,6 +68,7 @@
     <Compile Include="Behavior\Endpoint\Log4NetEndpointBehavior.cs" />
     <Compile Include="Behavior\WebHttp\ExtendErrorHandler.cs" />
     <Compile Include="Services\ErrorLogHttpModule.cs" />
+    <Compile Include="Services\ServiceRedirector.cs" />
     <Compile Include="Utils\ConfigurationHelper.cs" />
     <Compile Include="Utils\ServiceConstant.cs" />
     <Compile Include="Interfaces\IReturnMessage.cs" />
