@@ -1,9 +1,13 @@
 # U9-WS
 yonyou u9 restful webservice
+
 开发目的
+
    1.	简化外部系统对U9服务的调用。
    2.	增强U9服务的管理及维护功能。
+
 功能介绍
+
     1.	融合于U9系统中，不需要独立站点部署,可根据需求配置所需的功能。    
     2.	采用Newtonsoft.Json替换默认的DataContractJsonSerializer的Json转换器，解决Json日期格式、循环引用等问题 
     3.	统一对调用中出现的异常的进行处理   
