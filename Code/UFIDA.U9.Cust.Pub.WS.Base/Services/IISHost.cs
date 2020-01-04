@@ -26,26 +26,26 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Services
                 BasicHttpBinding basicHttpBinding = endpoint.Binding as BasicHttpBinding;
                 if (basicHttpBinding != null)
                 {
-                    basicHttpBinding.MaxReceivedMessageSize = 2147483647L;
-                    basicHttpBinding.MaxBufferSize = 2147483647;
-                    basicHttpBinding.MaxBufferPoolSize = 2147483647L;
-                    basicHttpBinding.ReaderQuotas.MaxStringContentLength = 2147483647;
+                    basicHttpBinding.MaxReceivedMessageSize = int.MaxValue;
+                    basicHttpBinding.MaxBufferSize = int.MaxValue;
+                    basicHttpBinding.MaxBufferPoolSize = int.MaxValue;
+                    basicHttpBinding.ReaderQuotas.MaxStringContentLength = int.MaxValue;
                 }
                 WebHttpBinding webHttpBinding = endpoint.Binding as WebHttpBinding;
                 if (webHttpBinding != null)
                 {
-                    webHttpBinding.MaxReceivedMessageSize = 2147483647L;
-                    webHttpBinding.MaxBufferSize = 2147483647;
-                    webHttpBinding.MaxBufferPoolSize = 2147483647L;
-                    webHttpBinding.ReaderQuotas.MaxStringContentLength = 2147483647;
+                    webHttpBinding.MaxReceivedMessageSize = int.MaxValue;
+                    webHttpBinding.MaxBufferSize = int.MaxValue;
+                    webHttpBinding.MaxBufferPoolSize = int.MaxValue;
+                    webHttpBinding.ReaderQuotas.MaxStringContentLength = int.MaxValue;
                 }
             }
             if (Description.Behaviors.Find<ServiceThrottlingBehavior>() == null)
             {
                 ServiceThrottlingBehavior item = new ServiceThrottlingBehavior
                 {
-                    MaxConcurrentCalls = 2147483647,
-                    MaxConcurrentSessions = 2147483647
+                    MaxConcurrentCalls = int.MaxValue,
+                    MaxConcurrentSessions = int.MaxValue
                 };
                 Description.Behaviors.Add(item);
             }

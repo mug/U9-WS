@@ -17,26 +17,26 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Json
     {
         protected override List<MemberInfo> GetSerializableMembers(Type objectType)
         {
-            var ignoreSerializableAttribute = this.IgnoreSerializableAttribute;
-            var objectMemberSerialization = JsonTypeReflector.GetObjectMemberSerialization(objectType,
+            bool ignoreSerializableAttribute = this.IgnoreSerializableAttribute;
+            MemberSerialization objectMemberSerialization = JsonTypeReflector.GetObjectMemberSerialization(objectType,
                 ignoreSerializableAttribute);
-            var allMembers = (
+            List<MemberInfo> allMembers = (
                 from m in
                     ReflectionUtils.GetFieldsAndProperties(objectType,
                         BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
                 where
                     !ReflectionUtils.IsIndexedProperty(m)
                 select m).ToList();
-            var serializableMembers = new List<MemberInfo>();
+            List<MemberInfo> serializableMembers = new List<MemberInfo>();
             if (objectMemberSerialization != MemberSerialization.Fields)
             {
-                var dataContractAttribute = JsonTypeReflector.GetDataContractAttribute(objectType);
-                var defaultMembers = (
+                DataContractAttribute dataContractAttribute = JsonTypeReflector.GetDataContractAttribute(objectType);
+                List<MemberInfo> defaultMembers = (
                     from m in ReflectionUtils.GetFieldsAndProperties(objectType, this.DefaultMembersSearchFlags)
                     where
                         !ReflectionUtils.IsIndexedProperty(m)
                     select m).ToList();
-                foreach (var memberInfo in allMembers)
+                foreach (MemberInfo memberInfo in allMembers)
                 {
                     //DataTransObjectBase
                     if (memberInfo.DeclaringType == typeof (DataTransObjectBase))
@@ -116,14 +116,14 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Json
             }
             else
             {
-                foreach (var current2 in allMembers)
+                foreach (MemberInfo member in allMembers)
                 {
-                    var fieldInfo = current2 as FieldInfo;
+                    var fieldInfo = member as FieldInfo;
                     if (fieldInfo != null && !fieldInfo.IsStatic)
                     {
                         var memberName = fieldInfo.Name.ToLower(CultureInfo.CurrentCulture);
                         if (memberName == "sysstate" || memberName.StartsWith("multi_")) continue;
-                        serializableMembers.Add(current2);
+                        serializableMembers.Add(member);
                     }
                 }
             }

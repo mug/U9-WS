@@ -26,6 +26,14 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.Endpoint
             {
                 Uri requestUri = request.Headers.To;
                 sb.AppendFormat("请求地址:{0}", requestUri).AppendLine();
+                OperationContext context = OperationContext.Current;
+                MessageProperties prop = context.IncomingMessageProperties;
+                RemoteEndpointMessageProperty endpoint =
+                    prop[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
+                if (endpoint != null)
+                {
+                    sb.AppendFormat("请求IP:{0}", endpoint.Address).AppendLine();
+                }
                 HttpRequestMessageProperty httpReq =
                     (HttpRequestMessageProperty) request.Properties[HttpRequestMessageProperty.Name];
                 sb.AppendFormat("请求方式:{0}", httpReq.Method).AppendLine();

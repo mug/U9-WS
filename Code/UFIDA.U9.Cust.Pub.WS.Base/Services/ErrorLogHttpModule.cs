@@ -17,16 +17,16 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Services
     /// </remarks>
     public class ErrorLogHttpModule : IHttpModule
     {
-        private static readonly ILogger _logger = LoggerManager.GetLogger("ErrorLogHttpModule");
-        private bool logUnhandeldExceptions;
+        private static readonly ILogger Logger = LoggerManager.GetLogger("ErrorLogHttpModule");
+        private bool _logUnhandeldExceptions;
 
         public void Init(HttpApplication context)
         {
             bool success = bool.TryParse(ConfigurationManager.AppSettings["LogUnhandledExceptions"],
-                out logUnhandeldExceptions);
+                out _logUnhandeldExceptions);
             if (!success)
             {
-                logUnhandeldExceptions = true;
+                _logUnhandeldExceptions = true;
             }
             context.Error += OnError;
         }
@@ -39,7 +39,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Services
         {
             try
             {
-                if (!logUnhandeldExceptions) return;
+                if (!_logUnhandeldExceptions) return;
                 string userIp;
                 string url;
                 string exception;
@@ -58,12 +58,12 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Services
                     url = "no httpcontext";
                     exception = "no httpcontext";
                 }
-                _logger.Error("Unhandled exception occured,IP:[{0}] Url:[{1}]", userIp, url);
-                _logger.Error("异常信息:{0}", exception);
+                Logger.Error("Unhandled exception occured,IP:[{0}] Url:[{1}]", userIp, url);
+                Logger.Error("异常信息:{0}", exception);
             }
             catch (Exception ex)
             {
-                _logger.Error("Exception occured in OnError: [{0}]", ex);
+                Logger.Error("Exception occured in OnError: [{0}]", ex);
             }
         }
     }

@@ -33,6 +33,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Utils
             JsonSerializerSettings settings = new JsonSerializerSettings();
             settings.ContractResolver = resolver;
             settings.MissingMemberHandling = MissingMemberHandling.Ignore;
+            settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             string dateTimeFormat = ConfigurationHelper.GetAppSettingValue(ServiceConstant.DateTimeFormatName);
             settings.Converters.Add(new IsoDateTimeConverter
             {
@@ -61,6 +62,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Utils
             JsonSerializer serializer = new JsonSerializer();
             serializer.ContractResolver = resolver;
             serializer.MissingMemberHandling = MissingMemberHandling.Ignore;
+            serializer.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             string dateTimeFormat = ConfigurationHelper.GetAppSettingValue(ServiceConstant.DateTimeFormatName);
             serializer.Converters.Add(new IsoDateTimeConverter
             {

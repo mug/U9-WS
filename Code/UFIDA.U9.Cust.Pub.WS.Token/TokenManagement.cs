@@ -61,7 +61,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token
             lock (InitLock)
             {
                 if (_isInited) return;
-                Logger.Debug("TokenManagement开启");
+                Logger.Debug("TokenManagement init...");
                 if (_providers != null && _providers.Count != 0) return;
                 TokenConfiguration config = TokenConfiguration.GetConfig();
                 if (config == null || !config.Enabled) return;

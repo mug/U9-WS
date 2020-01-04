@@ -9,7 +9,6 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context
 {
     /// <summary>
     ///     上下文对象
-    ///     需要注意
     /// </summary>
     public class ContextObject : IDisposable
     {

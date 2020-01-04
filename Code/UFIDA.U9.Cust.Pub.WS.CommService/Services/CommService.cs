@@ -40,7 +40,7 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Services
             if (proxyType.MaxExpandDepth <= 0)
                 proxyType.MaxExpandDepth = DefaultMaxWritingDepth;
             if (proxyType.MaxExpandDepth > MaxMaxWritingDepth)
-                throw new CommServiceException(string.Format("MaxExpandDepth is max value is {0}", MaxMaxWritingDepth));
+                throw new CommServiceException(string.Format("maxExpandDepth max value is {0}", MaxMaxWritingDepth));
             ReturnMessage<RequestProxyObject> ret = new ReturnMessage<RequestProxyObject>();
             RequestProxyObject proxyObject = new RequestProxyObject();
             proxyObject.RequestProxyType = proxyType;
@@ -79,10 +79,15 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Services
             object result = methodInfo.Invoke(proxyBase, null);
             ReturnMessage<string> ret = new ReturnMessage<string>();
             ret.IsSuccess = true;
-            ret.Result = result == null ? string.Empty : ProxyResultToJsonString(result, requestType.MaxExpandDepth);
+            ret.Result = result == null ? string.Empty : ProxyResultToJsonString(result);
             return ret;
         }
 
+        /// <summary>
+        /// Job执行代理请求
+        /// </summary>
+        /// <param name="proxyObject"></param>
+        /// <returns></returns>
         [WSLog("Job执行代理请求")]
         public ReturnMessage<bool> ProxyDoByJob(RequestProxyObject proxyObject)
         {
@@ -94,7 +99,7 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Services
                 throw new CommServiceException("ProxyObjectJsonString is empty");
             ProxyBase proxyBase = ObjectFromJsonString(proxyObject.ProxyObjectJsonString, proxyBaseType) as ProxyBase;
             if (proxyBase == null)
-                throw new CommServiceException(string.Format("type:{0},{1} is not proxy base object",
+                throw new CommServiceException(string.Format("type:{0},{1} is not a proxy base object",
                     requestType.TypeName,
                     requestType.AssemblyName));
             string[] arrTypeName = proxyObject.RequestProxyType.TypeName.Split('.');
@@ -183,7 +188,7 @@ namespace UFIDA.U9.Cust.Pub.WS.CommService.Services
         /// <param name="obj"></param>
         /// <param name="maxExpandDepth"></param>
         /// <returns></returns>
-        private static string ProxyResultToJsonString(object obj, int maxExpandDepth)
+        private static string ProxyResultToJsonString(object obj)
         {
             if (obj == null) return string.Empty;
             var settings = CommServiceJsonHelper.GetJsonSerializerSettings(new ProxyBaseContractResolver());

@@ -534,10 +534,18 @@ namespace UFIDA.U9.Cust.Pub.WS.Json.Serialization
                     property.PropertyContract = Serializer._contractResolver.ResolveContract(property.PropertyType);
 
                 memberValue = property.ValueProvider.GetValue(value);
-                //yt update 2019-12-28
+                //yt update 2016-12-28
                 //memberContract = (property.PropertyContract.IsSealed) ? property.PropertyContract : GetContractSafe(memberValue);
-                memberContract = (property.PropertyContract.IsSealed || memberValue == null) ? property.PropertyContract : GetContractSafe(memberValue);
-
+                if (writer.IsAutoCreateMemberValue)
+                {
+                    memberContract = (property.PropertyContract.IsSealed || memberValue == null)
+                        ? property.PropertyContract
+                        : GetContractSafe(memberValue);
+                }
+                else
+                {
+                    memberContract = (property.PropertyContract.IsSealed) ? property.PropertyContract : GetContractSafe(memberValue);
+                }
                 if (ShouldWriteProperty(memberValue, property))
                 {
                     if (ShouldWriteReference(memberValue, property, memberContract, contract, member))

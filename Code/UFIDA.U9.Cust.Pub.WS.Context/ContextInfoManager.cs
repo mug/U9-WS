@@ -87,7 +87,7 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context
             lock (InitLock)
             {
                 if (_isInited) return;
-                Logger.Debug("ContextInfoManager初始化");
+                Logger.Debug("ContextInfoManager init...");
                 if (_contextInfoDict != null) return;
                 _contextInfoDict = new Dictionary<string, ContextInfo>();
                 U9ContextSectionGroup u9ActionSectionGroup = U9ContextSectionGroup.GetConfig();

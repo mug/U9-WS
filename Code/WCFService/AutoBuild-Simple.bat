@@ -4,7 +4,6 @@ echo iisreset
 
 echo beging copy componet dll to portal and appserver
 
-copy .\AuthTokenService.svc  D:\yonyou\U9V60\Portal\ws
 copy .\CommService.svc  D:\yonyou\U9V60\Portal\ws
 copy .\TestService.svc  D:\yonyou\U9V60\Portal\ws
 copy .\Web-Simple.config  D:\yonyou\U9V60\Portal\ws\Web.config

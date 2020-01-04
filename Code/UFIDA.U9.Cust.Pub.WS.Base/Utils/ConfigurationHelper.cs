@@ -5,7 +5,7 @@ using System.Web.Configuration;
 
 namespace UFIDA.U9.Cust.Pub.WS.Base.Utils
 {
-    public class ConfigurationHelper
+    public static class ConfigurationHelper
     {
         /// <summary>
         ///     获取配置
