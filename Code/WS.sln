@@ -41,7 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U9.Cust.Pub.WS.U9Acti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U9.Cust.Pub.WS.TestService", "UFIDA.U9.Cust.Pub.WS.TestService\UFIDA.U9.Cust.Pub.WS.TestService.csproj", "{AC566F2B-AC90-45F6-A014-312E90B1996A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U9.Cust.Pub.WS.CommService", "UFIDA.U9.Cust.Pub.WS.CommService\UFIDA.U9.Cust.Pub.WS.CommService.csproj", "{9ECAAFF0-F62B-4603-9FFD-392E49CC9D60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U9.Cust.Pub.WS.ProxyService", "UFIDA.U9.Cust.Pub.WS.ProxyService\UFIDA.U9.Cust.Pub.WS.ProxyService.csproj", "{9ECAAFF0-F62B-4603-9FFD-392E49CC9D60}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U9.Cust.Pub.WS.U9Context", "UFIDA.U9.Cust.Pub.WS.Context\UFIDA.U9.Cust.Pub.WS.U9Context.csproj", "{0383059E-C9E6-4A08-8444-4FFCCEA88253}"
 EndProject

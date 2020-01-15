@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Security;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
+using System.Text;
+using System.Text.RegularExpressions;
 using UFIDA.U9.Cust.Pub.WS.Base.Interfaces;
 using UFIDA.U9.Cust.Pub.WS.Base.Utils;
+using UFSoft.UBF.Business;
 using UFSoft.UBF.Util.Log;
 
 namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.WebHttp
@@ -43,7 +47,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.WebHttp
             IReturnMessage ret = Activator.CreateInstance(returnType) as IReturnMessage;
             if (ret == null) return;
             ret.IsSuccess = false;
-            ret.ErrMsg = error.InnerException == null ? error.Message : error.InnerException.Message;
+            ret.ErrMsg = GetErrMsg(error);
             byte[] body = JsonHelper.GetReturnJsonBody(ret);
             fault = Message.CreateMessage(version, "",
                 new RawBodyWriter(body));
@@ -91,6 +95,32 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.WebHttp
             //responseMessageProperty.Headers[HttpResponseHeader.ContentType] = "application/json";
             ////Add to fault
             //fault.Properties.Add(HttpResponseMessageProperty.Name, responseMessageProperty);
+        }
+
+        /// <summary>
+        /// 获取错误信息
+        /// </summary>
+        /// <param name="ex"></param>
+        /// <returns></returns>
+        private string GetErrMsg(Exception ex)
+        {
+            List<string> errList = new List<string>();
+            BusinessException bex = ex as BusinessException;
+            if (bex != null && bex.InnerExceptions != null && bex.InnerExceptions.Count > 0)
+            {
+                foreach (Exception iex in bex.InnerExceptions)
+                {
+                    errList.Add(iex.Message);
+                }
+            }
+            else
+            {
+                errList.Add(ex.InnerException == null ? ex.Message : ex.InnerException.Message);
+            }
+            string errMsg = string.Join(";", errList.ToArray());
+            //移除<a href></a>
+            string hrefPattern = @"(?is)<a(?:(?!href=).)*href=(['""]?)(?<url>[^""\s>]*)\1[^>]*>(?<text>(?:(?!</?a\b).)*)</a>";
+            return Regex.Replace(errMsg, hrefPattern, string.Empty);
         }
 
         /// <summary>

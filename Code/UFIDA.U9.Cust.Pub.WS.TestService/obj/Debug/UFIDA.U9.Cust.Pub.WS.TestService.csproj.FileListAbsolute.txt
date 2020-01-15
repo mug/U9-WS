@@ -101,3 +101,4 @@ D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\zh-TW\UFIDA
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\obj\Debug\UFIDA.U9.Cust.Pub.WS.TestService.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\obj\Debug\UFIDA.U9.Cust.Pub.WS.TestService.pdb
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UBF.System.dll
+D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CBO.PubSV.Agent.dll

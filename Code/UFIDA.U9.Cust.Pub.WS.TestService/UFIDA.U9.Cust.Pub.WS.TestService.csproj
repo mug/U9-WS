@@ -43,6 +43,17 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UFIDA.U9.Base.BaseBE.Deploy, Version=25.5401.29250.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.Base.BaseBE.Deploy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.Base.BaseBP.Agent, Version=25.5401.31025.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.Base.BaseBP.Agent.dll</HintPath>
+    </Reference>
+    <Reference Include="UFIDA.U9.CBO.PubSV.Agent">
+      <HintPath>..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.CBO.PubSV.Agent.dll</HintPath>
+    </Reference>
     <Reference Include="UFIDA.U9.CBO.PubSV.Deploy">
       <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.CBO.PubSV.Deploy.dll</HintPath>
     </Reference>
@@ -51,6 +62,10 @@
     </Reference>
     <Reference Include="UFIDA.U9.ISV.CBO.PubSV.Deploy">
       <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.ISV.CBO.PubSV.Deploy.dll</HintPath>
+    </Reference>
+    <Reference Include="UFSoft.UBF.AopFrame, Version=25.5401.28703.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Temp\Codes\TestProxy\TestProxy\bin\Debug\UBFBin\UFSoft.UBF.AopFrame.dll</HintPath>
     </Reference>
     <Reference Include="UFSoft.UBF.Business">
       <HintPath>..\..\..\..\..\..\yonyou\U9V60\Portal\bin\UFSoft.UBF.Business.dll</HintPath>
