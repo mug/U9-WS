@@ -56,6 +56,9 @@
     <Reference Include="UFSoft.UBF.Business">
       <HintPath>..\..\..\..\..\..\Temp\Codes\TestProxy\TestProxy\bin\Debug\UBFBin\UFSoft.UBF.Business.dll</HintPath>
     </Reference>
+    <Reference Include="UFSoft.UBF.PL">
+      <HintPath>..\..\..\..\..\Temp\Codes\TestProxy\TestProxy\bin\Debug\UBFBin\UFSoft.UBF.PL.dll</HintPath>
+    </Reference>
     <Reference Include="UFSoft.UBF.Sys.Database, Version=25.5401.28777.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Temp\Codes\TestProxy\TestProxy\bin\Debug\UBFBin\UFSoft.UBF.Sys.Database.dll</HintPath>

@@ -37,7 +37,7 @@ using UFIDA.U9.Cust.Pub.WS.Json.Serialization;
 
 namespace UFIDA.U9.Cust.Pub.WS.Json.Utilities
 {
-    internal static class StringUtils
+    public static class StringUtils
     {
         public const string CarriageReturnLineFeed = "\r\n";
         public const string Empty = "";

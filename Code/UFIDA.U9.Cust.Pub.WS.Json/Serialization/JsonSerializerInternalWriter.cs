@@ -156,8 +156,8 @@ namespace UFIDA.U9.Cust.Pub.WS.Json.Serialization
                     }
                 }
             }
-            if (value == null && valueContract != null && writer.IsAutoCreateMemberValue)
-                value = AutoCreateMemberValue(writer, valueContract);
+            if (valueContract != null && writer.IsAutoCreateMemberValue)
+                value = AutoCreateMemberValue(value,writer, valueContract);
             if (value == null)
             {
                 writer.WriteNull();
@@ -217,50 +217,73 @@ namespace UFIDA.U9.Cust.Pub.WS.Json.Serialization
         /// <summary>
         /// auto set object value or array first value
         /// </summary>
+        /// <param name="value"></param>
         /// <param name="writer"></param>
         /// <param name="valueContract"></param>
         /// <returns></returns>
-        private object AutoCreateMemberValue(JsonWriter writer, JsonContract valueContract)
+        private object AutoCreateMemberValue(object value, JsonWriter writer, JsonContract valueContract)
         {
             try
             {
-                switch (valueContract.ContractType)
+                if (value == null && valueContract.ContractType == JsonContractType.Object)
                 {
-                    case JsonContractType.Object:
-                        if (!IsTypeInStack(valueContract.CreatedType))
-                            return JsonConvert.DeserializeObject("{}", valueContract.CreatedType);
-                        break;
-                    case JsonContractType.Array:
-                        JsonArrayContract arrayContract = (JsonArrayContract)valueContract;
-                        string jsonString = string.Empty;
-                        if (!arrayContract.IsArray)
+                    if (!IsTypeInStack(valueContract.CreatedType))
+                        value = JsonConvert.DeserializeObject("{}", valueContract.CreatedType);
+                }
+                else if (valueContract.ContractType == JsonContractType.Array)
+                {
+                    JsonArrayContract arrayContract = (JsonArrayContract)valueContract;
+                    if (value != null)
+                    {
+                        if (!arrayContract.IsMultidimensionalArray)
                         {
-                            if (arrayContract.CollectionItemType.IsClass)
+                            ICollection collectionValue = value as ICollection;
+                            if (collectionValue != null && collectionValue.Count > 0)
                             {
-                                jsonString = arrayContract.CollectionItemType == typeof(string) || IsTypeInStack(arrayContract.CreatedType) ? "[]" : "[{}]";
+                                return value;
                             }
-                            else if (arrayContract.CollectionItemType.IsArray)
+                        }
+                        else
+                        {
+                            Array arrayValue = value as Array;
+                            if (arrayValue != null && arrayValue.Length > 0)
                             {
-                                jsonString = "[[]]";
+                                return value;
                             }
-                            else
-                            {
-                                jsonString = "[]";
-                            }
+                        }
+                    }
+                    string jsonString;
+                    if (!arrayContract.IsArray)
+                    {
+                        if (arrayContract.CollectionItemType.IsClass)
+                        {
+                            jsonString = arrayContract.CollectionItemType == typeof(string) ||
+                                         IsTypeInStack(arrayContract.CreatedType)
+                                ? "[]"
+                                : "[{}]";
+                        }
+                        else if (arrayContract.CollectionItemType.IsArray)
+                        {
+                            jsonString = "[[]]";
                         }
                         else
                         {
                             jsonString = "[]";
                         }
-                        return JsonConvert.DeserializeObject(jsonString, valueContract.CreatedType);
+                    }
+                    else
+                    {
+                        jsonString = "[]";
+                    }
+                    value = JsonConvert.DeserializeObject(jsonString, valueContract.CreatedType);
                 }
             }
             catch (Exception ex)
             {
                 //value = null;
-                throw JsonSerializationException.Create(null, writer.ContainerPath, "auto create object error '{0}'.".FormatWith(CultureInfo.InvariantCulture, valueContract.CreatedType), ex);
+                //throw JsonSerializationException.Create(null, writer.ContainerPath, "auto create object error '{0}'.".FormatWith(CultureInfo.InvariantCulture, valueContract.CreatedType), ex);
             }
-            return null;
+            return value;
         }
 
         private bool IsTypeInStack(Type currentType)

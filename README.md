@@ -14,4 +14,4 @@ yonyou u9 restful webservice
     4.	包含两种初始化U9上下文环境的方式:固定上下文、Token上下文 
     5.	包含两种记录服务的调用过程的日志方式：Log4Net日志、数据库日志    
     6.	包含获取Token认证及Token校验功能，包含两种存储Token的方式:内存存储、数据库存储
-    7.	提供通用CommService服务调用方式，支持调用BP,SV,RestSV
+    7.	提供通用ProxyService服务调用方式，支持调用BP,SV,RestSV

@@ -9,12 +9,31 @@ using UFIDA.U9.Cust.Pub.WS.Json;
 using UFIDA.U9.Cust.Pub.WS.Json.Serialization;
 using UFIDA.U9.Cust.Pub.WS.Json.Utilities;
 using UFSoft.UBF.Business;
+using UFSoft.UBF.PL;
 using UFSoft.UBF.Service.Base;
 
 namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Json
 {
-    public class ProxyBaseContractResolver : CamelCasePropertyNamesContractResolver
+    public class ProxyBaseContractResolver : DefaultContractResolver
     {
+        private readonly bool _useDataContractTransData;
+
+        public ProxyBaseContractResolver(bool useDataContractTransData) : base(false)
+        {
+            _useDataContractTransData = useDataContractTransData;
+        }
+
+        /// <summary>
+        ///     Resolves the name of the property.
+        /// </summary>
+        /// <param name="propertyName">Name of the property.</param>
+        /// <returns>The property name camel cased.</returns>
+        protected override string ResolvePropertyName(string propertyName)
+        {
+            // lower case the first letter of the passed in name
+            return StringUtils.ToCamelCase(propertyName);
+        }
+
         protected override List<MemberInfo> GetSerializableMembers(Type objectType)
         {
             bool ignoreSerializableAttribute = this.IgnoreSerializableAttribute;
@@ -47,8 +66,16 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Json
                     if (memberInfo.DeclaringType != null && memberInfo.DeclaringType.IsSubclassOf(typeof (ProxyBase)))
                     {
                         var memberName = memberInfo.Name.ToLower(CultureInfo.CurrentCulture);
-                        if (memberName == "contextdto" ||
+                        if (memberName == "contextdto" || memberName == "targetorgcode" || memberName == "targetorgname" ||
                             memberName.EndsWith("_skey")) continue;
+                    }
+                    //BusinessEntity.EntityKey
+                    if (memberInfo.DeclaringType != null &&
+                        (memberInfo.DeclaringType == typeof (ObjectKeyX) ||
+                         memberInfo.DeclaringType.IsSubclassOf(typeof (ObjectKeyX))))
+                    {
+                        var memberName = memberInfo.Name.ToLower(CultureInfo.CurrentCulture);
+                        if (memberName == "entitytype" || memberName == "serializablekeys") continue;
                     }
                     var isDTOType = false;
                     switch (memberInfo.MemberType())
@@ -138,6 +165,23 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Json
             JsonContract contract = base.ResolveContract(type);
             contract.IsReference = false;
             return contract;
+        }
+
+        protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
+        {
+            JsonProperty property = base.CreateProperty(member, memberSerialization);
+            if (_useDataContractTransData) return property;
+            if (property == null) return null;
+            if (member != null && member.MemberType() == MemberTypes.Property)
+            {
+                PropertyInfo propertyInfo = (PropertyInfo) member;
+                property.Ignored = !propertyInfo.CanWrite;
+            }
+            else
+            {
+                property.Ignored = true;
+            }
+            return property;
         }
     }
 }

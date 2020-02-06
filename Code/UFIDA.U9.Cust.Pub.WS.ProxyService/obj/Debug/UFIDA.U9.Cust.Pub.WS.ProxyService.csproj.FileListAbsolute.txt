@@ -141,3 +141,9 @@ D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\zh-TW\UFSo
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\obj\Debug\UFIDA.U9.Cust.Pub.WS.ProxyService.csprojResolveAssemblyReference.cache
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\obj\Debug\UFIDA.U9.Cust.Pub.WS.ProxyService.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\obj\Debug\UFIDA.U9.Cust.Pub.WS.ProxyService.pdb
+D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\UFSoft.UBF.PL.dll
+D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\UFSoft.UBF.Sys.Resources.Runtime.dll
+D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\en-US\UFSoft.UBF.PL.resources.dll
+D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\ja-JP\UFSoft.UBF.PL.resources.dll
+D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\zh-CN\UFSoft.UBF.PL.resources.dll
+D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\zh-TW\UFSoft.UBF.PL.resources.dll

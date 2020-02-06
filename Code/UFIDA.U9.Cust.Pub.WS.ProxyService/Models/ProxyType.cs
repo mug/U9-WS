@@ -31,5 +31,11 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Models
         /// </summary>
         [DataMember]
         public int OutMaxExpandDepth { get; set; }
+
+        /// <summary>
+        ///     按数据成员(DataMember)传输数据
+        /// </summary>
+        [DataMember]
+        public bool UseDataMemberTransData { get; set; }
     }
 }

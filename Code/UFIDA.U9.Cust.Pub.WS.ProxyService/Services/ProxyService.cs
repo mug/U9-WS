@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Reflection;
 using System.ServiceModel.Activation;
 using System.Text;
 using UFIDA.U9.BS.Job.RequestClient;
 using UFIDA.U9.Cust.Pub.WS.Base.Models;
+using UFIDA.U9.Cust.Pub.WS.Json;
+using UFIDA.U9.Cust.Pub.WS.Json.Serialization;
 using UFIDA.U9.Cust.Pub.WS.ProxyService.Interfaces;
 using UFIDA.U9.Cust.Pub.WS.ProxyService.Json;
 using UFIDA.U9.Cust.Pub.WS.ProxyService.Models;
 using UFIDA.U9.Cust.Pub.WS.ProxyService.Utils;
-using UFIDA.U9.Cust.Pub.WS.Json;
 using UFSoft.UBF;
 using UFSoft.UBF.Service.Base;
 using UFSoft.UBF.Sys.Database;
@@ -25,9 +27,9 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Services
     public class ProxyService : IProxyService
     {
         private const int DefaultInMaxWritingDepth = 4;
-        private const int MaxInMaxWritingDepth = 6;
+        private const int MaxInMaxWritingDepth = 8;
         private const int DefaultOutMaxWritingDepth = 4;
-        private const int MaxOutMaxWritingDepth = 6;
+        private const int MaxOutMaxWritingDepth = 8;
 
         /// <summary>
         ///     查询服务信息
@@ -63,23 +65,28 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Services
             fullNameSb.Append("(");
             displayNameSb.Append("(");
             bool isFirst = true;
-            foreach (string str in arrQueryStr)
+            DataParamList dataParams = new DataParamList();
+            for (int i = 0; i < arrQueryStr.Length; i++)
             {
+                string str = arrQueryStr[i];
+                string paramName = "param" + i;
                 if (string.IsNullOrWhiteSpace(str)) continue;
                 if (!isFirst)
                 {
                     fullNameSb.Append(" AND ");
                     displayNameSb.Append(" AND ");
                 }
-                fullNameSb.AppendFormat("A.FullName LIKE '%{0}%'", str);
-                displayNameSb.AppendFormat("B.DisplayName LIKE '%{0}%'", str);
+                fullNameSb.AppendFormat("A.FullName LIKE @{0}", paramName);
+                displayNameSb.AppendFormat("B.DisplayName LIKE @{0}", paramName);
+                dataParams.Add(DataParamFactory.CreateInput(paramName, string.Format("%{0}%", str), DbType.String));
                 isFirst = false;
             }
             fullNameSb.Append(")");
             displayNameSb.Append(")");
             sb.Append(fullNameSb + " OR " + displayNameSb);
             sb.Append(")");
-            DataSet dataSet = ExecuteDataSet(sb.ToString());
+            DataSet dataSet;
+            DataAccessor.RunSQL(DatabaseManager.GetCurrentConnection(), sb.ToString(), dataParams, out dataSet);
             List<BPSVType> list = new List<BPSVType>();
             if (dataSet != null && dataSet.Tables.Count > 0 && dataSet.Tables[0].Rows.Count > 0)
             {
@@ -118,7 +125,8 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Services
             ReturnMessage<Proxy> ret = new ReturnMessage<Proxy>();
             Proxy proxy = new Proxy();
             proxy.ProxyType = proxyType;
-            proxy.ProxyJsonString = ProxyObjectToJsonString(proxyBase, proxyType.InMaxExpandDepth);
+            proxy.ProxyJsonString = ProxyObjectToJsonString(proxyBase, proxyType.UseDataMemberTransData,
+                proxyType.InMaxExpandDepth);
             ret.Result = proxy;
             return ret;
         }
@@ -145,13 +153,16 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Services
             if (loadType == null)
                 throw new ProxyServiceException(string.Format("proxyType {0},{1} is not exist", proxyType.FullName,
                     proxyType.AssemblyName));
-            ProxyBase proxyBase = ObjectFromJsonString(proxy.ProxyJsonString, loadType) as ProxyBase;
+            ProxyBase proxyBase =
+                ProxyObjectFromJsonString(proxy.ProxyJsonString, proxyType.UseDataMemberTransData, loadType) as
+                    ProxyBase;
             if (proxyBase == null)
                 throw new ProxyServiceException(string.Format("proxyType:{0},{1} is not proxy base object",
                     proxyType.FullName,
                     proxyType.AssemblyName));
             ReturnMessage<Proxy> ret = new ReturnMessage<Proxy>();
-            proxy.ProxyJsonString = ProxyObjectToJsonString(proxyBase, proxyType.InMaxExpandDepth);
+            proxy.ProxyJsonString = ProxyObjectToJsonString(proxyBase, proxyType.UseDataMemberTransData,
+                proxyType.InMaxExpandDepth);
             ret.Result = proxy;
             return ret;
         }
@@ -174,19 +185,24 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Services
             if (proxyType.OutMaxExpandDepth > MaxOutMaxWritingDepth)
                 throw new ProxyServiceException(string.Format("outMaxExpandDepth is max value is {0}",
                     MaxOutMaxWritingDepth));
-            ProxyBase proxyBase = ObjectFromJsonString(proxy.ProxyJsonString, proxyBaseType) as ProxyBase;
+            ProxyBase proxyBase =
+                ProxyObjectFromJsonString(proxy.ProxyJsonString, proxyType.UseDataMemberTransData, proxyBaseType) as
+                    ProxyBase;
             if (proxyBase == null)
                 throw new ProxyServiceException(string.Format("proxyType:{0},{1} is not proxy base object",
                     proxyType.FullName,
                     proxyType.AssemblyName));
             MethodInfo methodInfo = proxyBase.GetType().GetMethod("Do", new Type[] {});
             if (methodInfo == null)
-                throw new ProxyServiceException(string.Format("no find Do() method in proxyType:{0},{1}", proxyType.FullName,
+                throw new ProxyServiceException(string.Format("no find Do() method in proxyType:{0},{1}",
+                    proxyType.FullName,
                     proxyType.AssemblyName));
             object result = methodInfo.Invoke(proxyBase, null);
             ReturnMessage<string> ret = new ReturnMessage<string>();
             ret.IsSuccess = true;
-            ret.Result = result == null ? string.Empty : ProxyResultToJsonString(result, proxyType.OutMaxExpandDepth);
+            ret.Result = result == null
+                ? string.Empty
+                : ProxyResultToJsonString(result, proxyType.UseDataMemberTransData, proxyType.OutMaxExpandDepth);
             return ret;
         }
 
@@ -203,7 +219,9 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Services
             Type proxyBaseType = GetType(proxyType);
             if (string.IsNullOrEmpty(proxy.ProxyJsonString))
                 throw new ProxyServiceException("proxy.ProxyJsonString is empty");
-            ProxyBase proxyBase = ObjectFromJsonString(proxy.ProxyJsonString, proxyBaseType) as ProxyBase;
+            ProxyBase proxyBase =
+                ProxyObjectFromJsonString(proxy.ProxyJsonString, proxyType.UseDataMemberTransData, proxyBaseType) as
+                    ProxyBase;
             if (proxyBase == null)
                 throw new ProxyServiceException(string.Format("proxyType:{0},{1} is not a proxy base object",
                     proxyType.FullName,
@@ -264,21 +282,33 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Services
                 throw new ProxyServiceException(string.Format("Assembly {0} is not exist", proxyAssemblyName));
             string[] arrFullName = bpsvType.FullName.Split('.');
             string proxyClassName = arrFullName[arrFullName.Length - 1] + "Proxy";
+            string agentTypeFullName = string.Join(".", arrFullName.Take(arrFullName.Length - 1)) + ".Proxy." +
+                                       proxyClassName;
+            Type agentType = null;
             List<Type> types = new List<Type>();
             foreach (Type searchType in assembly.GetTypes())
             {
+                if (searchType.FullName == agentTypeFullName)
+                {
+                    agentType = searchType;
+                    break;
+                }
                 if (searchType.Name == proxyClassName && searchType.IsSubclassOf(typeof (ProxyBase)))
                     types.Add(searchType);
             }
-            if (types.Count == 0)
-                throw new ProxyServiceException(string.Format("className: {0} in {1} no exist", proxyClassName,
-                    proxyAssemblyName));
-            if (types.Count > 1)
-                throw new ProxyServiceException(string.Format("className: {0} in {1} no only one", proxyClassName,
-                    proxyAssemblyName));
+            if (agentType == null)
+            {
+                if (types.Count == 0)
+                    throw new ProxyServiceException(string.Format("className: {0} in {1} no exist", proxyClassName,
+                        proxyAssemblyName));
+                if (types.Count > 1)
+                    throw new ProxyServiceException(string.Format("className: {0} in {1} no only one", proxyClassName,
+                        proxyAssemblyName));
+                agentType = types[0];
+            }
             ProxyType proxyType = new ProxyType();
             proxyType.AssemblyName = proxyAssemblyName;
-            proxyType.FullName = types[0].FullName;
+            proxyType.FullName = agentType.FullName;
             proxyType.InMaxExpandDepth = DefaultInMaxWritingDepth;
             proxyType.OutMaxExpandDepth = DefaultOutMaxWritingDepth;
             ReturnMessage<ProxyType> ret = new ReturnMessage<ProxyType>();
@@ -318,16 +348,18 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Services
         }
 
         /// <summary>
-        ///     ProxyBase对象转为Json字符串
+        ///     Proxy对象转为Json字符串
         /// </summary>
         /// <param name="obj"></param>
+        /// <param name="useDataContractTransData"></param>
         /// <param name="maxExpandDepth"></param>
         /// <returns></returns>
-        private static string ProxyObjectToJsonString(object obj, int maxExpandDepth)
+        private static string ProxyObjectToJsonString(object obj, bool useDataContractTransData, int maxExpandDepth)
         {
             if (obj == null) return string.Empty;
+            IContractResolver resolver = new ProxyBaseContractResolver(useDataContractTransData);
             JsonSerializerSettings settings =
-                ProxyServiceJsonHelper.GetJsonSerializerSettings(new ProxyBaseContractResolver());
+                ProxyServiceJsonHelper.GetJsonSerializerSettings(resolver);
             settings.IsAutoCreateMemberValue = true;
             settings.MaxWritingDepth = maxExpandDepth > 0 ? maxExpandDepth : DefaultInMaxWritingDepth;
             settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
@@ -335,43 +367,36 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Services
         }
 
         /// <summary>
-        ///     对象转为Json字符串
+        ///     Proxy对象执行结果转为Json字符串
         /// </summary>
         /// <param name="obj"></param>
+        /// <param name="useDataContractTransData"></param>
         /// <param name="maxExpandDepth"></param>
         /// <returns></returns>
-        private static string ProxyResultToJsonString(object obj, int maxExpandDepth = DefaultInMaxWritingDepth)
+        private static string ProxyResultToJsonString(object obj, bool useDataContractTransData,
+            int maxExpandDepth = DefaultInMaxWritingDepth)
         {
             if (obj == null) return string.Empty;
-            var settings = ProxyServiceJsonHelper.GetJsonSerializerSettings(new ProxyBaseContractResolver());
+            IContractResolver resolver = new ProxyBaseContractResolver(useDataContractTransData);
+            JsonSerializerSettings settings = ProxyServiceJsonHelper.GetJsonSerializerSettings(resolver);
             settings.MaxWritingDepth = maxExpandDepth > 0 ? maxExpandDepth : DefaultInMaxWritingDepth;
             settings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             return JsonConvert.SerializeObject(obj, Formatting.None, settings);
         }
 
         /// <summary>
-        ///     Json字符串转为对象
+        ///     Json字符串转为Proxy对象
         /// </summary>
         /// <param name="jsonString"></param>
+        /// <param name="useDataContractTransData"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        private static object ObjectFromJsonString(string jsonString, Type type)
+        private static object ProxyObjectFromJsonString(string jsonString, bool useDataContractTransData, Type type)
         {
             if (string.IsNullOrEmpty(jsonString)) return null;
-            JsonSerializerSettings settings = ProxyServiceJsonHelper.GetDefaultJsonSerializerSettings();
+            IContractResolver resolver = new ProxyBaseContractResolver(useDataContractTransData);
+            JsonSerializerSettings settings = ProxyServiceJsonHelper.GetJsonSerializerSettings(resolver);
             return JsonConvert.DeserializeObject(jsonString, type, settings) as ProxyBase;
-        }
-
-        /// <summary>
-        ///     根据字符串获取数据表
-        /// </summary>
-        /// <param name="strSql">查询字符串</param>
-        /// <returns></returns>
-        private static DataSet ExecuteDataSet(string strSql)
-        {
-            DataSet dataSet;
-            DataAccessor.RunSQL(DatabaseManager.GetCurrentConnection(), strSql, null, out dataSet);
-            return dataSet;
         }
 
         private static string AsString(DataRow dataRow, string columnName)
