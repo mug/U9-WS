@@ -60,7 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicAuth.cs" />
     <Compile Include="Behavior\Endpoint\SetU9ContextByTokenEndpointBehavior.cs" />
     <Compile Include="Behavior\Endpoint\SetU9ContextByTokenEndpointBehaviorExtension.cs" />
     <Compile Include="Behavior\Endpoint\TokenValidationEndpointBehaviorExtension.cs" />
@@ -68,7 +67,6 @@
     <Compile Include="Configuration\TokenConfiguration.cs" />
     <Compile Include="Configuration\TokenProvider.cs" />
     <Compile Include="Configuration\TokenProviderCollection.cs" />
-    <Compile Include="Credentials.cs" />
     <Compile Include="Interfaces\IAuthTokenService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TokenConstant.cs" />

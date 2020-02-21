@@ -44,17 +44,53 @@ website.publishproj
     </AssemblyAttributes>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.TestService\UFIDA.U9.Cust.Pub.TestService.csproj">
-      <Project>{AC566F2B-AC90-45F6-A014-312E90B1996A}</Project>
-      <Name>UFIDA.U9.Cust.Pub.TestService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WCFService\UFIDA.U9.Cust.Pub.WCFService.csproj">
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Base\UFIDA.U9.Cust.Pub.WS.Base.csproj">
       <Project>{8C8E9755-0FFC-47E5-BD79-66C6B1ABD12B}</Project>
-      <Name>UFIDA.U9.Cust.Pub.WCFService</Name>
+      <Name>UFIDA.U9.Cust.Pub.WS.Base</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WSLog\UFIDA.U9.Cust.Pub.WSLog.csproj">
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Context\UFIDA.U9.Cust.Pub.WS.U9Context.csproj">
+      <Project>{0383059E-C9E6-4A08-8444-4FFCCEA88253}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.U9Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.DebugService\UFIDA.U9.Cust.Pub.WS.DebugService.csproj">
+      <Project>{68B149AA-CBE4-4F67-9914-88FE4D256CA3}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.DebugService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Json\UFIDA.U9.Cust.Pub.WS.Json.csproj">
+      <Project>{AE6D00EA-5BEE-48D7-B385-F9F6C7EB7799}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.ProxyService\UFIDA.U9.Cust.Pub.WS.ProxyService.csproj">
+      <Project>{9ECAAFF0-F62B-4603-9FFD-392E49CC9D60}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.ProxyService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.TestService\UFIDA.U9.Cust.Pub.WS.TestService.csproj">
+      <Project>{AC566F2B-AC90-45F6-A014-312E90B1996A}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.TestService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.TokenDBProvider\UFIDA.U9.Cust.Pub.WS.Token.DBProvider.csproj">
+      <Project>{F39E5BEC-20B0-4813-8A7A-599DE6CD9763}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.Token.DBProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.TokenMemoryProvider\UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider.csproj">
+      <Project>{7CB3DF10-79FA-4BD9-A29D-D7214EAE5E30}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Token\UFIDA.U9.Cust.Pub.WS.Token.csproj">
+      <Project>{CB3FD880-C065-43A5-9058-ECC3AB89DC9D}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.Token</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.U9Action.DBLog\UFIDA.U9.Cust.Pub.WS.U9Action.DBLog.csproj">
       <Project>{A00BB192-1B54-455C-9086-245227A86B14}</Project>
-      <Name>UFIDA.U9.Cust.Pub.WSLog</Name>
+      <Name>UFIDA.U9.Cust.Pub.WS.U9Action.DBLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.U9Action.Token\UFIDA.U9.Cust.Pub.WS.U9Action.Token.csproj">
+      <Project>{B1C120B3-BFCC-4D09-8508-87D8E006D44A}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.U9Action.Token</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.U9Action\UFIDA.U9.Cust.Pub.WS.U9Action.csproj">
+      <Project>{366444A8-4479-49F4-A614-61DF5D50994E}</Project>
+      <Name>UFIDA.U9.Cust.Pub.WS.U9Action</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(_WebPublishTargetsPath)\Web\Microsoft.WebSite.Publishing.targets" />

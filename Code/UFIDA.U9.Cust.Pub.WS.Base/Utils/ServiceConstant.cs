@@ -10,6 +10,6 @@
         public const string DateTimeFormatName = "JsonDateTimeFormat";
         public const string ResponeJsonNoStartsWithBOMName = "ResponeJsonNoStartsWithBOM";
         public const string ResponeJsonFormattingName = "ResponeJsonFormatting";
-
+        public const string ResponeMessageIncludeStackInfoName = "ResponeMessageIncludeStackInfo";
     }
 }

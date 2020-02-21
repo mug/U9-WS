@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Timers;
 using UFIDA.U9.Cust.Pub.WS.Token.Configuration;
-using UFIDA.U9.Cust.Pub.WS.Token.Models;
+using UFIDA.U9.Cust.Pub.WS.U9Context.Auth;
 using UFSoft.UBF.Util.Log;
 
 namespace UFIDA.U9.Cust.Pub.WS.Token

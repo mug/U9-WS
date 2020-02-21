@@ -81,6 +81,7 @@
     <Compile Include="Services\IISHost.cs" />
     <Compile Include="Services\IISHostFactory.cs" />
     <Compile Include="Utils\JsonHelper.cs" />
+    <Compile Include="Utils\StackTraceHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UFIDA.U9.Cust.Pub.WS.Json\UFIDA.U9.Cust.Pub.WS.Json.csproj">

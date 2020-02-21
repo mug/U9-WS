@@ -23,5 +23,11 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Models
         /// </summary>
         [DataMember]
         public string ErrMsg { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 堆栈
+        /// </summary>
+        [DataMember]
+        public string StackString { get; set; } = string.Empty;
     }
 }

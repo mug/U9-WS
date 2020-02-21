@@ -1,5 +1,5 @@
 ﻿using System.Configuration.Provider;
-using UFIDA.U9.Cust.Pub.WS.Token.Models;
+using UFIDA.U9.Cust.Pub.WS.U9Context.Auth;
 
 namespace UFIDA.U9.Cust.Pub.WS.Token.Configuration
 {

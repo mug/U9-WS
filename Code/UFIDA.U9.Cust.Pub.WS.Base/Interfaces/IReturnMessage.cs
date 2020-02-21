@@ -9,5 +9,8 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Interfaces
 
         [DataMember]
         string ErrMsg { set; }
+
+        [DataMember]
+        string StackString { set; }
     }
 }

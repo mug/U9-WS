@@ -36,7 +36,22 @@ namespace UFIDA.U9.Cust.Pub.WS.ProxyService.Interfaces
 
         [OperationContract]
         [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
-          BodyStyle = WebMessageBodyStyle.Bare)]
+            BodyStyle = WebMessageBodyStyle.Bare)]
         ReturnMessage<bool> ProxyDoByJob(Proxy proxy);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Bare)]
+        ReturnMessage<bool> IsSetupDebug(ProxyType proxyType);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Bare)]
+        ReturnMessage<bool> SetupDebug(ProxyType proxyType);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Bare)]
+        ReturnMessage<bool> StopDebug(ProxyType proxyType);
     }
 }

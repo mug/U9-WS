@@ -6,5 +6,6 @@
     public static class ContextConstant
     {
         public const string HeaderEnterpriseIDName = "EnterpriseID";
+        public const string HeaderAuthorizationName = "Authorization";
     }
 }

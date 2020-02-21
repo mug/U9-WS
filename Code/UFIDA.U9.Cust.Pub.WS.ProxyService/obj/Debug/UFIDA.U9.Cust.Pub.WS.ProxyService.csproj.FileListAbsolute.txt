@@ -111,7 +111,6 @@ D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\UFSoft.UBF
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\System.Web.Mvc.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\DotNetOpenAuth.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\UFSoft.UBF.CAProvider.dll
-D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\UFIDA.U9.BS.Job.JobBE.Deploy.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\UFIDA.U9.BS.Resources.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\UFSoft.UBF.MD.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\UFSoft.UBF.Execution.dll
@@ -147,3 +146,5 @@ D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\en-US\UFSo
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\ja-JP\UFSoft.UBF.PL.resources.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\zh-CN\UFSoft.UBF.PL.resources.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\zh-TW\UFSoft.UBF.PL.resources.dll
+D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\0Harmony.dll
+D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.ProxyService\bin\Debug\0Harmony.pdb

@@ -6,7 +6,6 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
-using System.Text;
 using System.Text.RegularExpressions;
 using UFIDA.U9.Cust.Pub.WS.Base.Interfaces;
 using UFIDA.U9.Cust.Pub.WS.Base.Utils;
@@ -47,7 +46,14 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.WebHttp
             IReturnMessage ret = Activator.CreateInstance(returnType) as IReturnMessage;
             if (ret == null) return;
             ret.IsSuccess = false;
-            ret.ErrMsg = GetErrMsg(error);
+            ret.ErrMsg = GetExceptionErrorMsg(error);
+            string strResponeMessageIncludeStackInfo =
+                ConfigurationHelper.GetAppSettingValue(ServiceConstant.ResponeMessageIncludeStackInfoName);
+            bool responeMessageIncludeStackInfo = !string.IsNullOrEmpty(strResponeMessageIncludeStackInfo) &&
+                                                  strResponeMessageIncludeStackInfo.ToLower() == "true";
+            ret.StackString = responeMessageIncludeStackInfo
+                ? StackTraceHelper.GetExceptionStackTraceString(error)
+                : string.Empty;
             byte[] body = JsonHelper.GetReturnJsonBody(ret);
             fault = Message.CreateMessage(version, "",
                 new RawBodyWriter(body));
@@ -98,11 +104,11 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.WebHttp
         }
 
         /// <summary>
-        /// 获取错误信息
+        ///     获取错误信息
         /// </summary>
         /// <param name="ex"></param>
         /// <returns></returns>
-        private string GetErrMsg(Exception ex)
+        private string GetExceptionErrorMsg(Exception ex)
         {
             List<string> errList = new List<string>();
             BusinessException bex = ex as BusinessException;
@@ -119,7 +125,8 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.WebHttp
             }
             string errMsg = string.Join(";", errList.ToArray());
             //移除<a href></a>
-            string hrefPattern = @"(?is)<a(?:(?!href=).)*href=(['""]?)(?<url>[^""\s>]*)\1[^>]*>(?<text>(?:(?!</?a\b).)*)</a>";
+            string hrefPattern =
+                @"(?is)<a(?:(?!href=).)*href=(['""]?)(?<url>[^""\s>]*)\1[^>]*>(?<text>(?:(?!</?a\b).)*)</a>";
             return Regex.Replace(errMsg, hrefPattern, string.Empty);
         }
 

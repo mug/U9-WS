@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\yonyou\U9V60\Portal\bin\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -69,15 +72,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Debug\ProxyDebug.cs" />
     <Compile Include="Json\ProxyBaseContractResolver.cs" />
     <Compile Include="Models\BPSVType.cs" />
+    <Compile Include="Utils\ProxyHelper.cs" />
     <Compile Include="Utils\ProxyServiceException.cs" />
     <Compile Include="Interfaces\IProxyService.cs" />
     <Compile Include="Models\Proxy.cs" />
     <Compile Include="Models\ProxyType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ProxyService.cs" />
-    <Compile Include="Utils\ProxyServiceJsonHelper.cs" />
+    <Compile Include="Utils\ProxyJsonHelper.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

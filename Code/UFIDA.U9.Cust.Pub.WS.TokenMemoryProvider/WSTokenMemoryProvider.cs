@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Specialized;
 using UFIDA.U9.Cust.Pub.WS.Context;
 using UFIDA.U9.Cust.Pub.WS.Token.Configuration;
-using UFIDA.U9.Cust.Pub.WS.Token.Models;
+using UFIDA.U9.Cust.Pub.WS.U9Context.Auth;
 using UFSoft.UBF.Util.Log;
 
 namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
@@ -66,7 +66,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
         private int _maxSizePerUser = int.MaxValue;
         private int _clearInvalidTokenSeconds;
         private TimeSpan _timeout = TimeSpan.FromSeconds(DefaultTimeoutSecond);
-        private  int _tokenSize = -1;
+        private int _tokenSize = -1;
         private const int DefaultTokenSize = 200;
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
         }
 
         /// <summary>
-        /// 是否内存缓存
+        ///     是否内存缓存
         /// </summary>
         public override bool IsMemoryCache
         {
@@ -107,7 +107,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
         }
 
         /// <summary>
-        /// 清理失效Token秒数
+        ///     清理失效Token秒数
         /// </summary>
         public int ClearInvalidTokenSeconds
         {
@@ -132,8 +132,9 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
             _tokenSize = config["tokenSize"] == null ? DefaultTokenSize : Convert.ToInt32(config["tokenSize"]);
             _isSameCredentialsOneToken = config["IsSameCredentialsOneToken"] != null &&
                                          Convert.ToBoolean(config["IsSameCredentialsOneToken"]);
-            this._clearInvalidTokenSeconds = config["clearInvalidTokenSeconds"] == null ? -1 : Convert.ToInt32(config["clearInvalidTokenSeconds"]);
-
+            this._clearInvalidTokenSeconds = config["clearInvalidTokenSeconds"] == null
+                ? -1
+                : Convert.ToInt32(config["clearInvalidTokenSeconds"]);
         }
 
         /// <summary>
@@ -143,7 +144,9 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider
         /// <returns></returns>
         public override Token Create(Credentials creds)
         {
-            ContextInfo contextInfo = TokenHelper.GetContextInfo(creds);
+            if (creds == null)
+                throw new ArgumentException("身份认证信息不能为空");
+            ContextInfo contextInfo = creds.GetContextInfo();
             string tokenStr = TokenHelper.BuildSecureTokenStr(this.TokenSize);
             Token token = TokenHelper.CreateToken(tokenStr, contextInfo);
             if (token != null)

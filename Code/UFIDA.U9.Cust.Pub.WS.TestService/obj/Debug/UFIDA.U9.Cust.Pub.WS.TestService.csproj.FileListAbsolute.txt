@@ -41,15 +41,12 @@ D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.UBF.S
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.SystemManage.Adapter.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFSoft.UBF.U9.FileServer.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\Microsoft.Web.Administration.dll
-D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFSoft.UBF.Sys.Resources.Runtime.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CS.Workflow.WorkflowBE.Deploy.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CBO.HRBE.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CS.Workflow.Model.Validate.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CS.Workflow.Model.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CS.Unify.UnifyBP.Agent.dll
-D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CS.Workflow.Activities.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CS.Workflow.IWorkflowService.dll
-D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.BS.Job.JobBE.Deploy.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.BS.Resources.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.Security.SecurityBP.Deploy.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\MongoDB.Bson.dll
@@ -61,8 +58,6 @@ D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CB
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.BS.Job.JobBP.Agent.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CS.Unify.UnifyBP.Deploy.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CS.Workflow.WorkflowBP.Deploy.dll
-D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CS.Workflow.WorkflowBP.Agent.dll
-D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.CS.Workflow.Agent.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.BS.Job.JobBP.Deploy.dll
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.Cust.Pub.WS.Base.pdb
 D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.TestService\bin\Debug\UFIDA.U9.Cust.Pub.WS.U9Action.DBLog.pdb

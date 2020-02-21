@@ -3,8 +3,8 @@ using System.Collections.Specialized;
 using System.Reflection.Emit;
 using UFIDA.U9.Cust.Pub.WS.Context;
 using UFIDA.U9.Cust.Pub.WS.Token.Configuration;
-using UFIDA.U9.Cust.Pub.WS.Token.Models;
 using UFIDA.U9.Cust.Pub.WS.U9Context;
+using UFIDA.U9.Cust.Pub.WS.U9Context.Auth;
 using UFIDA.U9.Cust.Pub.WSM.WSTokenBE;
 using UFIDA.U9.Cust.Pub.WSM.WSTokenSV;
 using UFIDA.U9.Cust.Pub.WSM.WSTokenSV.Proxy;
@@ -75,7 +75,9 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.DBProvider
         /// <returns></returns>
         public override Token Create(Credentials creds)
         {
-            ContextInfo contextInfo = TokenHelper.GetContextInfo(creds);
+            if (creds == null)
+                throw new ArgumentException("身份认证信息不能为空");
+            ContextInfo contextInfo = creds.GetContextInfo();
             Token token;
             using (ContextObject context = new ContextObject(contextInfo))
             {

@@ -5,8 +5,10 @@ using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.ServiceModel.Web;
 using UFIDA.U9.Cust.Pub.WS.Base.Models;
+using UFIDA.U9.Cust.Pub.WS.Context;
 using UFIDA.U9.Cust.Pub.WS.Token.Services;
 using UFIDA.U9.Cust.Pub.WS.U9Context;
+using UFIDA.U9.Cust.Pub.WS.U9Context.Auth;
 
 namespace UFIDA.U9.Cust.Pub.WS.Token.Behavior.Endpoint
 {
@@ -77,7 +79,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.Behavior.Endpoint
         private static void ValidateBasicAuthentication()
         {
             string authorization =
-                WebOperationContext.Current?.IncomingRequest.Headers[TokenConstant.HeaderAuthorizationName];
+                WebOperationContext.Current?.IncomingRequest.Headers[ContextConstant.HeaderAuthorizationName];
             if (string.IsNullOrWhiteSpace(authorization))
             {
                 throw new TokenException("用户未认证或认证已超时失效");

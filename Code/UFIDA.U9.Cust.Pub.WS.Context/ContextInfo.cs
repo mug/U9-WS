@@ -1,6 +1,9 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
+using System.Security.Authentication;
 using UFIDA.U9.Base.UserRole;
 using UFIDA.U9.Cust.Pub.WS.U9Context;
+using UFIDA.U9.Cust.Pub.WS.U9Context.Auth;
 using UFIDA.UBF.SystemManage;
 using Organization = UFIDA.U9.Base.Organization.Organization;
 
@@ -137,5 +140,6 @@ namespace UFIDA.U9.Cust.Pub.WS.Context
             return Create(enterprise.Code, enterprise.Name, org.ID.ToString(), org.Code, org.Name, user.ID.ToString(),
                 user.Code, user.Name, culture, supportCultureNameList);
         }
+
     }
 }
