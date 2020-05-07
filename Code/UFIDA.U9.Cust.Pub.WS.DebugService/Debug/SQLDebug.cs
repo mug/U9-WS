@@ -6,9 +6,11 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Text;
 using System.Threading;
+using System.Transactions;
 using Harmony;
 using UFIDA.U9.Cust.Pub.WS.Base.Utils;
 using UFIDA.U9.Cust.Pub.WS.DebugService.Models;
+using UFSoft.UBF.AopFrame;
 using UFSoft.UBF.Transactions;
 using UFSoft.UBF.Util.Context;
 using UFSoft.UBF.Util.DataAccess;
@@ -23,22 +25,23 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
     {
         private static readonly ILogger Logger = LoggerManager.GetLogger(typeof (SQLDebug));
         private static readonly string DebugID = typeof (SQLDebug).FullName;
+        private static string DebugGuid = string.Empty;
         private static readonly object LockObject = new object();
-        private static SQLDebugConfig _config;
+        private static SQLDebugConfig _debugConfig;
 
         #region Other
 
         /// <summary>
         ///     设置配置
         /// </summary>
-        /// <param name="config"></param>
-        private static void SetConfig(SQLDebugConfig config)
+        /// <param name="debugConfig"></param>
+        private static void SetConfig(SQLDebugConfig debugConfig)
         {
-            if (config == null)
-                throw new ArgumentException("config is null");
+            if (debugConfig == null)
+                throw new ArgumentException("debugConfig is null");
             lock (LockObject)
             {
-                _config = config;
+                _debugConfig = debugConfig;
             }
         }
 
@@ -51,13 +54,13 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
         /// <returns></returns>
         private static bool IsLog(string enterpriseID, string orgCode, string userCode)
         {
-            if (_config == null) return false;
-            if (!string.IsNullOrWhiteSpace(_config.EnterpriseID) &&
-                enterpriseID != _config.EnterpriseID) return false;
-            if (!string.IsNullOrWhiteSpace(_config.OrgCode) &&
-                orgCode != _config.OrgCode) return false;
-            if (!string.IsNullOrWhiteSpace(_config.UserCode) &&
-                userCode != _config.UserCode) return false;
+            if (_debugConfig == null) return false;
+            if (!string.IsNullOrWhiteSpace(_debugConfig.EnterpriseID) &&
+                enterpriseID != _debugConfig.EnterpriseID) return false;
+            if (!string.IsNullOrWhiteSpace(_debugConfig.OrgCode) &&
+                orgCode != _debugConfig.OrgCode) return false;
+            if (!string.IsNullOrWhiteSpace(_debugConfig.UserCode) &&
+                userCode != _debugConfig.UserCode) return false;
             return true;
         }
 
@@ -74,7 +77,7 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
         private static bool IsLog(string enterpriseID, string orgCode, string userCode, string commandText,
             string dataParamsString, CommandType commandType)
         {
-            if (_config == null) return false;
+            if (_debugConfig == null) return false;
             if (!IsLog(enterpriseID, orgCode, userCode)) return false;
             commandText = commandText.ToLower().Trim();
             //换掉回车
@@ -83,22 +86,22 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
             bool isUpdate = commandText.StartsWith("update");
             bool isDelete = commandText.StartsWith("delete");
             bool isSelect = !isInsert && !isUpdate & !isDelete;
-            if (!_config.IsContainInsert && isInsert) return false;
-            if (!_config.IsContainUpdate && isUpdate) return false;
-            if (!_config.IsContainDelete && isDelete) return false;
-            if (!_config.IsContainSelect && isSelect) return false;
-            if (_config.CommandType > 0)
+            if (!_debugConfig.IsContainInsert && isInsert) return false;
+            if (!_debugConfig.IsContainUpdate && isUpdate) return false;
+            if (!_debugConfig.IsContainDelete && isDelete) return false;
+            if (!_debugConfig.IsContainSelect && isSelect) return false;
+            if (_debugConfig.CommandType > 0)
             {
-                if (_config.CommandType == 1 && commandType != CommandType.Text) return false;
-                if (_config.CommandType == 2 && commandType != CommandType.StoredProcedure) return false;
-                if (_config.CommandType == 3 && commandType != CommandType.TableDirect) return false;
+                if (_debugConfig.CommandType == 1 && commandType != CommandType.Text) return false;
+                if (_debugConfig.CommandType == 2 && commandType != CommandType.StoredProcedure) return false;
+                if (_debugConfig.CommandType == 3 && commandType != CommandType.TableDirect) return false;
             }
-            if (!string.IsNullOrWhiteSpace(_config.SQLFilterString))
+            if (!string.IsNullOrWhiteSpace(_debugConfig.SQLFilterString))
             {
                 //多个空格替换成一个空格
                 //commandText = new Regex("[\\s]+").Replace(commandText, " ");
                 dataParamsString = string.IsNullOrEmpty(dataParamsString) ? string.Empty : dataParamsString.ToLower();
-                string[] arrSQLFilter = _config.SQLFilterString.Split(new[] {"\r\n"}, StringSplitOptions.None);
+                string[] arrSQLFilter = _debugConfig.SQLFilterString.Split(new[] {"\r\n"}, StringSplitOptions.None);
                 foreach (string sqlFilter in arrSQLFilter)
                 {
                     if (commandText.IndexOf(sqlFilter.ToLower(), StringComparison.Ordinal) < 0 &&
@@ -151,21 +154,16 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
             CommandType cmdType, string commandText, string dataParamsString)
         {
             StringBuilder sb = new StringBuilder();
-            string logID = Guid.NewGuid().ToString();
-            sb.AppendFormat("LogID:{0}", logID).AppendLine().Append("   ");
-            sb.AppendFormat("上下文信息-企业ID:{0} 组织编码:{1} 用户编码:{2} ", enterpriseID, orgCode, userCode)
-                .AppendLine()
-                .Append("   ");
-            sb.AppendFormat("调用方法:{0}", methodName).AppendLine().Append("   ");
-            sb.AppendFormat("执行类型:{0}", cmdType).AppendLine().Append("   ");
-            sb.AppendFormat("SQL语句:{0}", commandText).AppendLine().Append("   ");
-            sb.AppendFormat("SQL参数:{0}", dataParamsString).AppendLine().Append("   ");
-            if (_config.IsOutputStack)
+            sb.AppendLine().Append("   ").AppendFormat("SQL语句:{0}", commandText);
+            sb.AppendLine().Append("   ").AppendFormat("SQL参数:{0}", dataParamsString);
+            sb.AppendLine()
+                .Append("   ")
+                .AppendFormat("上下文信息:企业ID:{0} 组织编码:{1} 用户编码:{2} ", enterpriseID, orgCode, userCode);
+            sb.AppendLine().Append("   ").AppendFormat("调用方法:{0} 命令类型:{1}", methodName, cmdType);
+            if (_debugConfig.IsOutputSQLStack)
             {
-                //var trace = Environment.StackTrace;
-                //StackTrace trace = new StackTrace(true);
-                sb.Append("调用堆栈:").AppendLine();
-                sb.AppendFormat("{0}", StackTraceHelper.GetCurrentStackTraceString(4)).AppendLine();
+                sb.AppendLine().Append("   ").Append("调用堆栈:");
+                sb.AppendLine().AppendFormat("{0}", StackTraceHelper.GetCurrentStackTraceString(4));
             }
             Logger.Debug(sb.ToString());
         }
@@ -207,112 +205,175 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
         {
             //设置参数
             SetConfig(debugConfig);
-            var instance = HarmonyInstance.Create(DebugID);
-            if (instance.HasAnyPatches(DebugID)) return true;
+            HarmonyInstance instance = HarmonyInstance.Create(DebugID);
+            if (instance.HasAnyPatches(DebugID)) instance.UnpatchAll(DebugID);
+            DebugGuid = Guid.NewGuid().ToString();
             try
             {
-                Assembly assembly = typeof (DataAccessor).Assembly;
-                Type msSqlAccessorType = assembly.GetType("UFSoft.UBF.Util.DataAccess.MsSqlAccessor");
-                //Object
-                var queryObectMethod = AccessTools.Method(msSqlAccessorType, "Query",
-                    new[]
-                    {
-                        typeof (IDbConnection), typeof (string), typeof (DataParamList), typeof (object).MakeByRefType(),
-                        typeof (CommandType)
-                    });
-                var patchClass = typeof (SQLDebug);
-                var prefixQueryObjectMethod = patchClass.GetMethod("PrefixQueryObject");
-                var postQueryObjectMethod = patchClass.GetMethod("PostfixQueryObject");
-                var patcherQueryObject = new PatchProcessor(instance, new List<MethodBase> {queryObectMethod},
-                    new HarmonyMethod(prefixQueryObjectMethod), new HarmonyMethod(postQueryObjectMethod), null);
-                patcherQueryObject.Patch();
-                //DataSet
-                var queryDataSetMethod = AccessTools.Method(msSqlAccessorType, "Query",
-                    new[]
-                    {
-                        typeof (IDbConnection), typeof (string), typeof (DataParamList),
-                        typeof (DataSet).MakeByRefType(),
-                        typeof (CommandType)
-                    });
-                var prefixQueryDataSetMethod = patchClass.GetMethod("PrefixQueryDataSet");
-                var postQueryDataSetMethodMethod = patchClass.GetMethod("PostfixQueryDataSet");
-                var patcherQueryDataSet = new PatchProcessor(instance, new List<MethodBase> {queryDataSetMethod},
-                    new HarmonyMethod(prefixQueryDataSetMethod), new HarmonyMethod(postQueryDataSetMethodMethod), null);
-                patcherQueryDataSet.Patch();
-                //DataReader
-                var queryDataReaderMethod = AccessTools.Method(msSqlAccessorType, "Query",
-                    new[]
-                    {
-                        typeof (IDbConnection), typeof (string), typeof (DataParamList),
-                        typeof (IDataReader).MakeByRefType(),
-                        typeof (CommandType)
-                    });
-                var prefixQueryDataReaderMethod = patchClass.GetMethod("PrefixQueryDataReader");
-                var postQueryDataReaderMethod = patchClass.GetMethod("PostfixQueryDataReader");
-                var patcherQueryDataReader = new PatchProcessor(instance, new List<MethodBase> {queryDataReaderMethod},
-                    new HarmonyMethod(prefixQueryDataReaderMethod), new HarmonyMethod(postQueryDataReaderMethod), null);
-                patcherQueryDataReader.Patch();
-                //ExecuteWithTableParam
-                var executeWithTableParamMethod = AccessTools.Method(msSqlAccessorType, "ExecuteWithTableParam",
-                    new[]
-                    {
-                        typeof (IDbConnection), typeof (string), typeof (SqlParameter)
-                    });
-                var prefixExecuteWithTableParamMethod = patchClass.GetMethod("PrefixExecuteWithTableParam");
-                var postExecuteWithTableParamMethod = patchClass.GetMethod("PostfixExecuteWithTableParam");
-                var patcherExecuteWithTableParam = new PatchProcessor(instance,
-                    new List<MethodBase> {executeWithTableParamMethod},
-                    new HarmonyMethod(prefixExecuteWithTableParamMethod),
-                    new HarmonyMethod(postExecuteWithTableParamMethod), null);
-                patcherExecuteWithTableParam.Patch();
-                //Execute
-                var executeMethod = AccessTools.Method(msSqlAccessorType, "Execute",
-                    new[]
-                    {
-                        typeof (IDbConnection), typeof (string), typeof (DataParamList),
-                        typeof (CommandType)
-                    });
-                var prefixExecuteMethod = patchClass.GetMethod("PrefixExecute");
-                var postExecuteMethod = patchClass.GetMethod("PostfixExecute");
-                var patcherExecute = new PatchProcessor(instance, new List<MethodBase> {executeMethod},
-                    new HarmonyMethod(prefixExecuteMethod), new HarmonyMethod(postExecuteMethod), null);
-                patcherExecute.Patch();
-                //UpdateBatch
-                var updateBatchMethod = AccessTools.Method(msSqlAccessorType, "UpdateBatch",
-                    new[]
-                    {
-                        typeof (IDbConnection), typeof (string), typeof (DataParamList),
-                        typeof (CommandType)
-                    });
-                var prefixUpdateBatchMethod = patchClass.GetMethod("PrefixUpdateBatch");
-                var postUpdateBatchMethod = patchClass.GetMethod("PostfixUpdateBatch");
-                var patcherUpdateBatch = new PatchProcessor(instance, new List<MethodBase> {updateBatchMethod},
-                    new HarmonyMethod(prefixUpdateBatchMethod), new HarmonyMethod(postUpdateBatchMethod), null);
-                patcherUpdateBatch.Patch();
-                //Type ubfTransactionScopeType = typeof (UBFTransactionScope);
-                //ConstructorInfo ubfTransactionScopeConstructor = AccessTools.DeclaredConstructor(
-                //    ubfTransactionScopeType, new[]
-                //    {
-                //        typeof (TransactionOption)
-                //    });
-                //var prefixUBFTransactionScopeMethod = patchClass.GetMethod("PrefixUBFTransactionScope");
-                //var PostfixUBFTransactionScopeMethod = patchClass.GetMethod("PostfixUBFTransactionScope");
-                //var patcherUBFTransactionScope = new PatchProcessor(instance,
-                //    new List<MethodBase> {ubfTransactionScopeConstructor},
-                //    new HarmonyMethod(prefixUBFTransactionScopeMethod),
-                //    new HarmonyMethod(PostfixUBFTransactionScopeMethod), null);
-                //patcherUBFTransactionScope.Patch();
+                if (debugConfig.IsContainInsert || debugConfig.IsContainDelete || debugConfig.IsContainUpdate ||
+                    debugConfig.IsContainSelect)
+                {
+                    //启用SQL调试
+                    Logger.Debug("启用SQL追踪:{0}", DebugGuid);
+                    SetupSQLDebug(instance);
+                }
+                if (debugConfig.IsTraceBPSVTransaction || debugConfig.IsTraceCustomizeTransaction)
+                {
+                    //启用事务追踪
+                    Logger.Debug("启用事务追踪:{0}", DebugGuid);
+                    SetupTransactionScopeDebug(instance);
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                instance.UnpatchAll(DebugID);
+                try
+                {
+                    Logger.Debug("开启调试异常:{0}", DebugGuid);
+                    Logger.Debug(ex);
+                    //停止追踪
+                    StopDebug();
+                }
+                catch (Exception)
+                {
+                }
                 throw;
             }
             return true;
         }
 
         /// <summary>
-        ///     停止调试
+        ///     启用SQL调试
+        /// </summary>
+        /// <param name="instance"></param>
+        private static void SetupSQLDebug(HarmonyInstance instance)
+        {
+            var patchClass = typeof (SQLDebug);
+            Assembly assembly = typeof (DataAccessor).Assembly;
+            Type msSqlAccessorType = assembly.GetType("UFSoft.UBF.Util.DataAccess.MsSqlAccessor");
+            //Object
+            var queryObectMethod = AccessTools.Method(msSqlAccessorType, "Query",
+                new[]
+                {
+                    typeof (IDbConnection), typeof (string), typeof (DataParamList), typeof (object).MakeByRefType(),
+                    typeof (CommandType)
+                });
+            var prefixQueryObjectMethod = patchClass.GetMethod("PrefixQueryObject");
+            var postQueryObjectMethod = patchClass.GetMethod("PostfixQueryObject");
+            var patcherQueryObject = new PatchProcessor(instance, new List<MethodBase> {queryObectMethod},
+                new HarmonyMethod(prefixQueryObjectMethod), new HarmonyMethod(postQueryObjectMethod));
+            patcherQueryObject.Patch();
+            //DataSet
+            var queryDataSetMethod = AccessTools.Method(msSqlAccessorType, "Query",
+                new[]
+                {
+                    typeof (IDbConnection), typeof (string), typeof (DataParamList),
+                    typeof (DataSet).MakeByRefType(),
+                    typeof (CommandType)
+                });
+            var prefixQueryDataSetMethod = patchClass.GetMethod("PrefixQueryDataSet");
+            var postQueryDataSetMethodMethod = patchClass.GetMethod("PostfixQueryDataSet");
+            var patcherQueryDataSet = new PatchProcessor(instance, new List<MethodBase> {queryDataSetMethod},
+                new HarmonyMethod(prefixQueryDataSetMethod), new HarmonyMethod(postQueryDataSetMethodMethod));
+            patcherQueryDataSet.Patch();
+            //DataReader
+            var queryDataReaderMethod = AccessTools.Method(msSqlAccessorType, "Query",
+                new[]
+                {
+                    typeof (IDbConnection), typeof (string), typeof (DataParamList),
+                    typeof (IDataReader).MakeByRefType(),
+                    typeof (CommandType)
+                });
+            var prefixQueryDataReaderMethod = patchClass.GetMethod("PrefixQueryDataReader");
+            var postQueryDataReaderMethod = patchClass.GetMethod("PostfixQueryDataReader");
+            var patcherQueryDataReader = new PatchProcessor(instance, new List<MethodBase> {queryDataReaderMethod},
+                new HarmonyMethod(prefixQueryDataReaderMethod), new HarmonyMethod(postQueryDataReaderMethod));
+            patcherQueryDataReader.Patch();
+            //ExecuteWithTableParam
+            var executeWithTableParamMethod = AccessTools.Method(msSqlAccessorType, "ExecuteWithTableParam",
+                new[]
+                {
+                    typeof (IDbConnection), typeof (string), typeof (SqlParameter)
+                });
+            var prefixExecuteWithTableParamMethod = patchClass.GetMethod("PrefixExecuteWithTableParam");
+            var postExecuteWithTableParamMethod = patchClass.GetMethod("PostfixExecuteWithTableParam");
+            var patcherExecuteWithTableParam = new PatchProcessor(instance,
+                new List<MethodBase> {executeWithTableParamMethod},
+                new HarmonyMethod(prefixExecuteWithTableParamMethod),
+                new HarmonyMethod(postExecuteWithTableParamMethod));
+            patcherExecuteWithTableParam.Patch();
+            //Execute
+            var executeMethod = AccessTools.Method(msSqlAccessorType, "Execute",
+                new[]
+                {
+                    typeof (IDbConnection), typeof (string), typeof (DataParamList),
+                    typeof (CommandType)
+                });
+            var prefixExecuteMethod = patchClass.GetMethod("PrefixExecute");
+            var postExecuteMethod = patchClass.GetMethod("PostfixExecute");
+            var patcherExecute = new PatchProcessor(instance, new List<MethodBase> {executeMethod},
+                new HarmonyMethod(prefixExecuteMethod), new HarmonyMethod(postExecuteMethod));
+            patcherExecute.Patch();
+            //UpdateBatch
+            var updateBatchMethod = AccessTools.Method(msSqlAccessorType, "UpdateBatch",
+                new[]
+                {
+                    typeof (IDbConnection), typeof (string), typeof (DataParamList),
+                    typeof (CommandType)
+                });
+            var prefixUpdateBatchMethod = patchClass.GetMethod("PrefixUpdateBatch");
+            var postUpdateBatchMethod = patchClass.GetMethod("PostfixUpdateBatch");
+            var patcherUpdateBatch = new PatchProcessor(instance, new List<MethodBase> {updateBatchMethod},
+                new HarmonyMethod(prefixUpdateBatchMethod), new HarmonyMethod(postUpdateBatchMethod));
+            patcherUpdateBatch.Patch();
+        }
+
+        /// <summary>
+        ///     启用事务追踪
+        /// </summary>
+        /// <param name="instance"></param>
+        private static void SetupTransactionScopeDebug(HarmonyInstance instance)
+        {
+            var patchClass = typeof (SQLDebug);
+            if (_debugConfig == null) return;
+            if (_debugConfig.IsTraceCustomizeTransaction)
+            {
+                Type ubfTransactionScopeType = typeof (UBFTransactionScope);
+                ConstructorInfo ubfTransactionScopeConstructor = AccessTools.DeclaredConstructor(
+                    ubfTransactionScopeType, new[]
+                    {
+                        typeof (TransactionOption)
+                    });
+                var prefixUBFTransactionScopeConstructorMethod =
+                    patchClass.GetMethod("PrefixUBFTransactionScopeConstructor");
+                var PostfixUBFTransactionScopeConstructorMethod =
+                    patchClass.GetMethod("PostfixUBFTransactionScopeConstructor");
+                var patcherUBFTransactionScopeConstructor = new PatchProcessor(instance,
+                    new List<MethodBase> {ubfTransactionScopeConstructor},
+                    new HarmonyMethod(prefixUBFTransactionScopeConstructorMethod),
+                    new HarmonyMethod(PostfixUBFTransactionScopeConstructorMethod));
+                patcherUBFTransactionScopeConstructor.Patch();
+            }
+            if (_debugConfig.IsTraceBPSVTransaction)
+            {
+                Type transactionAttributeType = typeof (TransactionAttribute);
+                var transactionAttributeProcessMethod = AccessTools.Method(transactionAttributeType, "Process",
+                    new[]
+                    {
+                        typeof (object)
+                    });
+                var prefixTransactionAttributeProcessMethod = patchClass.GetMethod("PrefixTransactionAttributeProcess");
+                var postfixTransactionAttributeProcessMethod =
+                    patchClass.GetMethod("PostfixTransactionAttributeProcess");
+                var patcherTransactionAttributeProcess = new PatchProcessor(instance,
+                    new List<MethodBase> {transactionAttributeProcessMethod},
+                    new HarmonyMethod(prefixTransactionAttributeProcessMethod),
+                    new HarmonyMethod(postfixTransactionAttributeProcessMethod));
+                patcherTransactionAttributeProcess.Patch();
+            }
+        }
+
+        /// <summary>
+        ///     停止追踪
         /// </summary>
         /// <returns></returns>
         public static bool StopDebug()
@@ -320,6 +381,7 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
             var instance = HarmonyInstance.Create(DebugID);
             if (instance.HasAnyPatches(DebugID))
             {
+                Logger.Debug("关闭事务追踪:{0}", DebugGuid);
                 instance.UnpatchAll(DebugID);
             }
             return true;
@@ -334,7 +396,7 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
             DataParamList dataParams,
             CommandType cmdType)
         {
-            if (_config == null) return;
+            if (_debugConfig == null) return;
             const string methodName = "QueryObject";
             string enterpriseID = PlatformContext.Current.EnterpriseID;
             string orgCode = PlatformContext.Current.OrgCode;
@@ -355,7 +417,7 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
             DataParamList dataParams,
             DataSet ds, CommandType cmdType)
         {
-            if (_config == null) return;
+            if (_debugConfig == null) return;
             const string methodName = "QueryDataSet";
             string enterpriseID = PlatformContext.Current.EnterpriseID;
             string orgCode = PlatformContext.Current.OrgCode;
@@ -375,7 +437,7 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
             DataParamList dataParams,
             IDataReader dr, CommandType cmdType)
         {
-            if (_config == null) return;
+            if (_debugConfig == null) return;
             const string methodName = "QueryDataReader";
             string enterpriseID = PlatformContext.Current.EnterpriseID;
             string orgCode = PlatformContext.Current.OrgCode;
@@ -394,7 +456,7 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
         public static void PrefixExecuteWithTableParam(object __instance, IDbConnection sqlserver_conn,
             string commandText, SqlParameter tableParam)
         {
-            if (_config == null) return;
+            if (_debugConfig == null) return;
             const string methodName = "ExecuteWithTableParam";
             string enterpriseID = PlatformContext.Current.EnterpriseID;
             string orgCode = PlatformContext.Current.OrgCode;
@@ -414,7 +476,7 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
         public static void PrefixExecute(object __instance, IDbConnection con, string commandText,
             DataParamList dataParams, CommandType cmdType)
         {
-            if (_config == null) return;
+            if (_debugConfig == null) return;
             const string methodName = "Execute";
             string enterpriseID = PlatformContext.Current.EnterpriseID;
             string orgCode = PlatformContext.Current.OrgCode;
@@ -433,7 +495,7 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
         public static void PrefixUpdateBatch(object __instance, IDbConnection con, string commandText,
             DataParamList dataParams, CommandType cmdType)
         {
-            if (_config == null) return;
+            if (_debugConfig == null) return;
             const string methodName = "UpdateBatch";
             string enterpriseID = PlatformContext.Current.EnterpriseID;
             string orgCode = PlatformContext.Current.OrgCode;
@@ -449,27 +511,93 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Debug
         {
         }
 
-        public static void PrefixUBFTransactionScope(TransactionOption option)
+        #region 事务追踪
+
+        public static void PrefixUBFTransactionScopeConstructor(TransactionOption option)
         {
         }
 
-        public static void PostfixUBFTransactionScope(UBFTransactionScope __instance, TransactionOption option)
+        public static void PostfixUBFTransactionScopeConstructor(UBFTransactionScope __instance,
+            TransactionOption option)
         {
-            if (_config == null) return;
+            if (_debugConfig == null) return;
             string enterpriseID = PlatformContext.Current.EnterpriseID;
             string orgCode = PlatformContext.Current.OrgCode;
             string userCode = PlatformContext.Current.UserCode;
             if (!IsLog(enterpriseID, orgCode, userCode)) return;
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("UBFTransactionScope:{0}", option).AppendLine();
-            sb.AppendFormat("TransactionID:{0}",
-                __instance.Transaction == null
-                    ? string.Empty
-                    : __instance.Transaction.TransactionInformation.LocalIdentifier).AppendLine();
             StackTrace stackTrace = new StackTrace(true);
-            sb.AppendFormat(stackTrace.ToString());
+            for (int i = 0; i < stackTrace.FrameCount; i++)
+            {
+                StackFrame frame = stackTrace.GetFrame(i);
+                MethodBase method = frame.GetMethod();
+                if (method.DeclaringType == null) continue;
+                if (method.DeclaringType == typeof (SQLDebug)) continue;
+                string assemblyFullName = method.DeclaringType.Assembly.FullName;
+                sb.AppendFormat("自定义事务:");
+                if (!string.IsNullOrEmpty(assemblyFullName))
+                {
+                    sb.Append(assemblyFullName.Split(',')[0]);
+                    sb.Append("!");
+                }
+                sb.AppendFormat("{0}.{1} 事务类型:{2} 事务ID:{3}",
+                    method.DeclaringType.FullName,
+                    method.Name, option, Transaction.Current == null
+                        ? string.Empty
+                        : Transaction.Current.TransactionInformation.LocalIdentifier);
+                break;
+            }
+            if (_debugConfig.IsOutputTransactionStack)
+            {
+                sb.AppendLine();
+                sb.Append(StackTraceHelper.GetCurrentStackTraceString(4));
+            }
             Logger.Debug(sb.ToString());
         }
+
+        public static void PrefixTransactionAttributeProcess(TransactionAttribute __instance, object obj)
+        {
+        }
+
+        public static void PostfixTransactionAttributeProcess(TransactionAttribute __instance, object obj)
+        {
+            if (_debugConfig == null) return;
+            string enterpriseID = PlatformContext.Current.EnterpriseID;
+            string orgCode = PlatformContext.Current.OrgCode;
+            string userCode = PlatformContext.Current.UserCode;
+            if (!IsLog(enterpriseID, orgCode, userCode)) return;
+            StringBuilder sb = new StringBuilder();
+            StackTrace stackTrace = new StackTrace(true);
+            for (int i = 0; i < stackTrace.FrameCount; i++)
+            {
+                StackFrame frame = stackTrace.GetFrame(i);
+                MethodBase method = frame.GetMethod();
+                if (method.DeclaringType == null) continue;
+                var transactionAttribute = Attribute.GetCustomAttribute(method, typeof (TransactionAttribute));
+                if (transactionAttribute == null) continue;
+                string assemblyFullName = method.DeclaringType.Assembly.FullName;
+                sb.AppendFormat("BPSV事务:");
+                if (!string.IsNullOrEmpty(assemblyFullName))
+                {
+                    sb.Append(assemblyFullName.Split(',')[0]);
+                    sb.Append("!");
+                }
+                sb.AppendFormat("{0}.{1} 事务类型:{2} 事务ID:{3}",
+                    method.DeclaringType.FullName,
+                    method.Name, __instance.TransactionOption, Transaction.Current == null
+                        ? string.Empty
+                        : Transaction.Current.TransactionInformation.LocalIdentifier);
+                break;
+            }
+            if (_debugConfig.IsOutputTransactionStack)
+            {
+                sb.AppendLine();
+                sb.Append(StackTraceHelper.GetCurrentStackTraceString(4));
+            }
+            Logger.Debug(sb.ToString());
+        }
+
+        #endregion
 
         #endregion
     }

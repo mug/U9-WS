@@ -1,7 +1,0 @@
-D:\Works\Pub_U9\38WS\Code\WSLogRSV\Deploy\bin\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Deploy.dll
-D:\Works\Pub_U9\38WS\Code\WSLogRSV\Deploy\bin\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Deploy.pdb
-D:\Works\Pub_U9\38WS\Code\WSLogRSV\Deploy\obj\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Deploy.csprojResolveAssemblyReference.cache
-D:\Works\Pub_U9\38WS\Code\WSLogRSV\Deploy\obj\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Resource.resources
-D:\Works\Pub_U9\38WS\Code\WSLogRSV\Deploy\obj\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Deploy.csproj.GenerateResource.Cache
-D:\Works\Pub_U9\38WS\Code\WSLogRSV\Deploy\obj\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Deploy.dll
-D:\Works\Pub_U9\38WS\Code\WSLogRSV\Deploy\obj\Debug\UFIDA.U9.Cust.Pub.WSLogRSV.Deploy.pdb

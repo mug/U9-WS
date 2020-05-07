@@ -6,7 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFService", "WCFService\", "{ADD65B44-575B-4003-8FCF-D7F1F2D37D26}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		ProjectReferences = "{8C8E9755-0FFC-47E5-BD79-66C6B1ABD12B}|UFIDA.U9.Cust.Pub.WS.Base.dll;{cb3fd880-c065-43a5-9058-ecc3ab89dc9d}|UFIDA.U9.Cust.Pub.WS.Token.dll;{f39e5bec-20b0-4813-8a7a-599de6cd9763}|UFIDA.U9.Cust.Pub.WS.Token.DBProvider.dll;{7cb3df10-79fa-4bd9-a29d-d7214eae5e30}|UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider.dll;{366444a8-4479-49f4-a614-61df5d50994e}|UFIDA.U9.Cust.Pub.WS.U9Action.dll;{a00bb192-1b54-455c-9086-245227a86b14}|UFIDA.U9.Cust.Pub.WS.U9Action.DBLog.dll;{b1c120b3-bfcc-4d09-8508-87d8e006d44a}|UFIDA.U9.Cust.Pub.WS.U9Action.Token.dll;{ac566f2b-ac90-45f6-a014-312e90b1996a}|UFIDA.U9.Cust.Pub.WS.TestService.dll;{9ecaaff0-f62b-4603-9ffd-392e49cc9d60}|UFIDA.U9.Cust.Pub.WS.ProxyService.dll;{AE6D00EA-5BEE-48D7-B385-F9F6C7EB7799}|UFIDA.U9.Cust.Pub.WS.Json.dll;{0383059E-C9E6-4A08-8444-4FFCCEA88253}|UFIDA.U9.Cust.Pub.WS.U9Context.dll;{68b149aa-cbe4-4f67-9914-88fe4d256ca3}|UFIDA.U9.Cust.Pub.WS.DebugService.dll;"
+		ProjectReferences = "{8C8E9755-0FFC-47E5-BD79-66C6B1ABD12B}|UFIDA.U9.Cust.Pub.WS.Base.dll;{cb3fd880-c065-43a5-9058-ecc3ab89dc9d}|UFIDA.U9.Cust.Pub.WS.Token.dll;{f39e5bec-20b0-4813-8a7a-599de6cd9763}|UFIDA.U9.Cust.Pub.WS.Token.DBProvider.dll;{7cb3df10-79fa-4bd9-a29d-d7214eae5e30}|UFIDA.U9.Cust.Pub.WS.Token.MemoryProvider.dll;{366444a8-4479-49f4-a614-61df5d50994e}|UFIDA.U9.Cust.Pub.WS.U9Action.dll;{a00bb192-1b54-455c-9086-245227a86b14}|UFIDA.U9.Cust.Pub.WS.U9Action.DBLog.dll;{b1c120b3-bfcc-4d09-8508-87d8e006d44a}|UFIDA.U9.Cust.Pub.WS.U9Action.Token.dll;{ac566f2b-ac90-45f6-a014-312e90b1996a}|UFIDA.U9.Cust.Pub.WS.TestService.dll;{9ecaaff0-f62b-4603-9ffd-392e49cc9d60}|UFIDA.U9.Cust.Pub.WS.ProxyService.dll;{AE6D00EA-5BEE-48D7-B385-F9F6C7EB7799}|UFIDA.U9.Cust.Pub.WS.Json.dll;{0383059E-C9E6-4A08-8444-4FFCCEA88253}|UFIDA.U9.Cust.Pub.WS.U9Context.dll;{68b149aa-cbe4-4f67-9914-88fe4d256ca3}|UFIDA.U9.Cust.Pub.WS.DebugService.dll;{9d9a5ceb-e073-4c44-9592-1e8b3a99da0d}|UFIDA.U9.Cust.Pub.WS.LoginService.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_3023"
 		Debug.AspNetCompiler.PhysicalPath = "WCFService\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_3023\"
@@ -55,7 +55,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{85
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U9.Cust.Pub.WS.DebugService", "UFIDA.U9.Cust.Pub.WS.DebugService\UFIDA.U9.Cust.Pub.WS.DebugService.csproj", "{68B149AA-CBE4-4F67-9914-88FE4D256CA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U9.Cust.Pub.WS.AttachmentService", "UFIDA.U9.Cust.Pub.WS.AttachmentService\UFIDA.U9.Cust.Pub.WS.AttachmentService.csproj", "{9D9A5CEB-E073-4C44-9592-1E8B3A99DA0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UFIDA.U9.Cust.Pub.WS.LoginService", "UFIDA.U9.Cust.Pub.WS.LoginService\UFIDA.U9.Cust.Pub.WS.LoginService.csproj", "{9D9A5CEB-E073-4C44-9592-1E8B3A99DA0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

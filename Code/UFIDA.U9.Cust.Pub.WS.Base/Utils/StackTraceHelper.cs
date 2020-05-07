@@ -74,6 +74,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Utils
         private static bool IsMethodToIncluded(StackFrame stackFrame, Type type)
         {
             MethodBase method = stackFrame.GetMethod();
+            if (method.DeclaringType == null) return false;
             return method.DeclaringType != type;
         }
 

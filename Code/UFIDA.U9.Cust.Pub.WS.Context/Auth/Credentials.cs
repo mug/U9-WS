@@ -52,31 +52,31 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Context.Auth
         public ContextInfo GetContextInfo()
         {
             if (string.IsNullOrWhiteSpace(this.EnterpriseID))
-                throw new AuthenticationException("企业ID不能为空");
+                throw new U9ContextException("企业ID不能为空");
             if (string.IsNullOrWhiteSpace(this.OrgCode))
-                throw new AuthenticationException("组织不能为空");
+                throw new U9ContextException("组织不能为空");
             if (string.IsNullOrWhiteSpace(this.UserCode))
-                throw new AuthenticationException("用户不能为空");
+                throw new U9ContextException("用户不能为空");
             Enterprise enterprise = ContextObject.GetEnterprise(this.EnterpriseID);
             if (enterprise == null)
                 throw new U9ContextException(string.Format("企业:{0}不存在!", this.EnterpriseID));
             using (ContextObject contextObject = new ContextObject(enterprise))
             {
                 if (string.IsNullOrWhiteSpace(this.OrgCode))
-                    throw new AuthenticationException("组织编码不能为空");
+                    throw new U9ContextException("组织编码不能为空");
                 Organization org = Organization.FindByCode(this.OrgCode);
                 if (org == null)
                     throw new U9ContextException(string.Format("组织:{0}不存在", this.OrgCode));
                 User user = User.FindByCode(this.UserCode);
                 if (user == null)
-                    throw new AuthenticationException("用户不存在或密码不正确");
+                    throw new U9ContextException("用户不存在或密码不正确");
                 string encryptPassword = ContextHelper.EncryptPassword(this.Password);
                 if (encryptPassword != user.Password)
                 {
-                    throw new AuthenticationException("用户不存在或密码不正确");
+                    throw new U9ContextException("用户不存在或密码不正确");
                 }
                 if (!user.IsAlive)
-                    throw new AuthenticationException("用户已失效");
+                    throw new U9ContextException("用户已失效");
                 return ContextInfo.GetContext(enterprise, org, user, this.Culture,
                     this.SupportCultureNameList);
             }

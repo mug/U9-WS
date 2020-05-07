@@ -1,8 +1,0 @@
-D:\Works\Pub_U9\38WS\Code\WSMRSV\BPAgent\bin\Debug\UFIDA.U9.Cust.Pub.WSM.WSMRSV.Agent.dll
-D:\Works\Pub_U9\38WS\Code\WSMRSV\BPAgent\bin\Debug\UFIDA.U9.Cust.Pub.WSM.WSMRSV.Agent.pdb
-D:\Works\Pub_U9\38WS\Code\WSMRSV\BPAgent\bin\Debug\UFIDA.U9.Cust.Pub.WSM.WSMRSV.Deploy.dll
-D:\Works\Pub_U9\38WS\Code\WSMRSV\BPAgent\bin\Debug\UFIDA.U9.Cust.Pub.WSM.WSMRSV.Deploy.pdb
-D:\Works\Pub_U9\38WS\Code\WSMRSV\BPAgent\bin\Debug\UFIDA.U9.Cust.Pub.WSM.WSMRSV.Deploy.xml
-D:\Works\Pub_U9\38WS\Code\WSMRSV\BPAgent\obj\Debug\UFIDA.U9.Cust.Pub.WSM.WSMRSV.Agent.csprojResolveAssemblyReference.cache
-D:\Works\Pub_U9\38WS\Code\WSMRSV\BPAgent\obj\Debug\UFIDA.U9.Cust.Pub.WSM.WSMRSV.Agent.dll
-D:\Works\Pub_U9\38WS\Code\WSMRSV\BPAgent\obj\Debug\UFIDA.U9.Cust.Pub.WSM.WSMRSV.Agent.pdb

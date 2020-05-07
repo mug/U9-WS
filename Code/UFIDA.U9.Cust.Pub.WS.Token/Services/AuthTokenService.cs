@@ -1,6 +1,7 @@
 ﻿using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using UFIDA.U9.Cust.Pub.WS.Base.Models;
+using UFIDA.U9.Cust.Pub.WS.Base.Utils;
 using UFIDA.U9.Cust.Pub.WS.Context;
 using UFIDA.U9.Cust.Pub.WS.Token.Interfaces;
 using UFIDA.U9.Cust.Pub.WS.U9Context.Auth;
@@ -27,7 +28,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.Services
             }
             Token token = TokenManagement.Instance.Create(creds);
             if (token == null)
-                throw new TokenException("获取Token失败,请确认配置是否正确");
+                throw new TokenException("生成Token失败,请确认配置是否正确");
             ret.Result = token.TokenStr;
             return ret;
         }

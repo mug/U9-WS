@@ -21,10 +21,10 @@ namespace UFIDA.U9.Cust.Pub.WS.U9Action.Token
             string tokenStr =
                 WebOperationContext.Current.IncomingRequest.Headers[TokenConstant.HeaderAccessTokenName];
             if (string.IsNullOrWhiteSpace(tokenStr))
-                throw new TokenException("未认证身份信息");
+                throw new UnauthorizedTokenException("未认证身份信息");
             WS.Token.Token token = TokenManagement.Instance.Get(tokenStr);
             if (token == null)
-                throw new TokenException("认证失败或认证已失效");
+                throw new ForbiddenTokenException("认证失败或认证已失效");
             return new ContextObject(token);
         }
 

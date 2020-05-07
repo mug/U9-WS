@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Specialized;
-using UFIDA.U9.Cust.Pub.UIBase.Helper;
 using UFIDA.U9.Cust.Pub.WSLogBE;
 using UFIDA.U9.Cust.Pub.WSLogBP;
 using UFIDA.U9.Cust.Pub.WSLogBP.Proxy;
@@ -155,7 +154,7 @@ namespace UFIDA.U9.Cust.Pub.WSLogBListUIModel
             DoRequestBPProxy proxy = new DoRequestBPProxy();
             proxy.WSLogID = wsLogID;
             RequestResultDTOData resultData = proxy.Do();
-            if (UIWebFormHelper.HasErrorMessage(Model)) return;
+            if (Model.ErrorMessage.hasErrorMessage || Model.ErrorMessage.hasChildMessage) return;
             Action.NavigateAction.Refresh(DataGrid1);
             if (resultData.CallResult != (int) CallResultEnumData.Success)
             {

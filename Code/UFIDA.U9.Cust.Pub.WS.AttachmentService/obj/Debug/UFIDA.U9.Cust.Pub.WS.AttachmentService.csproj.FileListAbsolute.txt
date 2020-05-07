@@ -1,4 +1,0 @@
-D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.AttachmentService\bin\Debug\UFIDA.U9.Cust.Pub.WS.AttachmentService.dll
-D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.AttachmentService\bin\Debug\UFIDA.U9.Cust.Pub.WS.AttachmentService.pdb
-D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.AttachmentService\obj\Debug\UFIDA.U9.Cust.Pub.WS.AttachmentService.dll
-D:\Works\Pub_U9\38WS\Code\UFIDA.U9.Cust.Pub.WS.AttachmentService\obj\Debug\UFIDA.U9.Cust.Pub.WS.AttachmentService.pdb

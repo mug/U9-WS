@@ -60,7 +60,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.Behavior.Endpoint
             Token token = TokenManagement.Instance.Get(tokenStr);
             if (token == null || TokenManagement.Instance.IsExpired(token))
             {
-                throw new TokenException("用户未认证或认证已超时失效");
+                throw new ForbiddenTokenException("用户未认证或认证已超时失效");
             }
             else
             {
@@ -82,7 +82,7 @@ namespace UFIDA.U9.Cust.Pub.WS.Token.Behavior.Endpoint
                 WebOperationContext.Current?.IncomingRequest.Headers[ContextConstant.HeaderAuthorizationName];
             if (string.IsNullOrWhiteSpace(authorization))
             {
-                throw new TokenException("用户未认证或认证已超时失效");
+                throw new UnauthorizedTokenException("未认证身份信息");
                 //throw new WebFaultException(HttpStatusCode.Forbidden);
             }
             BasicAuth basicAuth = new BasicAuth(authorization);

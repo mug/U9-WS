@@ -1,5 +1,4 @@
-﻿using System.Data;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace UFIDA.U9.Cust.Pub.WS.DebugService.Models
 {
@@ -34,10 +33,27 @@ namespace UFIDA.U9.Cust.Pub.WS.DebugService.Models
         public bool IsContainDelete { get; set; }
 
         /// <summary>
-        /// 是否输出堆栈
+        ///     是否输出SQL堆栈
         /// </summary>
         [DataMember]
-        public bool IsOutputStack { get; set; }
+        public bool IsOutputSQLStack { get; set; }
 
+        /// <summary>
+        ///     是否追踪BPSV事务
+        /// </summary>
+        [DataMember]
+        public bool IsTraceBPSVTransaction { get; set; }
+
+        /// <summary>
+        ///     是否追踪自定义事务
+        /// </summary>
+        [DataMember]
+        public bool IsTraceCustomizeTransaction { get; set; }
+
+        /// <summary>
+        ///     是否输出事务堆栈
+        /// </summary>
+        [DataMember]
+        public bool IsOutputTransactionStack { get; set; }
     }
 }

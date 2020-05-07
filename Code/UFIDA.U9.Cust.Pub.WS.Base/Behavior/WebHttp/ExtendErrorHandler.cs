@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Security;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
@@ -61,16 +60,31 @@ namespace UFIDA.U9.Cust.Pub.WS.Base.Behavior.WebHttp
                 new WebBodyFormatMessageProperty(WebContentFormat.Raw));
             HttpResponseMessageProperty respProp = new HttpResponseMessageProperty();
             respProp.Headers[HttpResponseHeader.ContentType] = "application/json;charset=utf-8";
-            if (error is SecurityException &&
-                (error.Message == "Session expired" || error.Message == "Authentication ticket expired"))
+            if (error is WSException)
             {
-                respProp.StatusCode = HttpStatusCode.Unauthorized;
-                respProp.StatusDescription = "Unauthorized";
+                WSException wsEx = error as WSException;
+                if (wsEx.ExceptionCode == 40001)
+                {
+                    respProp.StatusCode = HttpStatusCode.Unauthorized;
+                    respProp.StatusDescription = "Unauthorized";
+                }
+                else if (wsEx.ExceptionCode == 40003)
+                {
+                    respProp.StatusCode = HttpStatusCode.Forbidden;
+                    respProp.StatusDescription = "Forbidden";
+                }
+                else
+                {
+                    // return custom error code, 200.
+                    respProp.StatusCode = HttpStatusCode.BadRequest;
+                    //responseMessageProperty.StatusCode = HttpStatusCode.BadRequest;
+                    respProp.StatusDescription = "Bad request";
+                }
             }
             else
             {
                 // return custom error code, 400.
-                respProp.StatusCode = HttpStatusCode.OK;
+                respProp.StatusCode = HttpStatusCode.BadRequest;
                 //responseMessageProperty.StatusCode = HttpStatusCode.BadRequest;
                 respProp.StatusDescription = "Bad request";
             }

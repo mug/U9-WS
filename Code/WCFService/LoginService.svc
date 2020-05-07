@@ -1,0 +1,2 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Factory="UFIDA.U9.Cust.Pub.WS.Base.Services.IISHostFactory,UFIDA.U9.Cust.Pub.WS.Base" 
+    Service="UFIDA.U9.Cust.Pub.WS.LoginService.Services.LoginService,UFIDA.U9.Cust.Pub.WS.LoginService" %>

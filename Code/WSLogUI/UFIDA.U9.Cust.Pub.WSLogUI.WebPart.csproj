@@ -35,12 +35,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="UFIDA.U9.Cust.Pub.Base">
-      <HintPath>..\..\..\..\..\yonyou\U9V60\Portal\bin\UFIDA.U9.Cust.Pub.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="UFIDA.U9.Cust.Pub.UIBase">
-      <HintPath>..\..\..\..\..\yonyou\U9V60\Portal\UILib\UFIDA.U9.Cust.Pub.UIBase.dll</HintPath>
-    </Reference>
     <Reference Include="UFIDA.U9.Cust.Pub.WSLogBE.Deploy">
       <HintPath>..\..\..\..\..\yonyou\U9V60\Portal\ApplicationServer\Libs\UFIDA.U9.Cust.Pub.WSLogBE.Deploy.dll</HintPath>
     </Reference>
